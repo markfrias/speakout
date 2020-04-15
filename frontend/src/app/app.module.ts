@@ -7,6 +7,7 @@ import { TrendingComponent } from './trending/trending.component';
 import { PostsComponent } from './posts/posts.component';
 import { TagsComponent } from './tags/tags.component';
 import { TeamComponent } from './team/team.component';
+import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 
 const appRoutes: Routes = [
   { path: 'trending', component: TrendingComponent },
@@ -21,15 +22,12 @@ const appRoutes: Routes = [
     TrendingComponent,
     PostsComponent,
     TagsComponent,
-    TeamComponent
+    TeamComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true}
-    )
   ],
   providers: [],
   bootstrap: [AppComponent]
