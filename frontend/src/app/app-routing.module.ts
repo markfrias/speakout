@@ -6,12 +6,14 @@ import { TagsComponent } from './tags/tags.component';
 import { TeamComponent } from './team/team.component';
 import { TrendingComponent } from './trending/trending.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
- 
+import { ContactComponent } from './contact/contact.component'; 
+
 const routes: Routes = [
   { path: 'trending', component: TrendingComponent },
   { path: 'posts', component: PostsComponent }, 
   { path: 'tags', component: TagsComponent} ,
   { path: 'team', component: TeamComponent},
+  { path: 'contact', component: ContactComponent},
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
