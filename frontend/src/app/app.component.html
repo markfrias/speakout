@@ -3,8 +3,18 @@
     <div>Logo</div>
     <ul>
       <a class="navlinks"><li>Home</li></a>
-      <a class="navlinks"><li>Contact Us</li></a>
+      <a class="navlinks" routerLink="/team"><li>Contact Us</li></a>
       <a class="navlinks"><li>Meet the Team</li></a>
     </ul>
   </nav>
 </header>
+
+<div id="secondary-nav">
+  <ul>
+    <li class="navlinks-2" routerLink="/trending">Trending Posts</li>
+    <li class="navlinks-2" routerLink="/posts">Recent Posts</li>
+    <li class="navlinks-2" routerLink="/tags">Topics</li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>

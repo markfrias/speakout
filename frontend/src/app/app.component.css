@@ -14,3 +14,17 @@ nav > ul {
     margin-right: 5vw;
     cursor: pointer;
 }
+
+#secondary-nav > ul {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    justify-content: center;
+}
+
+.navlinks-2 {
+    margin-right: 5vw;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
