@@ -1,4 +1,50 @@
-h1 {
+
+body {
+    height: 100%;
+    background-color: whitesmoke;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.contact-form {
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+.form-input input {
+
+
+width: 97%;
+padding: 15px 5px;
+cursor: pointer;
+font-size: 20px;
+font-family: 'Courier New', Courier, monospace;
+}
+.form-submit {
     font-size: 25px;
+    text-align:center;
+    
+
+}
+.btn-submit {
+    text-decoration: none;
+    background-color: rgb(163, 163, 199,0.3);
+    color: rgb(224, 37, 37);
+    padding: 0px 7px 7px 7px;
+    border-radius: 5px;
+}
+
+a.link {
+    margin: 0;
+    color: rgb(247, 193, 56);
+    text-decoration: none;
+    padding-top: 5px 
+}
+a:visited {
+    color: yellow;
+}
+a:hover{
+    color: teal;
+}
+h1 {
+    font-size: 35px;
     text-align: center;
 }
