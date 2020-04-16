@@ -1,13 +1,43 @@
+
 nav {
     display: flex;
     width: 100%;
     height: 10vh;
-    background-color: maroon;
+    background-color: #903749;
+    margin: 0;
+    
+
+
+
+}
+/*link unvisited */
+a:link {
+    margin: 0;
+    color: mintcream;
+    text-decoration: none;
+    color: black;
+    padding: 14px 25px;
+
+}
+
+/* link visited */
+a:visited {
+    color: goldenrod;
+    text-decoration: none;
+}
+/*link hover */
+a:hover {
+    color: black;
+    opacity: 80%;
+   
 }
 
 nav > ul {
-    display: flex;
-    margin-left: 50%;
+   display: flex;
+   list-style: none;
+  font-size: 20px;
+    margin-left: 30%;
+    
 }
 
 .navlinks {
