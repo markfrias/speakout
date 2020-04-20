@@ -1,0 +1,91 @@
+body {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    background: #f6f6f6;
+    font-family: 'Lora', serif;
+}
+main {
+    display: block;     
+
+}
+.content {
+    width: 90%;
+    margin: 30px auto 30px;
+}
+.content .members-profile-left .post .post-preview {
+    width: 60%;
+    float: right;
+    padding: 10px;
+}
+
+.content .members-profile-right .post .post-preview {
+    width: 60%;
+    float: left;
+    padding: 10px; 
+}
+
+    .content .members-profile-left .post .post-preview .social-apps a,
+    .content .members-profile-right .post .post-preview .social-apps a {
+        border: 1px solid #00152e;
+        width: 35px;
+        height: 31px;
+        padding-top: 3px;
+        margin-right: 3px;
+        text-align: center;
+        display: inline-block;
+        font-size: 1.3em;
+        border-radius: 5px;
+        transition: .4s;
+    }
+    
+.members-profile-right {
+
+    width: 85%;
+    float: right;
+}
+.fa-user:before {
+    content: "\f007"; }
+
+.members-profile-left .post {
+    width: 95%;
+    height: 280px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background: white;
+    position: relative;
+}
+.members-profile-right .post {
+    width: 95%;
+    height: 280px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background: white;
+    position: relative; }
+
+.members-profile-left {
+    width: 85%;
+    float: left;
+}
+
+.content .members-profile-left .post .profile-image {
+    width: 30%;
+    height: 100%;
+    float: left;
+    border-radius: 50%;
+}
+
+.content .members-profile-right .post .profile-image {
+    width: 30%;
+    height: 100%;
+    float: right;
+    border-radius: 50%;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+
+
