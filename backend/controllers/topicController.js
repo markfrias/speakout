@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const ObjectId = require('mongoose').Types.ObjectId;
 
-var { Topic } = require('../models/topic.js');
+var { Topic } = require('../models/topic.model');
 
 //list all topics in the database: localhost:3000/topics/
 router.get('/', (req, res) => {
@@ -17,15 +17,18 @@ router.get('/', (req, res) => {
 
 //retrieve a single topic record: localhost:3000/topics/id (replace 'id' with the actual id on the record)
 router.get('/:id', (req, res) => {
-    //check if the topic exists in the databse
-    if (!ObjectId.isValid(req.params.id))
-        return res.status(400).send(`No topic record with given id: ${req.params.id}`);
-
-    Topic.findById(req.params.id, (err, doc) => {
-        if (!err)
-            res.send(doc);
-        else
-            console.log('Error in retrieving User record:' + JSON.stringify(err, undefined, 2));
+    //first, check if the topic exists in the databse
+    Topic.exists({ _id: req.params.id }).then((result) => {
+        if (!result) {
+            return res.status(400).send(`No topic record with given id: ${req.params.id}`);
+        } else {
+            Topic.findById(req.params.id, (err, doc) => {
+                if (!err)
+                    res.send(doc);
+                else
+                    console.log('Error in retrieving User record:' + JSON.stringify(err, undefined, 2));
+            });
+        }
     });
 });
 
@@ -45,33 +48,39 @@ router.post('/',(req, res) => {
 
 //edit or update topic
 router.put('/:id', (req, res) => {
-    //check if the topic exists in the database
-    if (!ObjectId.isValid(req.params.id))
-        return res.status(400).send(`No topic record with given id: ${req.params.id}`);
-
-    var updateTopic = {
-        topicName: req.body.topicName,
-        description: req.body.description
-    };
-    Topic.findByIdAndUpdate(req.params.id, { $set: updateTopic }, { new: true }, (err, doc) => {
-        if (!err)
-            res.send(doc);
-        else
-            console.log('Error in User update: ' + JSON.stringify(err, undefined, 2));
+    //first, check if the topic exists in the database
+    Topic.exists({ _id: req.params.id }).then((result) => {
+        if (!result) {
+            return res.status(400).send(`No topic record with given id: ${req.params.id}`);
+        } else {
+            var updateTopic = {
+                topicName: req.body.topicName,
+                description: req.body.description
+            };
+            Topic.findByIdAndUpdate(req.params.id, { $set: updateTopic }, { new: true }, (err, doc) => {
+                if (!err)
+                    res.send(doc);
+                else
+                    console.log('Error in User update: ' + JSON.stringify(err, undefined, 2));
+            }); 
+        }
     });
 });
 
 //delete topic from the database
 router.delete('/:id', (req, res) => {
-    //check if the topic exists in the database
-    if (!ObjectId.isValid(req.params.id))
-        return res.status(400).send(`No topic record with given id: ${req.params.id}`);
-
-    Topic.findByIdAndRemove(req.params.id, (err, doc) => {
-        if (!err) {
-            res.send(doc);
+    //first, check if the topic exists in the database
+    Topic.exists({ _id: req.params.id }).then((result) => {
+        if (!result) {
+            return res.status(400).send(`No topic record with given id: ${req.params.id}`);
         } else {
-            console.log('Error; could not delete the topic: ' + JSON.stringify(err, undefined, 2));
+            Topic.findByIdAndRemove(req.params.id, (err, doc) => {
+                if (!err) {
+                    res.send(doc);
+                } else {
+                    console.log('Error; could not delete the topic: ' + JSON.stringify(err, undefined, 2));
+                }
+            });
         }
     });
 });
