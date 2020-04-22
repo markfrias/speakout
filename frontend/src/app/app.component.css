@@ -58,6 +58,15 @@ nav > ul {
     margin-right: 5vw;
     cursor: pointer;
 }
+.adminbtn {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    font-size: 15px;
+    padding-left: 28%;
+        
+
+}
 
 #secondary-nav > ul {
     display: flex;
