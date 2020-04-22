@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv/config');
 
-mongoose.connect('mongodb://localhost:27017/speakout-blog', (err) => {
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true}, (err) => {
     if (!err)
         console.log('MongoDB connection succeeded...');
     else
