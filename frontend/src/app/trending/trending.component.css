@@ -1,0 +1,20 @@
+.trending-wrapper {
+    width: 100%;
+    margin-left: 4%;
+}
+h1 {
+    text-align: center;
+}
+.trending-post {
+    text-align: center;
+    display: inline-block;
+    padding:0 40px 200px 40px;
+    background-color:rgb(216, 178, 178);
+    border-radius: 5px;
+    margin:25px;
+    max-width: 150px;
+
+}
+p {
+    text-align: center;
+}
