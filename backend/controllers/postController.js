@@ -77,5 +77,23 @@ router.put('/:id', (req, res) => {
     });
 });
 
+//delete post from the database
+router.delete('/:id', (req, res) => {
+    //first, check if the post exists in the database
+    Post.exists({ _id: req.params.id }).then((result) => {
+        if (!result) {
+            return res.status(400).send(`No post record with given id: ${req.params.id}`);
+        } else {
+            Post.findByIdAndRemove(req.params.id, (err, doc) => {
+                if (!err) {
+                    res.send(doc);
+                } else {
+                    console.log('Error; could not delete the post: ' + JSON.stringify(err, undefined, 2));
+                }
+            });
+        }
+    });
+});
+
 module.exports = router;
 
