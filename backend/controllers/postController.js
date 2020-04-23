@@ -50,5 +50,32 @@ router.post('/',(req, res) => {
     })
 });
 
+//edit or update post
+router.put('/:id', (req, res) => {
+    //first, check if the post exists in the database
+    Post.exists({ _id: req.params.id }).then((result) => {
+        if (!result) {
+            return res.status(400).send(`No post record with given id: ${req.params.id}`);
+        } else {
+            var updatePost = {
+                title: req.body.title,
+                postDescription: req.body.postDescription,
+                postBody: req.body.postBody,
+                timestamp: req.body.timestamp,
+                topic: req.body.topic,
+                likes: req.body.likes,
+                shares: req.body.shares,
+                comments: req.body.comments
+            };
+            Post.findByIdAndUpdate(req.params.id, { $set: updatePost }, { new: true }, (err, doc) => {
+                if (!err)
+                    res.send(doc);
+                else
+                    console.log('Error in post update: ' + JSON.stringify(err, undefined, 2));
+            }); 
+        }
+    });
+});
+
 module.exports = router;
 

@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
                 if (!err)
                     res.send(doc);
                 else
-                    console.log('Error in retrieving User record:' + JSON.stringify(err, undefined, 2));
+                    console.log('Error in retrieving topic record:' + JSON.stringify(err, undefined, 2));
             });
         }
     });
@@ -61,7 +61,7 @@ router.put('/:id', (req, res) => {
                 if (!err)
                     res.send(doc);
                 else
-                    console.log('Error in User update: ' + JSON.stringify(err, undefined, 2));
+                    console.log('Error in topic update: ' + JSON.stringify(err, undefined, 2));
             }); 
         }
     });
