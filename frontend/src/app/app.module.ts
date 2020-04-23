@@ -9,6 +9,7 @@ import { TagsComponent } from './tags/tags.component';
 import { TeamComponent } from './team/team.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { ContactComponent } from './contact/contact.component';
+import { AdminComponent } from './admin/admin.component';
 
 const appRoutes: Routes = [
   { path: 'trending', component: TrendingComponent },
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
     TagsComponent,
     TeamComponent,
     PageNotFoundComponent,
-    ContactComponent
+    ContactComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
