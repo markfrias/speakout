@@ -13,6 +13,8 @@ img {
     width: 15 0px;
     height: 150px;
    /* margin: 3px; */
+
+
 }
 a.navlinks {
     
@@ -48,7 +50,7 @@ a:hover {
 nav > ul {
    display: flex;
    list-style: none;
-   font-size: 20px;
+   font-size: 25px;
    margin-left: 25%;
 
     
@@ -62,12 +64,16 @@ nav > ul {
 .adminbtn {
     cursor: pointer;
     list-style: none;
-    font-size: 15px;
     list-style: none;
     color:rgb(75, 75, 235);
-    padding-left: 35%;
+    float: right ;
         
-
+}
+a.adminbtn {
+    display: flex;
+    text-align: end;
+    margin-left: 35%;
+    font-size: 18px;
 }
 
 #secondary-nav > ul {
