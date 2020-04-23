@@ -15,7 +15,8 @@ const appRoutes: Routes = [
   { path: 'trending', component: TrendingComponent },
   { path: 'posts', component: PostsComponent }, 
   { path: 'tags', component: TagsComponent} ,
-  { path: 'team', component: TeamComponent}
+  { path: 'team', component: TeamComponent},
+  { path: 'admin', component: AdminComponent}
 ]
 
 @NgModule({

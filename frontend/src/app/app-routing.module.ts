@@ -7,6 +7,7 @@ import { TeamComponent } from './team/team.component';
 import { TrendingComponent } from './trending/trending.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { ContactComponent } from './contact/contact.component'; 
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: 'trending', component: TrendingComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'tags', component: TagsComponent} ,
   { path: 'team', component: TeamComponent},
   { path: 'contact', component: ContactComponent},
+  { path: 'admin', component: AdminComponent},
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
