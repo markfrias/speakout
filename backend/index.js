@@ -1,18 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const _port = process.env.PORT || 3000;
-
+// Routes
 const { mongoose } = require('./db');
 const userController = require('./controllers/userController');
 const topicController = require('./controllers/topicController');
+const postsRoute = require('./controllers/postController');
 
 const app = express();
 app.use(bodyParser.json());
-
-// Routes
-const postsRoute = require('./controllers/postController');
-
-app.use('/posts', postsRoute);
 
 app.listen(_port, (err) => {
     if (err) { throw err; }
@@ -21,3 +17,4 @@ app.listen(_port, (err) => {
 
 app.use('/users', userController);
 app.use('/topics', topicController);
+app.use('/posts', postsRoute);

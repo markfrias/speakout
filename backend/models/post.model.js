@@ -6,12 +6,12 @@ const PostSchema = mongoose.Schema({
         required: true
     },
 
-    description: {
+    postDescription: {
         type: String,
         required: true
     },
 
-    body: {
+    postBody: {
         type: String,
         required: true
     },
@@ -21,7 +21,7 @@ const PostSchema = mongoose.Schema({
         default: Date.now
     },
 
-    topics: {
+    topic: {
         type: [String]
     },
 
