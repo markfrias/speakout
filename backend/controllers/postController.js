@@ -2,15 +2,32 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/post.model');
 
-// Get all the posts
-router.get('/', async (req, res) => {
-    try {
-        const posts = await Post.find();
-        res.json(posts);
-        console.log("Get posts successful");
-    } catch (err) {
-        res.json({message: err})
-    }
+//Get all the posts: localhost:3000/posts/
+router.get('/', (req, res) => {
+    Post.find((err, docs) => {
+        if (!err){
+            res.send(docs);
+        }else{
+            console.log('Error in retrieving Posts: ' + JSON.stringify(err, undefined, 2));
+        }
+    });
+});
+
+//retrieve a single post record: localhost:3000/posts/id (replace 'id' with the actual id on the record)
+router.get('/:id', (req, res) => {
+    //first, check if the post exists in the databse
+    Post.exists({ _id: req.params.id }).then((result) => {
+        if (!result) {
+            return res.status(400).send(`No post record with given id: ${req.params.id}`);
+        } else {
+            Post.findById(req.params.id, (err, doc) => {
+                if (!err)
+                    res.send(doc);
+                else
+                    console.log('Error in retrieving post record:' + JSON.stringify(err, undefined, 2));
+            });
+        }
+    });
 });
 
 //insert post into the database
