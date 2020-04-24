@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const _port = process.env.PORT || 3000;
+const _port = process.env.PORT || 3300;
+const cors = require('cors');
 // Routes
 const { mongoose } = require('./db');
 const userController = require('./controllers/userController');
@@ -9,6 +10,7 @@ const postsRoute = require('./controllers/postController');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 app.listen(_port, (err) => {
     if (err) { throw err; }

@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
     Post.find((err, docs) => {
         if (!err){
             res.send(docs);
+            console.log("Request successful");
         }else{
             console.log('Error in retrieving Posts: ' + JSON.stringify(err, undefined, 2));
         }
@@ -51,7 +52,7 @@ router.post('/',(req, res) => {
 });
 
 //edit or update post
-router.put('/:id', (req, res) => {
+router.patch('/:id', (req, res) => {
     //first, check if the post exists in the database
     Post.exists({ _id: req.params.id }).then((result) => {
         if (!result) {
