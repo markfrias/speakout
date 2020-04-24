@@ -54,12 +54,12 @@ body {
     position: relative;
 }
 .members-profile-left .post .post-preview {
-    width: 60%;
-    float: right;
-    margin-top: 22px;
-    padding: 10px;
-    background-color: whitesmoke;
-    border-radius: 5px;
+  width: 60%;
+  float: right;
+  margin-top: 22px;
+  padding: 10px;
+  background-color: whitesmoke;
+  border-radius: 5px;
 }
 
 
@@ -70,19 +70,28 @@ body {
     border-radius: 50%;
 }
 
- .members-profile-left .post .post-preview .social-apps a,
+.members-profile-left .post .post-preview .social-apps a,
 .members-profile-right .post .post-preview .social-apps a {
-        border: 1px solid #00152e;
-        width: 35px;
-        height: 31px;
-        padding-top: 3px;
-        margin-right: 3px;
-        text-align: center;
-        display: inline-block;
-        font-size: 1.3em;
-        border-radius: 5px;
-        transition: .4s;
+  border: .5px solid #114c94;
+  color: #114c94;
+  width: 35px;
+  height: 31px;
+  padding-top: 5px;
+  margin-right: 3px;
+  text-align: center;
+  display: inline-block;
+  font-size: 1.5em;
+  border-radius: 3px;
+  transition: .5s;
 }
+
+.members-profile-left .post .post-preview .social-apps a:hover,
+.members-profile-right .post .post-preview .social-apps a:hover {
+  background: #114c94;
+  color: aliceblue;
+  transition: .5s;
+}
+
 /*right members profile */
 .content .members-profile-right .post .profile-image {
     margin-right: 25px;
@@ -93,13 +102,12 @@ body {
     border-radius: 5px;
 }
 
- .members-profile-right .post .post-preview {
-    width: 60%;
-    float: left;
-    margin-top: 22px;
-    padding: 10px;
-    background-color:whitesmoke;
-    border-radius: 5px;
+.members-profile-right .post .post-preview {
+  width: 60%;
+  float: left;
+  padding: 10px;
+  background-color:whitesmoke;
+  border-radius: 5px;
 }
 
 .members-profile-right {
@@ -132,6 +140,3 @@ h2 {
     font-size: 30px;
     font-style: italic;
 }
-
-
-
