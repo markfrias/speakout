@@ -4,18 +4,18 @@ body {
     height: 100%;
     padding: 0px;
     margin: 0px;
-    
+
     font-family: 'Lora', serif;
 }
 /*main {
-    display: block; 
-    background-color: aqua;    
-  
+    display: block;
+    background-color: aqua;
+
 
 }*/
 .page-wrapper {
-    min-height: 100%; 
-   
+    min-height: 100%;
+
 }
 .content {
     width: 90%;
@@ -25,7 +25,7 @@ body {
 }
 .post {
     border:10px solid rgb(207, 205, 205);
-   
+
 }
 
 /* left member profile */
@@ -36,7 +36,7 @@ body {
     width: 30%;
     height: 95%;
     float: left;
-    border-radius: 50%;
+    border-radius: 5px;
 }
 
 
@@ -90,14 +90,14 @@ body {
     width: 30%;
     height: 95%;
     float: right;
-    border-radius: 50%;
+    border-radius: 5px;
 }
 
  .members-profile-right .post .post-preview {
     width: 60%;
     float: left;
     margin-top: 22px;
-    padding: 10px; 
+    padding: 10px;
     background-color:whitesmoke;
     border-radius: 5px;
 }
@@ -113,7 +113,7 @@ body {
     margin: 20px auto;
     border-radius: 5px;
     background: whitesmoke;
-    position: relative; 
+    position: relative;
 
 }
 .members-profile-right .post .profile-image {
@@ -127,7 +127,7 @@ body {
 h1 {
     text-align: center;
     color:#6186a8;
-} 
+}
 h2 {
     font-size: 30px;
     font-style: italic;
