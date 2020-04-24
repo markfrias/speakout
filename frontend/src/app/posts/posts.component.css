@@ -30,6 +30,9 @@ border-radius: 8px;
 
     
 }
+a {
+    padding: 10px;
+}
 /**side bar **/
 
 
@@ -45,7 +48,7 @@ border-radius: 8px;
     margin-bottom: 20px;
 }
 .search-section .text-input {
-    padding: 10px 95px;
+    padding: 10px 80px;
     text-align: center;
     border-radius: 5px;
     

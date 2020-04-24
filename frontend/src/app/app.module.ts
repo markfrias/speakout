@@ -11,12 +11,14 @@ import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminComponent } from './admin/admin.component';
 
+
 const appRoutes: Routes = [
   { path: 'trending', component: TrendingComponent },
   { path: 'posts', component: PostsComponent }, 
   { path: 'tags', component: TagsComponent} ,
   { path: 'team', component: TeamComponent},
-  { path: 'admin', component: AdminComponent}
+  { path: 'admin', component: AdminComponent},
+  
 ]
 
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     TeamComponent,
     PageNotFoundComponent,
     ContactComponent,
-    AdminComponent
+    AdminComponent,
+    
   ],
   imports: [
     BrowserModule,

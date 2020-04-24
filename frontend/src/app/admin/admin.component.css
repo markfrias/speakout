@@ -2,21 +2,35 @@ body {
     height: 100%;
     padding: 0px;
     margin: 0px;
-    background: #6f3637;
-    font-family: 'Lora', serif;
+    font-family: monospace;
+    overflow: hidden;
 }
 main{
     background-color: rgba(252, 246, 246, 0.925);
+    height: 100vh;
 
+}
+nav {
+    display:flex;
+    width: 100%;
+    height: 12vh;
+    background-color: #6f3637;
+    padding-left: 35%;
+    margin-left: 300px;
+   
+}
+.nav .li {
+    list-style-type: none;
 }
 .admin-wrapper {
     display: flex;
-    height: calc(100% - 66px);
+    height: 100%;
+    
 }
 
 .admin-wrapper .left-sidebar {
     flex: 2; /* 20% 0f the width */
-    height: 100%;
+    height: 94vh;
     background: #0d243a;
 }
 
@@ -25,6 +39,7 @@ main{
     margin: 30px 0px 0px 0px;
     padding: 0px;
     color: aliceblue;
+    
 }
 
 .admin-wrapper .left-sidebar ul li a {
@@ -43,12 +58,22 @@ main{
     flex: 8; /* 80% of the width */
     height: 100%;
     padding: 40px 100px 100px;
-    overflow-y: scroll;
+    
 }
 
 .admin-content .page-title {
     text-align: center;
     margin-bottom: 1.5rem;
+}
+.button-group .btn-big{
+    list-style: none;
+    font-size: 15px;
+    color: #b35340;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
 
 table {

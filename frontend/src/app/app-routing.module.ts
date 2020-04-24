@@ -9,6 +9,8 @@ import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { ContactComponent } from './contact/contact.component'; 
 import { AdminComponent } from './admin/admin.component';
 
+
+
 const routes: Routes = [
   { path: 'trending', component: TrendingComponent },
   { path: 'posts', component: PostsComponent }, 
