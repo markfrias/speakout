@@ -15,7 +15,6 @@ box-sizing:border-box ;
     width: 50%;
     height: 210px;
     margin: 50px auto;
-    margin-left: 25%;
     border-radius: 5px;
     background: rgb(233, 202, 202);
     position: relative; 
@@ -55,4 +54,41 @@ box-sizing:border-box ;
 }
 h1 {
     text-align: center;
+}
+/*mobile responsive*/
+@media only screen and (max-width: 600px) {
+
+     .recent-posts .post {
+            height: auto;
+        }
+    
+      .recent-posts.single {
+            padding: 10px 20px;
+        }
+    
+        .recent-posts .post .post-image {
+            width: 100%;
+        } 
+    
+         .recent-posts .post .post-preview {
+            width: 100%;
+        }
+    
+        .recent-posts .post .read-more {
+            position: static;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+}
+@media only screen and (max-width: 934px) {
+    .recent-posts{
+        width: 100%;
+        padding: 10px;
+    }
+    .recent-posts .post {
+        width: 100%;
+    }
+
 }

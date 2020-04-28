@@ -26,13 +26,11 @@ a {
     float: left;  
     background-color: #5d6d85;
     margin-top: 50px;
-    position: relative;
 }
 .search-section {
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
-    position: relative;
 }
 .search-section .text-input {
     padding: 10px 80px;
@@ -76,7 +74,7 @@ div {
 }
 p {
    
-    text-align: center justify;
+    text-align: justify;
     font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
 }

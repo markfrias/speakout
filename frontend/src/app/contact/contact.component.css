@@ -48,3 +48,14 @@ h1 {
     font-size: 35px;
     text-align: center;
 }
+
+
+@media only screen and (max-width: 934px) {
+    body {
+        margin-top: 10%;
+        height: 100%;
+        background-color: whitesmoke;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        position: inherit;
+    }
+}
