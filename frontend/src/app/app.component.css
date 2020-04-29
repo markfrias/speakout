@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
 /*
 nav {
     display:flex;
@@ -103,7 +104,7 @@ li.navlinks-2 {
    
 } */
 
-@import url(http://fonts.googleapis.com/css?family=Raleway);
+
 h2{
 background-color: #FEFFED;
 padding: 30px 35px;
