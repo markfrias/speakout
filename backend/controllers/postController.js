@@ -36,6 +36,7 @@ router.post('/',(req, res) => {
     var newPost = new Post({
         title: req.body.title,
         postDescription: req.body.postDescription,
+        author: req.body.author,
         postBody: req.body.postBody,
         timestamp: req.body.timestamp,
         topic: req.body.topic,
@@ -61,6 +62,7 @@ router.patch('/:id', (req, res) => {
             var updatePost = {
                 title: req.body.title,
                 postDescription: req.body.postDescription,
+                author: req.body.author,
                 postBody: req.body.postBody,
                 timestamp: req.body.timestamp,
                 topic: req.body.topic,

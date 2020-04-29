@@ -11,6 +11,11 @@ const PostSchema = mongoose.Schema({
         required: true
     },
 
+    author: {
+        type: String,
+        required: true
+    },
+
     postBody: {
         type: String,
         required: true
