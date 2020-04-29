@@ -1,19 +1,4 @@
 
-/* body {
-    height: 100%;
-    padding: 0px;
-    margin: 0px;
-    background: #f6f6f6;
-    font-family: 'Lora', serif;
-}
-main{
-    background-color: rgba(252, 246, 246, 0.925);
-
-}
-*{
-    box-sizing: border-box;
-}
-/* posts */ 
 .recent-posts {
     background-color: rgb(192, 192, 192, 0.3);
     width: 60%;
@@ -51,7 +36,7 @@ a {
     padding: 10px 80px;
     text-align: center;
     border-radius: 5px;
-    
+    position: relative;
 }
 .trending-section ul li {
    text-align: center;
@@ -89,8 +74,93 @@ div {
 }
 p {
    
-    text-align: center justify;
+    text-align: justify;
     font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
 }
 
+@media only screen and (max-width: 934px) { 
+    .recent-posts {
+        background-color: rgb(192, 192, 192, 0.3);
+        width: 90%;
+        float: left;
+        margin: 50px;
+    
+    }
+    
+    .post {
+    background-color:whitesmoke ;
+    margin: 25px;
+    padding: 10px;
+    border-radius: 8px;
+    
+        
+    }
+    a {
+        padding: 10px;
+    }
+    /**side bar **/
+    
+    
+    .sidebar{
+        width: 90%;
+        float: left;  
+        background-color: #5d6d85;
+        margin: 50px;
+        position: relative;
+    }
+    .search-section {
+        padding: 3px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    .search-section .text-input {
+        padding: 10px 80px;
+        text-align: center;
+        border-radius: 5px;
+        
+    }
+    .trending-section ul li {
+       text-align: center;
+       margin-right: 40px;
+       color: blanchedalmond;
+       font-size: 20px;
+        padding: 5px;
+        list-style-type: none;
+        border-top: 2px solid #e0e0e0;
+    }
+    
+    h2 {
+        font-size: 25px;
+        font-style: italic;
+        color: rgb(22, 30, 31);
+        text-align: center;
+        margin-top: 55px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    h3 {
+        text-align: center;
+        font-family: cursive;
+    }
+    h4  {
+        font-size: 35px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-style: italic;
+        color: rgb(22, 30, 31);
+        margin: 25px;
+    }
+    div {
+       
+       /*margin: 50px 25px 0px 25px;*/
+       border-radius: 8px;
+        text-align: center;
+    }
+    p {
+       
+        text-align: center justify;
+        font-size: 15px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+
+}
