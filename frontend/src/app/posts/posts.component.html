@@ -5,7 +5,7 @@
         <!--Need to change code below. Use structural directives later-->
         <div class="recent-posts">
 
-            <div class="post" *ngFor="let post of posts | slice:0:3">
+            <div class="post" *ngFor="let post of posts | slice:0:5">
                 <h3>{{post.title}}</h3>
                 <p>{{post.timestamp}}</p>
                 <i class="description">{{post.description}}</i>
