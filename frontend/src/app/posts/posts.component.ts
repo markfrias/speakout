@@ -10,8 +10,8 @@ import { PostsService } from './posts.service';
 export class PostsComponent implements OnInit {
 
   posts;
- 
-  constructor(private postsService : PostsService) { 
+
+  constructor(private postsService : PostsService) {
     this.showPosts();
   }
 
@@ -23,10 +23,5 @@ export class PostsComponent implements OnInit {
       .subscribe((data: any) => this.posts = data
       );
     console.log(this.posts);
-
-      
   }
-
-
-
 }
