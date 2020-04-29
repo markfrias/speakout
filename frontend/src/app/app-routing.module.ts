@@ -8,6 +8,7 @@ import { TrendingComponent } from './trending/trending.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { ContactComponent } from './contact/contact.component'; 
 import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'team', component: TeamComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'admin', component: AdminComponent},
+  { path: 'login', component: LoginComponent},
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
