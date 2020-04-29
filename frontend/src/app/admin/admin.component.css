@@ -22,6 +22,14 @@ nav {
 .nav .li {
     list-style-type: none;
 }
+/* unvisited link */
+a:link {
+    color: #ce8054;
+}
+/* visited link */
+a:visited {
+    color: #b35340;
+}
 .admin-wrapper {
     display: flex;
     height: 100%;

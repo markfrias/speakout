@@ -23,10 +23,11 @@
                 <li><a href="index.html">Manage Posts</a></li>
                 <li><a href="../users/index.html">Manage Users</a></li>
                 <li><a href="../topics/index.html">Manage Topics</a></li>
+                <li><a href="../signup">Signup</a></li>
             </ul>
         </div>
 
-        
+
 
         <!--admin content-->
         <div class="admin-content">
@@ -37,19 +38,19 @@
                     <thead>
                         <th>SN</th>
                         <th>Title</th>
-                        <th>Name</th>
-                        
+                        <th>Author</th>
+
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>This is the first post</td>
-                            <td>Tatenda</td>
+                        <tr *ngFor="let post of posts">
+                            <td>{{post._id}}</td>
+                            <td>{{post.title}}</td>
+                            <td>{{post.author}}</td>
                             <td><a href="#" class="edit">edit</a></td>
                             <td><a href="#" class="delete">delete</a></td>
                             <td><a href="#" class="publish">publish</a></td>
-                        </tr>
 
+                        <!---
                         <tr>
                             <td>2</td>
                             <td>This is the second post</td>
@@ -58,12 +59,13 @@
                             <td><a href="#" class="delete">delete</a></td>
                             <td><a href="#" class="publish">publish</a></td>
                         </tr>
+                      -->
                     </tbody>
                 </table>
             </div>
         </div>
         <div class="button-group">
-            <a [routerLink]="['/create-post']" routerLinkActive="router-link-active"  class="btn btn-big">Create Post </a>
+            <a routerLink="/create-post" routerLinkActive="router-link-active"  class="btn btn-big">Create Post </a>
         </div>
     </div>
 

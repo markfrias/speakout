@@ -12,7 +12,8 @@ import { TeamComponent } from './team/team.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminComponent } from './admin/admin.component';
-import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+
 
 
 const appRoutes: Routes = [
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
   { path: 'tags', component: TagsComponent} ,
   { path: 'team', component: TeamComponent},
   { path: 'admin', component: AdminComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'signup', component: SignupComponent},
+ 
   
 ]
 
@@ -35,13 +37,14 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     ContactComponent,
     AdminComponent,
-    LoginComponent,
+    SignupComponent,
+   
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
