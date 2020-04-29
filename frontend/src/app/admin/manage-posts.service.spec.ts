@@ -15,18 +15,3 @@ describe('Service: ManagePosts', () => {
     expect(service).toBeTruthy();
   }));
 });
-
-/*
-describe('PostsService', () => {
-  let service: PostsService;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(PostsService);
-  });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
-*/
