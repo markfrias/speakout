@@ -15,13 +15,15 @@ import { AdminComponent } from './admin/admin.component';
 import { SignupComponent } from './signup/signup.component';
 
 
+
 const appRoutes: Routes = [
   { path: 'trending', component: TrendingComponent },
   { path: 'posts', component: PostsComponent }, 
   { path: 'tags', component: TagsComponent} ,
   { path: 'team', component: TeamComponent},
   { path: 'admin', component: AdminComponent},
-  { path: 'admin', component: SignupComponent},
+  { path: 'signup', component: SignupComponent},
+ 
   
 ]
 
@@ -36,12 +38,13 @@ const appRoutes: Routes = [
     ContactComponent,
     AdminComponent,
     SignupComponent,
+   
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,8 @@ import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { ContactComponent } from './contact/contact.component'; 
 import { AdminComponent } from './admin/admin.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+
 
 
 
@@ -20,6 +22,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'signup', component: SignupComponent},
+  { path: 'login', component: LoginComponent},
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
