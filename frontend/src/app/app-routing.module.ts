@@ -12,6 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 
 
 
+
 const routes: Routes = [
   { path: 'trending', component: TrendingComponent },
   { path: 'posts', component: PostsComponent }, 
