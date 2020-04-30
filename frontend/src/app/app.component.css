@@ -1,9 +1,12 @@
 
+
 nav {
     display:flex;
     width: 100%;
     height: 12vh;
     background-color: #6f3637;
+ 
+
 
 
 
@@ -12,7 +15,7 @@ nav {
 img {
     width: 152px;
     height: 152px;
-   margin: 3px;
+   margin: 0px;
 
 
 }
@@ -21,11 +24,13 @@ a.navlinks {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 15px;
     font-size: 20px;
+    list-style: none;
+   
 
 
 
 }
-link unvisited
+/*link unvisited*/
 a:link {
     margin: 0;
     color: rgb(247, 193, 56);
@@ -35,12 +40,12 @@ a:link {
 
 }
 
-link visited
+/*link visited*/
 a:visited {
     color: #6186a8;
     text-decoration: none;
 }
-link hover
+/*link hover*/
 a:hover {
     color: goldenrod;
 
@@ -52,12 +57,13 @@ nav > ul {
    font-size: 30px;
    margin-left: 35%;
    position: absolute;
+   
 
 
 }
 
 .navlinks {
-    margin-right: 5vw;
+  /*  margin-right: 5vw;*/
     cursor: pointer;
 
 }
@@ -77,6 +83,23 @@ a.adminbtn {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: absolute;
 }
+.loginbtn {
+    list-style: none;
+    cursor: pointer;
+    list-style: none;
+    list-style: none;
+    color:rgb(75, 75, 235);
+    float: right;
+}
+a.loginbtn {
+    display: flex;
+    text-align: end;
+    margin-left: 85%;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+}
+
 
 #secondary-nav > ul {
     display: flex;
@@ -239,7 +262,20 @@ font-size:32px;
         position: absolute;
 
     }
-
+    .loginbtn {
+        cursor: pointer;
+        list-style: none;
+        list-style: none;
+        color:rgb(75, 75, 235);
+        float: right ;
+    }
+    a.loginbtn {
+        display: flex;
+        text-align: end;
+        margin-left: 86%;
+        font-size: 13px;
+        position: absolute;
+    }
     #secondary-nav > ul {
         display: flex;
         list-style-type: none;
