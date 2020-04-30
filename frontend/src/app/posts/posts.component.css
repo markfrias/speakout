@@ -24,13 +24,14 @@ a {
 .sidebar{
     width: 30%;
     float: left;  
-    background-color: #5d6d85;
     margin-top: 50px;
+   
 }
 .search-section {
     padding: 20px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    background-color: #5d6d85;
 }
 .search-section .text-input {
     padding: 10px 80px;
@@ -107,7 +108,7 @@ p {
         float: left;  
         background-color: #5d6d85;
         margin: 50px;
-        position: relative;
+        
     }
     .search-section {
         padding: 3px;
