@@ -14,6 +14,18 @@ router.get('/', (req, res) => {
     });
 });
 
+// Get all posts sorted by their number of likes and limited to 10 items returned
+router.get('/trending', (req, res) => {
+    Post.find({}, null, {sort: {likes: -1}}, (err, docs) => {
+        if (!err){
+            res.send(docs);
+            console.log("Request successful");
+        }else{
+            console.log('Error in retrieving Posts: ' + JSON.stringify(err, undefined, 2));
+        }
+    }).limit(10);
+});
+
 //retrieve a single post record: localhost:3000/posts/id (replace 'id' with the actual id on the record)
 router.get('/:id', (req, res) => {
     //first, check if the post exists in the databse

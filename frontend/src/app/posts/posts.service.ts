@@ -13,4 +13,9 @@ export class PostsService {
   getPosts() {
     return this.http.get('http://127.0.0.1:3300/posts/');
   }
+
+  // Returns results for trending posts
+  getTrending() {
+    return this.http.get('http://127.0.0.1:3300/posts/trending/');
+  }
 }

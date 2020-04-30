@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsService } from '../posts/posts.service';
 
 @Component({
   selector: 'app-trending',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrendingComponent implements OnInit {
 
-  constructor() { }
+  trendingPosts;
+  constructor(private postsService: PostsService) {
+    this.showTrending();
+   }
 
   ngOnInit(): void {
+  }
+
+  showTrending() {
+    this.postsService.getTrending()
+      .subscribe((data: any) => this.trendingPosts = data
+      );
   }
 
 }
