@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AdminComponent } from './admin/admin.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { UsersComponent } from './users/users.component';
 
 
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'users', component: UsersComponent},
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

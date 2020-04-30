@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminComponent } from './admin/admin.component';
 import { SignupComponent } from './signup/signup.component';
+import { UsersComponent } from './users/users.component';
 
 
 
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
   { path: 'team', component: TeamComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'signup', component: SignupComponent},
+  { path: 'users', component: UsersComponent},
  
   
 ]
@@ -38,6 +40,7 @@ const appRoutes: Routes = [
     ContactComponent,
     AdminComponent,
     SignupComponent,
+    UsersComponent,
    
     
   ],
