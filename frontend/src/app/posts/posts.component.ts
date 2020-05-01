@@ -9,9 +9,11 @@ import { PostsService } from './posts.service';
 export class PostsComponent implements OnInit {
 
   posts;
+  trendingPosts;
 
   constructor(private postsService : PostsService) {
     this.showPosts();
+    this.showTrending();
   }
 
   ngOnInit(): void {
@@ -22,5 +24,11 @@ export class PostsComponent implements OnInit {
       .subscribe((data: any) => this.posts = data
       );
     console.log(this.posts);
+  }
+
+  showTrending() {
+    this.postsService.getTrending()
+      .subscribe((data: any) => this.trendingPosts = data
+      );
   }
 }

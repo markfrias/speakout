@@ -16,6 +16,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { TopicsComponent } from './topics/topics.component';
+import { TagArticlesComponent } from './tags/tag-articles/tag-articles.component';
 
 
 
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
     SignupComponent,
     UsersComponent,
     TopicsComponent,
+    TagArticlesComponent,
    
     
   ],
