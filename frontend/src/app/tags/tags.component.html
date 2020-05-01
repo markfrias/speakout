@@ -1,21 +1,30 @@
 <div class="recent-posts">
     <h1 class="recent-post-title">TOPICS</h1>
 
-    <!--topic post 1-->
-    <div id="topic-list">
-        <ul>
-            <li *ngFor="let topic of topics" (click)="showPost(topic._id, topic.topicName)">
-                {{topic.topicName}}
-            </li>
-        </ul>
-    </div>
-
-    <div id="article-container" *ngIf="articleShown">
-        <h1>{{topicName}}</h1>
-        <div id="article" *ngFor="let article of articles">
-            <h2>{{article.title}}</h2>
+    <div class="topic-page-container">
+        <!--topic post 1-->
+        <div class="topic-list">
+            <ul>
+                <li *ngFor="let topic of topics" (click)="showPost(topic._id, topic.topicName)">
+                    {{topic.topicName}}
+                </li>
+            </ul>
         </div>
+    
+        <div class="item-2">
+            <h1>{{topicName}}</h1>
+                <div id="article" *ngFor="let article of articles">
+                    <h2>{{article.title}}</h2>
+                </div>
+            
+
+        </div>
+        
+            
+                
     </div>
+    
+    
     
     
 </div>
