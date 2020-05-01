@@ -26,9 +26,9 @@ const PostSchema = mongoose.Schema({
         default: Date.now
     },
 
-    topic: {
-        type: [String]
-    },
+    topic: [
+        { type: mongoose.Schema.Types.ObjectId, ref: 'Topic'}
+    ],
 
     likes: {
         type: Number

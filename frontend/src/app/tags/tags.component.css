@@ -92,3 +92,30 @@ h1 {
     }
 
 }
+
+/* Adjust for responsiveness */
+.topic-page-container {
+    display: flex;
+}
+
+.topic-list {
+    height: 500px;
+    width: 30%;
+    background-color: gold;
+}
+
+.item-2 {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 10px;
+    background-color: beige;
+    width: 70%;
+}
+
+.item-2 > h1 {
+    text-align: left;
+}
+
+
+

@@ -1,88 +1,30 @@
 <div class="recent-posts">
     <h1 class="recent-post-title">TOPICS</h1>
 
-    <!--topic post 1-->
-    <div class="post">
-        <img src="assets/Img/SPEAK OUT (EDITED).png" alt="" class="post-image">
-        <div class="post-preview">
-            <h2><a href="">Topic 1</a></h2>
-            <i class="far fa-user"> Joelson Mvundura</i>
-            &nbsp;
-            <!--add space-->
-            <i class="far fa-calendar"> Apr 7, 2019</i>
-            <p class="preview-text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Voluptate illo consequatur ipsam illum, quia facilis.
-            </p>
-            <a href="" class="btn read-more">Read More</a>
+    <div class="topic-page-container">
+        <!--topic post 1-->
+        <div class="topic-list">
+            <ul>
+                <li *ngFor="let topic of topics" (click)="showPost(topic._id, topic.topicName)">
+                    {{topic.topicName}}
+                </li>
+            </ul>
         </div>
-    </div>
+    
+        <div class="item-2">
+            <h1>{{topicName}}</h1>
+                <div id="article" *ngFor="let article of articles">
+                    <h2>{{article.title}}</h2>
+                </div>
+            
 
-    <!--topic post 2-->
-    <div class="post">
-        <img src="assets/Img/SPEAK OUT (EDITED).png" alt="" class="post-image">
-        <div class="post-preview">
-            <h2><a href="">Topic 2</a></h2>
-            <i class="far fa-user"> Antoinette Hall</i>
-            &nbsp;
-            <!--add space-->
-            <i class="far fa-calendar"> Feb 15, 2019</i>
-            <p class="preview-text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Voluptate illo consequatur ipsam illum, quia facilis.
-            </p>
-            <a href="" class="btn read-more">Read More</a>
         </div>
+        
+            
+                
     </div>
-
-    <!--topic post 3-->
-    <div class="post">
-        <img src="assets/Img/SPEAK OUT (EDITED).png" alt="" class="post-image">
-        <div class="post-preview">
-            <h2><a href="">Topic 3</a></h2>
-            <i class="far fa-user"> Adeline Uwibambe</i>
-            &nbsp;
-            <!--add space-->
-            <i class="far fa-calendar"> Feb 15, 2019</i>
-            <p class="preview-text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Voluptate illo consequatur ipsam illum, quia facilis.
-            </p>
-            <a href="" class="btn read-more">Read More</a>
-        </div>
-    </div>
-
-    <!--topic post 4-->
-    <div class="post">
-        <img src="assets/Img/SPEAK OUT (EDITED).png" alt="" class="post-image">
-        <div class="post-preview">
-            <h2><a href="">Topic 4</a></h2>
-            <i class="far fa-user"> Andra Bullos</i>
-            &nbsp;
-            <!--add space-->
-            <i class="far fa-calendar"> Feb 15, 2019</i>
-            <p class="preview-text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Voluptate illo consequatur ipsam illum, quia facilis.
-            </p>
-            <a href="" class="btn read-more">Read More</a>
-        </div>
-    </div>
-
-    <!--topicpost 5-->
-    <div class="post">
-        <img src="assets/Img/SPEAK OUT (EDITED).png" alt="" class="post-image">
-        <div class="post-preview">
-            <h2><a href="">Topic 5</a></h2>
-            <i class="far fa-user"> Jabel Frias</i>
-            &nbsp;
-            <!--add space-->
-            <i class="far fa-calendar"> Feb 15, 2019</i>
-            <p class="preview-text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Voluptate illo consequatur ipsam illum, quia facilis.
-            </p>
-            <a href="" class="btn read-more">Read More</a>
-        </div>
-    </div>
+    
+    
+    
+    
 </div>

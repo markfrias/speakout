@@ -25,6 +25,8 @@ a {
     width: 30%;
     float: left;  
     margin-top: 50px;
+    position: sticky;
+
    
 }
 .search-section {
@@ -34,10 +36,12 @@ a {
     background-color: #5d6d85;
 }
 .search-section .text-input {
-    padding: 10px 80px;
-    text-align: center;
-    border-radius: 5px;
     position: relative;
+    padding: 10px 40px;
+    text-align: center;
+    border-radius: 10px;
+    border-top: 2px solid #e0e0e0;
+    
 }
 .trending-section ul li {
    text-align: center;
@@ -46,24 +50,24 @@ a {
    font-size: 20px;
     padding: 5px;
     list-style-type: none;
-    border-top: 2px solid #e0e0e0;
+    
 }
 
 h2 {
     font-size: 35px;
-    font-style: italic;
     color: rgb(22, 30, 31);
     text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 h3 {
+    font-size: 25px;
     text-align: center;
-    font-family: cursive;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 h4  {
     font-size: 35px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
+
     color: rgb(22, 30, 31);
     margin: 25px;
 }
@@ -77,10 +81,11 @@ p {
    
     text-align: justify;
     font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 @media only screen and (max-width: 934px) { 
+    
     .recent-posts {
         background-color: rgb(192, 192, 192, 0.3);
         width: 90%;
@@ -111,12 +116,15 @@ p {
         
     }
     .search-section {
+        
         padding: 3px;
         border-radius: 5px;
         margin-bottom: 20px;
     }
     .search-section .text-input {
-        padding: 10px 80px;
+
+        padding: 10px 100px;
+       position: sticky;
         text-align: center;
         border-radius: 5px;
         
@@ -126,27 +134,27 @@ p {
        margin-right: 40px;
        color: blanchedalmond;
        font-size: 20px;
-        padding: 5px;
+        padding: 9px;
         list-style-type: none;
         border-top: 2px solid #e0e0e0;
+      
     }
     
     h2 {
         font-size: 25px;
-        font-style: italic;
         color: rgb(22, 30, 31);
         text-align: center;
         margin-top: 55px;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
     h3 {
         text-align: center;
-        font-family: cursive;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
     h4  {
         font-size: 35px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-style: italic;
+        
         color: rgb(22, 30, 31);
         margin: 25px;
     }
@@ -160,7 +168,7 @@ p {
        
         text-align: center justify;
         font-size: 15px;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
     
 

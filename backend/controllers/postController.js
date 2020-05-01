@@ -14,7 +14,31 @@ router.get('/', (req, res) => {
     });
 });
 
-// Get all posts sorted by their number of likes and limited to 10 items returned
+//Get posts that correspond to a certain topic
+router.get('/topics/:id', (req, res) => {
+    Post.find({topic: req.params.id}, (err, docs) => {
+        if (!err){
+            res.send(docs);
+            console.log("Request successful");
+        }else{
+            console.log('Error in retrieving Posts: ' + JSON.stringify(err, undefined, 2));
+        }
+    });
+});
+
+// Get 10 posts sorted by their number of likes and limited to 10 items returned
+router.get('/trending', (req, res) => {
+    Post.find({}, null, {sort: {likes: -1}}, (err, docs) => {
+        if (!err){
+            res.send(docs);
+            console.log("Request successful");
+        }else{
+            console.log('Error in retrieving Posts: ' + JSON.stringify(err, undefined, 2));
+        }
+    }).limit(10);
+});
+
+// Get list of topics
 router.get('/trending', (req, res) => {
     Post.find({}, null, {sort: {likes: -1}}, (err, docs) => {
         if (!err){

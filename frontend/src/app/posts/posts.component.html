@@ -27,11 +27,7 @@
                 <div class="trending-section">
                     <h4>Trending</h4>
                     <ul>
-                        <li>Trend # 1</li>
-                        <li>Trend # 2</li>
-                        <li>Trend # 3</li>
-                        <li>Trend # 4</li>
-                        <li>Trend # 5</li>
+                        <li *ngFor="let trendingPost of trendingPosts"><a href="/trending">{{trendingPost.title}}</a></li>
                     </ul>
                 </div>
             </div>
