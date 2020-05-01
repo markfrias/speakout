@@ -1,8 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const ObjectId = require('mongoose').Types.ObjectId;
-
+const Post = require('../models/post.model');
 var { Topic } = require('../models/topic.model');
+
+// Get list of topics
+router.get('/all', (req, res) => {
+    Post.find({}, {topic: 1},(err, docs) => {
+        if (!err){
+            res.send(docs);
+            console.log("Topics fetch request successful");
+        }else{
+            console.log('Error in retrieving topics: ' + JSON.stringify(err, undefined, 2));
+        }
+    })
+});
 
 //list all topics in the database: localhost:3000/topics/
 router.get('/', (req, res) => {
@@ -14,6 +26,7 @@ router.get('/', (req, res) => {
         }
     });
 });
+
 
 //retrieve a single topic record: localhost:3000/topics/id (replace 'id' with the actual id on the record)
 router.get('/:id', (req, res) => {
@@ -47,7 +60,7 @@ router.post('/',(req, res) => {
 });
 
 //edit or update topic
-router.put('/:id', (req, res) => {
+router.patch('/:id', (req, res) => {
     //first, check if the topic exists in the database
     Topic.exists({ _id: req.params.id }).then((result) => {
         if (!result) {
