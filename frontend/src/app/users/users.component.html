@@ -37,6 +37,7 @@
                         <tr *ngFor="let user of users">
                             <td>{{user._id}}</td>
                             <td>{{user.username}}</td>
+                            <td>{{user.role}}</td>
                             <td><a href="#" class="edit">edit</a></td>
                             <td><a href="#" class="delete">delete</a></td>
                         </tr>
@@ -45,8 +46,6 @@
             </div>
         </div>
     </div>
-
-
     </main>
 </body>
 
