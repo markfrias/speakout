@@ -12,6 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { TopicsComponent } from './topics/topics.component';
+import { ArticlesComponent} from './articles/articles.component';
 
 
 
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'users', component: UsersComponent},
   { path: 'topics', component: TopicsComponent},
+  { path: 'articles/:id', component: ArticlesComponent },
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

@@ -18,4 +18,8 @@ export class PostsService {
   getTrending() {
     return this.http.get('http://127.0.0.1:3300/posts/trending/');
   }
+
+  getSpecificPost(id: string) {
+    return this.http.get('http://127.0.0.1:3300/posts/' + id);
+  }
 }
