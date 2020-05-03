@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { TopicsComponent } from './topics/topics.component';
 import { TagArticlesComponent } from './tags/tag-articles/tag-articles.component';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 
 
@@ -48,6 +49,7 @@ const appRoutes: Routes = [
     UsersComponent,
     TopicsComponent,
     TagArticlesComponent,
+    CreatePostComponent,
    
     
   ],
