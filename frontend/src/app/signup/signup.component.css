@@ -65,6 +65,7 @@ form {
     outline: none;
     padding: .8em 0;
     text-shadow: 0 1px #68B25B;
+    float: center;
 }
 .input[type="submit"]:hover {
     background: rgba(148,175,101,1);

@@ -4,15 +4,34 @@
         <form action="#" method="post">
             <h2>Sign Up</h2>
                 <p> 
+                    <label for="fname" class="floatLabel">First Name</label>
+                    <br>
+                    <input id="fname" name="fname" type="text">
+                </p>
+                <p> 
+                    <label for="lname" class="floatLabel">Last Name</label>
+                    <br>
+                    <input id="lname" name= "lname" type="text">
+                </p>
+                <p> 
                     <label for="username" class="floatLabel">Username</label>
                     <br>
-                    <input id="username" name="username" type="text
-                    ">
+                    <input id="username" name="username" type="text">
                 </p>
                 <p>
                     <label for="Email" class="floatLabel">Email</label>
                     <br>
                     <input id="Email" name="Email" type="text">
+                </p>
+                <p> 
+                    <label for="address" class="floatLabel">Address</label>
+                    <br>
+                    <input id="fname" name="fname" type="text">
+                </p>
+                <p> 
+                    <label for="phoneNumber" class="floatLabel">Phone Number</label>
+                    <br>
+                    <input id="phoneNumber" name="phoneNumber" type="number">
                 </p>
                 <p>
                     <label for="password" class="floatLabel">Password</label>
@@ -26,6 +45,30 @@
                     <br>
                     <input id="confirm_password" name="confirm_password" type="password">
                 </p>
+                <p> 
+                    <label for="role" class="floatLabel">Please select a role:</label><br>
+
+                    <input type="radio" id="user" name="role" value="user">
+                    <label for="user">User</label><br>
+
+                    <input type="radio" id="author" name="role" value="author">
+                    <label for="author">Author</label><br>
+
+                    <input type="radio" id="editor" name="role" value="editor">
+                    <label for="editor">Editor</label><br>
+
+                    <input type="radio" id="manager" name="role" value="manager">
+                    <label for="manager">Manager</label><br>
+
+                    <input type="radio" id="frontend-developer" name="role" value="frontend-developer">
+                    <label for="frontend-developer">Frontend Developer</label><br>
+
+                    <input type="radio" id="backend-developer" name="role" value="backend-developer">
+                    <label for="backend-developer">Backend Developer</label><br>
+            
+                    <input type="radio" id="administrator" name="role" value="administrator">
+                    <label for="administrator">Administrator</label><br>
+                </p> 
                 <p>
                     <input type="submit" value="Create My Account" id="submit">
                 </p>

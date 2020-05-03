@@ -17,7 +17,11 @@ import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { TopicsComponent } from './topics/topics.component';
 import { TagArticlesComponent } from './tags/tag-articles/tag-articles.component';
+<<<<<<< HEAD
 import { ArticlesComponent } from './articles/articles.component';
+=======
+import { CreatePostComponent } from './create-post/create-post.component';
+>>>>>>> 4790e9a4add34a184bdac0b3748e3f8838b56121
 
 
 
@@ -49,7 +53,11 @@ const appRoutes: Routes = [
     UsersComponent,
     TopicsComponent,
     TagArticlesComponent,
+<<<<<<< HEAD
     ArticlesComponent,
+=======
+    CreatePostComponent,
+>>>>>>> 4790e9a4add34a184bdac0b3748e3f8838b56121
    
     
   ],
