@@ -31,7 +31,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'users', component: UsersComponent},
   { path: 'topics', component: TopicsComponent},
- 
+  {path: 'create-post', component: CreatePostComponent},
   
 ]
 

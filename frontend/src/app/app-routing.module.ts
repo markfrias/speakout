@@ -12,6 +12,8 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { TopicsComponent } from './topics/topics.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+
 
 
 
@@ -27,6 +29,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'users', component: UsersComponent},
   { path: 'topics', component: TopicsComponent},
+  {path: 'create-post', component: CreatePostComponent},
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
