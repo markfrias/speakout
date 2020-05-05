@@ -6,25 +6,22 @@ import { TagsComponent } from './tags/tags.component';
 import { TeamComponent } from './team/team.component';
 import { TrendingComponent } from './trending/trending.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
-import { ContactComponent } from './contact/contact.component'; 
+import { ContactComponent } from './contact/contact.component';
 import { AdminComponent } from './admin/admin.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { TopicsComponent } from './topics/topics.component';
-<<<<<<< HEAD
 import { CreatePostComponent } from './create-post/create-post.component';
 
-=======
 import { ArticlesComponent} from './articles/articles.component';
->>>>>>> cf52663d7cf88e879ba9014e3fdf8be708860e37
 
 
 
 
 const routes: Routes = [
   { path: 'trending', component: TrendingComponent },
-  { path: 'posts', component: PostsComponent }, 
+  { path: 'posts', component: PostsComponent },
   { path: 'tags', component: TagsComponent} ,
   { path: 'team', component: TeamComponent},
   { path: 'contact', component: ContactComponent},
@@ -33,11 +30,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'users', component: UsersComponent},
   { path: 'topics', component: TopicsComponent},
-<<<<<<< HEAD
   {path: 'create-post', component: CreatePostComponent},
-=======
   { path: 'articles/:id', component: ArticlesComponent },
->>>>>>> cf52663d7cf88e879ba9014e3fdf8be708860e37
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
