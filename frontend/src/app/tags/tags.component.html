@@ -13,8 +13,11 @@
     
         <div class="item-2">
             <h1>{{topicName}}</h1>
+            <h2 *ngIf="articlesIsEmpty">There are no articles for this topic.</h2>
                 <div id="article" *ngFor="let article of articles">
                     <h2>{{article.title}}</h2>
+                    <p>{{article.postDescription}}</p>
+                    <a href="/posts">Read more</a>
                 </div>
             
 

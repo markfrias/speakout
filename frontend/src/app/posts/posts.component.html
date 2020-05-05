@@ -27,7 +27,7 @@
                 <div class="trending-section">
                     <h4>Trending</h4>
                     <ul>
-                        <li *ngFor="let trendingPost of trendingPosts"><a href="/trending">{{trendingPost.title}}</a></li>
+                        <li *ngFor="let trendingPost of trendingPosts"><a [routerLink]="['/articles', trendingPost._id]">{{trendingPost.title}}</a></li>
                     </ul>
                 </div>
             </div>

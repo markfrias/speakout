@@ -15,11 +15,14 @@ export class TagsComponent implements OnInit {
   articles;
   topicParam: string;
   topicName: string;
+  articlesIsEmpty: boolean;
 
   articleShown: boolean;
   constructor(private tagsService: TagsService) { 
     !this.articleShown;
+    !this.articlesIsEmpty;
     this.showTags();
+
 
   }
 
@@ -34,18 +37,35 @@ export class TagsComponent implements OnInit {
 
   fetchArticle(id) {
     this.tagsService.getArticles(id)
-    .subscribe((data: any) => this.articles = data);
+    .subscribe((data: any) => this.articles = data
+    );
   }
 
   showPost(id: string, topicName: string) {
+   
     this.articleShown = true;
     console.log(this.articleShown);
     console.log(id);
     this.topicParam = id;
     this.topicName = topicName;
 
-      this.fetchArticle(this.topicParam);
-      console.log(this.articles);
+
+  
+    this.articles = this.fetchArticle(this.topicParam);
+    
+    setTimeout(() => {
+      console.log(this.articles.length);
+      if (this.articles == 0){
+        this.articlesIsEmpty = true;
+      } else
+        this.articlesIsEmpty = false;
+    }, 2000);
+      
+
+      
+
+
+    
 
     
   }
