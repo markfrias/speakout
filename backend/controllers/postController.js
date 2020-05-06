@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/post.model');
 
+
 //Get all the posts: localhost:3000/posts/
 router.get('/', (req, res) => {
     Post.find((err, docs) => {
@@ -78,7 +79,8 @@ router.post('/',(req, res) => {
         topic: req.body.topic,
         likes: req.body.likes,
         shares: req.body.shares,
-        comments: req.body.comments
+        comments: req.body.comments,
+        bannerImageName: req.body.bannerImageName
     });
     newPost.save((err, doc) => {
         if (!err) 
@@ -104,7 +106,9 @@ router.patch('/:id', (req, res) => {
                 topic: req.body.topic,
                 likes: req.body.likes,
                 shares: req.body.shares,
-                comments: req.body.comments
+                comments: req.body.comments,
+                bannerImageName: req.body.bannerImageName
+
             };
             Post.findByIdAndUpdate(req.params.id, { $set: updatePost }, { new: true }, (err, doc) => {
                 if (!err)

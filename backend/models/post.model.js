@@ -40,7 +40,9 @@ const PostSchema = mongoose.Schema({
 
     comments: {
         type: [String]
-    }
+    },
+
+    bannerImageName: String
 });
 
 module.exports = mongoose.model("Posts", PostSchema);

@@ -1,3 +1,7 @@
 <p>{{articles.title}}</p>
 <p>{{articles.postDescription}}</p>
+<img [src]=" 'http://127.0.0.1:3300/uploads/' + articles.bannerImageName" *ngIf="articles.bannerImageName != null">
 <p>{{articles.postBody}}</p>
+<input type="file" (change)="onFileSelect($event)">
+<button type="submit" (submit)="onSubmit()">Submit</button>
+<img [src]="url">
