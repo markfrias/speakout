@@ -19,6 +19,7 @@ import { TopicsComponent } from './topics/topics.component';
 import { TagArticlesComponent } from './tags/tag-articles/tag-articles.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 
 
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
   { path: 'users', component: UsersComponent},
   { path: 'topics', component: TopicsComponent},
   {path: 'create-post', component: CreatePostComponent},
+  {path: 'edit-user', component: EditUserComponent},
   
 ]
 
@@ -52,6 +54,7 @@ const appRoutes: Routes = [
     TagArticlesComponent,
     ArticlesComponent,
     CreatePostComponent,
+    EditUserComponent,
    
     
   ],
