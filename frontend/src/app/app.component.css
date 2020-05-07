@@ -4,7 +4,8 @@ nav {
     width: 100%;
     height: 12vh;
     margin-top: -10px;
-    padding:0px 15px 0px 25px;
+    margin-left: 0px;
+    padding:0px 0px 0px 45px;
     background-color: #6f3637;
 
 }
@@ -21,6 +22,7 @@ a.navlinks {
     padding: 15px;
     font-size: 20px;
     list-style: none;
+   
    
 
 
@@ -51,7 +53,7 @@ nav > ul {
    display: flex;
    list-style: none;
    font-size: 30px;
-   margin-left: 21.5%;
+   margin-left: 25%;
   
    
 
@@ -103,7 +105,7 @@ a.loginbtn {
     display: flex;
     list-style-type: none;
     width: 100%;
-    margin-left: 35%;
+    margin-left: 40%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 

@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#e0eafc, #cfdef3);
+    height: 100vh;
+}
+.center, .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#click {
+    display: none;
+}
+.click me {
+    display: block;
+    width: 160px;
+    height: 50px;
+    background: #27ae60;
+    border: 1px solid #26a65b;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .5s;
+}
+.click-me:hover {
+    background: blue;
+}
+.content {
+    opacity: 0;
+    visibility: hidden;
+    width: 400px;
+    height: 350px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,4);
+    transition: .3s ease-in;
+}
+#click:checked ~ .CONTENT {
+    opacity: 1;
+    visibility: visible;
+}
+.header {
+    height: 68px;
+    background: green;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+
+}
+.header h2 {
+    color: white;
+    padding-left: 32px;
+    font-weight: normal;
+}
+.fa-times {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: pink;
+    font-weight: bold;
+    cursor: pointer;
+}
+.fa-check {
+    margin: 30px 0 0 160px;
+    font-size: 50px;
+    color: purple;
+    font-weight: bold;
+    height: 80px;
+    width: 80px;
+    border: 1px solid magenta;
+    text-align: center;
+    padding-top: 13px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 30px 0 0 160px;
+
+}
+p{
+    padding-top: 10px;
+    font-size: 19px;
+    color: darksalmon;
+    text-align: center;
+
+}
+.line {
+    bottom: 60px;
+    width: 100%;
+    height: 1px;
+    background: silver;
+}
+.close-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 25px;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: darkslategray;
+    padding: 8px 10px;
+    font-size: 18x;
+    cursor: pointer;
+}
+.close-btn:hover {
+    background: gray;
+    color: white;
+    transition: .5s;
+}

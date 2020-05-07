@@ -1,20 +1,26 @@
 .trending-wrapper {
     width: 100%;
-    margin-left: 4%;
+    margin-left: 7%;
 }
 h1 {
     text-align: center;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .trending-post {
+    width: 150px;
+    height:200px;
     text-align: center;
-    display: inline-block;
-    padding:0 40px 200px 40px;
-    background-color:rgb(216, 178, 178);
+    display: inline-grid;
+    padding:0 60px 200px 60px;
+    background-color:rgb(221, 205, 205);
     border-radius: 5px;
-    margin:25px;
-    max-width: 150px;
+    margin: 2%;
+    max-width: 200px;
 
 }
 p {
-    text-align: center;
+    text-align: center justify;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

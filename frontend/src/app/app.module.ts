@@ -4,6 +4,8 @@ import { RouterModule, Routes} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
+
+
 import { AppComponent } from './app.component';
 import { TrendingComponent } from './trending/trending.component';
 import { PostsComponent } from './posts/posts.component';
@@ -33,8 +35,8 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'users', component: UsersComponent},
   { path: 'topics', component: TopicsComponent},
-  {path: 'create-post', component: CreatePostComponent},
-  {path: 'edit-user', component: EditUserComponent},
+  { path: 'create-post', component: CreatePostComponent},
+  { path: 'edit-user', component: EditUserComponent},
   
 ]
 
@@ -62,6 +64,7 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
