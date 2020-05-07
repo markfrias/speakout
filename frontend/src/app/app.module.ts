@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { PopupModule} from 'ng2-opd-popup'
 
 import { AppComponent } from './app.component';
 import { TrendingComponent } from './trending/trending.component';
@@ -59,6 +60,7 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    PopupModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

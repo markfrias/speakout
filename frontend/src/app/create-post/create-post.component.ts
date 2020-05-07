@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Popup} from 'ng2-opd-popup';
 
 @Component({
   selector: 'app-create-post',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePostComponent implements OnInit {
 
-  constructor() { }
-
+  constructor (private popup:Popup) {}
+  
+  clickButton(){
+    this.popup.show()
+  }
   ngOnInit(): void {
   }
 
