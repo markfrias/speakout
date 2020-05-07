@@ -24,3 +24,61 @@ p {
     font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+@media only screen and (max-width:1050px){
+    .trending-post {
+        width: 150px;
+        height:200px;
+        text-align: center;
+        display: inline-grid;
+        padding:0px 60px 200px;
+        background-color:rgb(221, 205, 205);
+        border-radius: 5px;
+        margin: 1%;
+        max-width: 200px;
+}
+}
+@media only screen and (max-width:1000px){
+    h1 {
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-top: 55px;
+    }
+        .trending-wrapper {
+        width: 100%;
+        margin-left: 5%; 
+    }
+
+    .trending-post {
+        width: 150px;
+        height:200px;
+        text-align: center;
+        display: inline-grid;
+        padding:0px 60px 150px;
+        background-color:rgb(221, 205, 205);
+        border-radius: 5px;
+        margin: 1%;
+        max-width: 200px;
+}
+}
+@media only screen and (max-width:900px) {
+  
+
+    
+    .trending-wrapper {
+        width: 100%;
+        margin-left: 15%; 
+    }
+
+    .trending-post {
+        width: 150px;
+        height:250px;
+        text-align: center;
+        display: inline-grid;
+        padding:0px 60px 80px;
+        background-color:rgb(221, 205, 205);
+        border-radius: 5px;
+        margin: 1%;
+        max-width: 200px;
+    }
+}

@@ -180,8 +180,93 @@ font-size:32px;
 
 
 /*mobile responsive */
+@media only screen and (max-width:1250px) {
+    .adminbtn {
+        cursor: pointer;
+        list-style: none;
+        list-style: none;
+        color:rgb(75, 75, 235);
+        float: right ;
+    
+    }
+    a.adminbtn {
+        display: flex;
+        text-align: end;
+        margin-left: 80%;
+        font-size: 15px;
+        position: absolute;
+    
+    }
+    .loginbtn {
+        cursor: pointer;
+        list-style: none;
+        list-style: none;
+        color:rgb(75, 75, 235);
+        float: right ;
+    }
+    a.loginbtn {
+        display: flex;
+        text-align: end;
+        margin-left: 86%;
+        font-size: 15px;
+        position: absolute;
+    }
+}
+@media only screen and (max-width:1050px){
+    nav > ul {
+        width: 100%;
+        max-height: 0px;
+        position: absolute;
+        margin-top: 30px;
+        z-index: 1;
+        display: flex;
+        list-style: none;
+        font-size: 30px;
 
+}
+.navlinks {
+    margin-left:5vw;
+    cursor: pointer;
+}
+.adminbtn {
+    cursor: pointer;
+    list-style: none;
+    list-style: none;
+    color:rgb(75, 75, 235);
+    float: right ;
 
+}
+a.adminbtn {
+    display: flex;
+    text-align: end;
+    margin-left: 80%;
+    font-size: 15px;
+    position: absolute;
+
+}
+.loginbtn {
+    cursor: pointer;
+    list-style: none;
+    list-style: none;
+    color:rgb(75, 75, 235);
+    float: right ;
+}
+a.loginbtn {
+    display: flex;
+    text-align: end;
+    margin-left: 86%;
+    font-size: 15px;
+    position: absolute;
+}
+#secondary-nav > ul {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    margin-left: 30%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+}
 @media only screen and (max-width: 934px) {
     
     nav {
@@ -253,7 +338,7 @@ font-size:32px;
     a.adminbtn {
         display: flex;
         text-align: end;
-        margin-left: 90%;
+        margin-left: 80%;
         font-size: 15px;
         position: absolute;
 
@@ -276,7 +361,7 @@ font-size:32px;
         display: flex;
         list-style-type: none;
         width: 100%;
-        justify-content: center;
+      margin-left: 20%;
         font-family: monospace;
         position: absolute;
 

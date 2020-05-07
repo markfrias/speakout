@@ -13,21 +13,21 @@ body {
 }
 .form-input-fname input{
     text-align: left;
-    width: 200px;
-    padding: 15px 45px 0px 15px;
+    width: 41%;
+    padding: 15px 45px 0px 0px;
     margin:5px
 }
 
 .form-input input {
 
-width: 97%;
+width: 95%;
 padding: 15px 5px;
 cursor: pointer;
 font-size: 13px;
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
  .form-input-message input {
-    width: 97%;
+    width: 95%;
     padding: 15px 5px;
     padding-bottom: 150px;
     font-size: 15px;

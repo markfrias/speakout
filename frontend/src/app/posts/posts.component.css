@@ -83,7 +83,36 @@ p {
     font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
+@media only screen and (max-width:1050px) {
+    .recent-posts {
+        background-color: rgb(192, 192, 192, 0.3);
+        width: 90%;
+        float: left;
+        margin: 50px; 
+    }
 
+    .post {
+    background-color:whitesmoke ;
+    margin: 25px;
+    padding: 10px;
+    border-radius: 8px;
+    }
+    .sidebar{
+        width: 90%;
+        float: left;  
+        background-color: #5d6d85;
+        margin: 50px;
+    }
+    .trending-section ul li {
+        text-align: center;
+        margin-right: 40px;
+        color: blanchedalmond;
+        font-size: 20px;
+         padding: 9px;
+         list-style-type: none;
+         border-top: 2px solid #e0e0e0;
+    }
+}
 @media only screen and (max-width: 934px) { 
     
     .recent-posts {
