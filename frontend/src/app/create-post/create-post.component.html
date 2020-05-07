@@ -1,18 +1,26 @@
-<!--<h1>Popup/Modal Windows without JavaScript</h1>
-<div class="box">
-	<a class="button" href="#popup1">Let me Pop up</a>
-</div>
-
-<div id="popup1" class="overlay">
-	<div class="popup">
-		<h2>Here i am</h2>
-		<a class="close" href="#">&times;</a>
-		<div class="content">
-			Thank to pop me out of that button, but now i'm done so you can close this window.
-		</div>
-	</div>
-</div>-->
-<h1>
-    <popup> create post </popup>
-    <button (click)="clickButton()"> submit</button>
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <link rel = "stylesheet" href = "create-post.component.css">
+    <script src = "https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <div class = "center">
+        <input type = "text" id = "message">
+        <label for = "click" class ="click-me"> Submit</label>
+        <div class = "content">
+            <div class = "header">
+                <h2> hello</h2>
+                <label for = "click" class = "fas fa-times"></label>
+            </div>
+            <label for = "click" class = "fas fa-check"></label>
+            <p> hello</p>
+            <div class = "line"></div>
+            <label for = "click" class = "close-btn">x</label>
+        </div>
+    </div>
+</body>
+</html>

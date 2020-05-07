@@ -8,11 +8,8 @@ import {Popup} from 'ng2-opd-popup';
 })
 export class CreatePostComponent implements OnInit {
 
-  constructor (private popup:Popup) {}
-  
-  clickButton(){
-    this.popup.show()
-  }
+  constructor () {}
+
   ngOnInit(): void {
   }
 

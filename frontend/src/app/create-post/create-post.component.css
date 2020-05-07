@@ -1,96 +1,111 @@
 body {
-    font-family: Arial, sans-serif;
-    background: url(http://ak.picdn.net/assets/cms/2d850dac5bcfcb86514922660d6e357aa44fd06e-crop-shutterstock_310408637.jpg) no-repeat;
-    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#e0eafc, #cfdef3);
     height: 100vh;
-  }
-  
-  h1 {
-    text-align: center;
-    font-family: Tahoma, Arial, sans-serif;
-    color: #06D85F;
-    margin: 80px 0;
-  }
-  
-  .box {
-    width: 40%;
-    margin: 0 auto;
-    background: rgba(255,255,255,0.2);
-    padding: 35px;
-    border: 2px solid #fff;
-    border-radius: 20px/50px;
-    background-clip: padding-box;
-    text-align: center;
-  }
-  
-  .button {
-    font-size: 1em;
-    padding: 10px;
-    color: #fff;
-    border: 2px solid #06D85F;
-    border-radius: 20px/50px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-  }
-  .button:hover {
-    background: #06D85F;
-  }
-  
-  .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
-  }
-  .overlay:target {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  .popup {
-    margin: 70px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    width: 30%;
-    position: relative;
-    transition: all 5s ease-in-out;
-  }
-  
-  .popup h2 {
-    margin-top: 0;
-    color: #333;
-    font-family: Tahoma, Arial, sans-serif;
-  }
-  .popup .close {
+}
+.center, .content {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#click {
+    display: none;
+}
+.click me {
+    display: block;
+    width: 160px;
+    height: 50px;
+    background: #27ae60;
+    border: 1px solid #26a65b;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .5s;
+}
+.click-me:hover {
+    background: blue;
+}
+.content {
+    opacity: 0;
+    visibility: hidden;
+    width: 400px;
+    height: 350px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,4);
+    transition: .3s ease-in;
+}
+#click:checked ~ .CONTENT {
+    opacity: 1;
+    visibility: visible;
+}
+.header {
+    height: 68px;
+    background: green;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+
+}
+.header h2 {
+    color: white;
+    padding-left: 32px;
+    font-weight: normal;
+}
+.fa-times {
+    position: absolute;
+    right: 20px;
     top: 20px;
-    right: 30px;
-    transition: all 200ms;
-    font-size: 30px;
+    color: pink;
     font-weight: bold;
-    text-decoration: none;
-    color: #333;
-  }
-  .popup .close:hover {
-    color: #06D85F;
-  }
-  .popup .content {
-    max-height: 30%;
-    overflow: auto;
-  }
-  
-  @media screen and (max-width: 700px){
-    .box{
-      width: 70%;
-    }
-    .popup{
-      width: 70%;
-    }
-  }
+    cursor: pointer;
+}
+.fa-check {
+    margin: 30px 0 0 160px;
+    font-size: 50px;
+    color: purple;
+    font-weight: bold;
+    height: 80px;
+    width: 80px;
+    border: 1px solid magenta;
+    text-align: center;
+    padding-top: 13px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 30px 0 0 160px;
+
+}
+p{
+    padding-top: 10px;
+    font-size: 19px;
+    color: darksalmon;
+    text-align: center;
+
+}
+.line {
+    bottom: 60px;
+    width: 100%;
+    height: 1px;
+    background: silver;
+}
+.close-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 25px;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: darkslategray;
+    padding: 8px 10px;
+    font-size: 18x;
+    cursor: pointer;
+}
+.close-btn:hover {
+    background: gray;
+    color: white;
+    transition: .5s;
+}
