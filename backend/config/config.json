@@ -1,0 +1,10 @@
+{
+    "development": {
+        "JWT_SECRET": "iLoveProgramming",
+        "JWT_EXP": "10m" 
+    },
+    "production": {
+        "JWT_SECRET": "iLoveProgramming",
+        "JWT_EXP": "10m" 
+    }
+}

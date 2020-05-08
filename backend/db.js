@@ -8,4 +8,5 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true}, (err) => {
         console.log('Error in DB connection: ' + JSON.stringify(err, undefined, 2));
 });
 
-module.exports = mongoose;
+//module.exports = mongoose;
+require('./models/user.model');
