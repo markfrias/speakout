@@ -45,10 +45,22 @@ userSchema.path('email').validate((val) => {
 
 // Encrypt password before saving it to the database
 userSchema.pre('save', function (next) {
+    var user = this;
+
+    //hash the password if only it has been modified or is new
+    if (!user.isModified('password'))
+        return next();
+
+    // hash the password
     bcrypt.genSalt(12, (err, salt) => {
-        bcrypt.hash(this.password, salt, (err, hash) => {
-            this.password = hash;
-            this.saltSecret = salt;
+        if (err) return next(err);
+
+        bcrypt.hash(user.password, salt, (err, hash) => {
+            if (err) return next(err);
+            
+            user.password = hash;
+            user.saltSecret = salt;
+            user.verify = hash;
             next();
         });
     });

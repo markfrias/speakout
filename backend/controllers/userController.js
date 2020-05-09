@@ -84,27 +84,23 @@ router.get('/:id', (req, res) => {
 });
 
 //edit or update user information
-router.put('/:id', (req, res) => {
+router.put('/:id', (req, res, next) => {
     //check if the user exists in the database
     User.exists({ _id: req.params.id }).then((result) => {
         if (!result) {
             return res.status(400).send(`No user record with given id: ${req.params.id}`);
         } else {
-            var updateUser = {
-                fname: req.body.fname,
-                lname: req.body.lname,
-                username: req.body.username,
-                email: req.body.email,
-                address: req.body.address,
-                phoneNumber: req.body.phoneNumber,
-                password: req.body.password,
-                role: req.body.role,
-            };
-            User.findByIdAndUpdate(req.params.id, { $set: updateUser }, { new: true }, (err, doc) => {
-                if (!err)
-                    res.send(doc);
-                else
-                    console.log('Error in User update: ' + JSON.stringify(err, undefined, 2));
+            //fetch user record
+            User.findById(req.params.id, (err, post) => {
+                if (err) return next(err);
+
+                //update user using lodash
+                _.assign(post, req.body);
+                post.save((err) => {
+                    if (err) return next(err);
+                    
+                    return res.status(200).json(post);
+                })
             });
         }
     }); 
