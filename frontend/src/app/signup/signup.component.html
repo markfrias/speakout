@@ -1,77 +1,71 @@
-<body>
-    <main>
-        
-        <form action="#" method="post">
-            <h2>Sign Up</h2>
-                <p> 
-                    <label for="fname" class="floatLabel">First Name</label>
-                    <br>
-                    <input id="fname" name="fname" type="text">
-                </p>
-                <p> 
-                    <label for="lname" class="floatLabel">Last Name</label>
-                    <br>
-                    <input id="lname" name= "lname" type="text">
-                </p>
-                <p> 
-                    <label for="username" class="floatLabel">Username</label>
-                    <br>
-                    <input id="username" name="username" type="text">
-                </p>
-                <p>
-                    <label for="Email" class="floatLabel">Email</label>
-                    <br>
-                    <input id="Email" name="Email" type="text">
-                </p>
-                <p> 
-                    <label for="address" class="floatLabel">Address</label>
-                    <br>
-                    <input id="fname" name="fname" type="text">
-                </p>
-                <p> 
-                    <label for="phoneNumber" class="floatLabel">Phone Number</label>
-                    <br>
-                    <input id="phoneNumber" name="phoneNumber" type="number">
-                </p>
-                <p>
-                    <label for="password" class="floatLabel">Password</label>
-                    <br>
-                    <input id="password" name="password" type="password">
-                    <br>
-                    <span>Enter a password at least 8 characters long</span>
-                </p>
-                <p>
-                    <label for="confirm_password" class="floatLabel">Confirm Password</label>
-                    <br>
-                    <input id="confirm_password" name="confirm_password" type="password">
-                </p>
-                <p> 
-                    <label for="role" class="floatLabel">Please select a role:</label><br>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h1 style="font-family: Poppins, sans-serif;">Create a new account</h1>
+    <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+      <input type="text" #fname="ngModel" [(ngModel)]="userService.selectedUser.fname" name="fname" placeholder="First Name"
+      required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fname.valid }">
+      <div *ngIf="signUpForm.submitted && !fname.valid">
+        <label class="validation-message">First name is required.</label>
+      </div>
 
-                    <input type="radio" id="user" name="role" value="user">
-                    <label for="user">User</label><br>
+      <input type="text" #lname="ngModel" [(ngModel)]="userService.selectedUser.lname" name="lname" placeholder="Last Name"
+      required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !lname.valid }">
+      <div *ngIf="signUpForm.submitted && !lname.valid">
+        <label class="validation-message">Last name is required.</label>
+      </div>
 
-                    <input type="radio" id="author" name="role" value="author">
-                    <label for="author">Author</label><br>
+      <input type="text" #username="ngModel" [(ngModel)]="userService.selectedUser.username" name="username" placeholder="Username"
+      required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !username.valid }">
+      <div *ngIf="signUpForm.submitted && !username.valid">
+        <label class="validation-message">Username is required.</label>
+      </div>
 
-                    <input type="radio" id="editor" name="role" value="editor">
-                    <label for="editor">Editor</label><br>
+      <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
+      required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
+      <div *ngIf="signUpForm.submitted && email.errors">
+        <label *ngIf="email.errors.required" class="validation-message">Email is required.</label>
+        <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+      </div>
 
-                    <input type="radio" id="manager" name="role" value="manager">
-                    <label for="manager">Manager</label><br>
+      <input type="text" #address="ngModel" [(ngModel)]="userService.selectedUser.address" name="address" placeholder="Physical address"
+      required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !address.valid }">
+      <div *ngIf="signUpForm.submitted && !address.valid">
+        <label class="validation-message">Physical address is required.</label>
+      </div>
 
-                    <input type="radio" id="frontend-developer" name="role" value="frontend-developer">
-                    <label for="frontend-developer">Frontend Developer</label><br>
+      <input type="text" #phoneNumber="ngModel" [(ngModel)]="userService.selectedUser.phoneNumber" name="phoneNumber" placeholder="Phone Number"
+      required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !phoneNumber.valid }">
+      <div *ngIf="signUpForm.submitted && !phoneNumber.valid">
+        <label class="validation-message">Phone number is required.</label>
+      </div>
 
-                    <input type="radio" id="backend-developer" name="role" value="backend-developer">
-                    <label for="backend-developer">Backend Developer</label><br>
-            
-                    <input type="radio" id="administrator" name="role" value="administrator">
-                    <label for="administrator">Administrator</label><br>
-                </p> 
-                <p>
-                    <input type="submit" value="Create My Account" id="submit">
-                </p>
-        </form>
-    </main>
-</body>
+      <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"
+      minlength="8" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+      <div *ngIf="signUpForm.submitted && password.errors">
+        <label *ngIf="password.errors.required" class="validation-message">Password is required.</label>
+        <label *ngIf="password.errors.minlength" class="validation-message">Enter at least 8 characters.</label>
+      </div>
+
+      <input type="text" #role="ngModel" [(ngModel)]="userService.selectedUser.role" name="role" placeholder="Role"
+      required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !role.valid }">
+      <div *ngIf="signUpForm.submitted && !role.valid">
+        <label class="validation-message">Role is required. (your office, ex. Admin)</label>
+      </div>
+      <input type="submit" value="Sign Up">
+    </form>
+
+    <!-- Success message -->
+    <div class="success" *ngIf="showSucessMessage">
+      New account has been created successfully
+    </div>
+
+    <!-- Error message -->
+    <div class="alert" *ngIf="serverErrorMessages">
+      {{serverErrorMessages}}
+    </div>
+
+    <div style="padding: 15px; font-family: Poppins, sans-serif;">
+      Already have an account? You can login <a routerLink='/login'>HERE</a>
+    </div>
+  </div>
+</div>

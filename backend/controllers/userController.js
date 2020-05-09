@@ -24,7 +24,7 @@ router.post('/',(req, res, next) => {
         if (!err)  
             res.send(doc);
         else {
-            if (err.code == 11000)
+            if (err.code === 11000)
                 res.status(422).send(['The entered email is alredy registered with an existing account.']);
             else
                 return next(err);

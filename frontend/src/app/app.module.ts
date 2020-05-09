@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -22,12 +23,13 @@ import { TagArticlesComponent } from './tags/tag-articles/tag-articles.component
 import { ArticlesComponent } from './articles/articles.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { from } from 'rxjs';
 
 
 
 const appRoutes: Routes = [
   { path: 'trending', component: TrendingComponent },
-  { path: 'posts', component: PostsComponent }, 
+  { path: 'posts', component: PostsComponent },
   { path: 'tags', component: TagsComponent} ,
   { path: 'team', component: TeamComponent},
   { path: 'admin', component: AdminComponent},
@@ -37,7 +39,7 @@ const appRoutes: Routes = [
   { path: 'topics', component: TopicsComponent},
   { path: 'create-post', component: CreatePostComponent},
   { path: 'edit-user', component: EditUserComponent},
-  
+
 ]
 
 @NgModule({
@@ -57,14 +59,15 @@ const appRoutes: Routes = [
     ArticlesComponent,
     CreatePostComponent,
     EditUserComponent,
-   
-    
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-  
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
