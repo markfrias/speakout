@@ -9,6 +9,7 @@ import { User } from './user.model';
 export class UserService {
   readonly baseURL = 'http://localhost:3300/users';
   selectedUser: User = {
+    _id: '',
     fname: '',
     lname: '',
     username: '',

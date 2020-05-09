@@ -28,15 +28,17 @@
       </div>
 
       <input type="text" #address="ngModel" [(ngModel)]="userService.selectedUser.address" name="address" placeholder="Physical address"
-      required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !address.valid }">
+      required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !address.valid }">
       <div *ngIf="signUpForm.submitted && !address.valid">
         <label class="validation-message">Physical address is required.</label>
       </div>
 
       <input type="text" #phoneNumber="ngModel" [(ngModel)]="userService.selectedUser.phoneNumber" name="phoneNumber" placeholder="Phone Number"
-      required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !phoneNumber.valid }">
+      required minlength="6" [pattern]="phoneNumberRegex"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !phoneNumber.valid }">
       <div *ngIf="signUpForm.submitted && !phoneNumber.valid">
         <label class="validation-message">Phone number is required.</label>
+        <label *ngIf="phoneNumber.errors.minlength" class="validation-message">Phone number must have at least 6 digits.</label>
+        <label *ngIf="phoneNumber.errors.pattern" class="validation-message">Invalid phone number.</label>
       </div>
 
       <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"

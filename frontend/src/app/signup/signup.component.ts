@@ -11,6 +11,7 @@ import { UserService } from './../shared/user.service';
 })
 export class SignupComponent implements OnInit {
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  phoneNumberRegex = /^[+]?([0-9]*[\.\s\-\(\)]|[0-9]+){3,24}$/;
   showSucessMessage: boolean;
   serverErrorMessages: string;
 
@@ -38,12 +39,13 @@ export class SignupComponent implements OnInit {
 
   resetForm(form: NgForm) {
     this.userService.selectedUser = {
+      _id: '',
       fname: '',
       lname: '',
       username: '',
       email: '',
       address: '',
-      phoneNumber: null,
+      phoneNumber: '',
       password: '',
       role: ''
     };

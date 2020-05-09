@@ -24,7 +24,9 @@ var userSchema = new mongoose.Schema({
         type: String 
     },
     phoneNumber: {
-        type: Number
+        type: String,
+        required: true,
+        minlength: [4, 'Phone number must have at least 4 digits']
     },
     password: { 
         type: String, 
@@ -42,6 +44,12 @@ userSchema.path('email').validate((val) => {
     emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return emailRegex.test(val);
 }, 'Invalid email.');
+
+// custom validation for phone number regular expression (Regex)
+userSchema.path('phoneNumber').validate((val) => {
+    phoneNumberRegex = /^[+]?([0-9]*[\.\s\-\(\)]|[0-9]+){3,24}$/;
+    return phoneNumberRegex.test(val);
+}, 'Invalid phone number.');
 
 // Encrypt password before saving it to the database
 userSchema.pre('save', function (next) {

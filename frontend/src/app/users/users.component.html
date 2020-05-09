@@ -1,13 +1,5 @@
 <body>
     <main>
-    <header>
-        <!--<div class = "logo">
-            <img src="../../assets/Img/SPEAK OUT (EDITED).png" alt="" class="logo-image">
-        </div>-->
-
-    </header>
-    <br>
-
     <div class="admin-wrapper">
         <!--left sidebar-->
         <div class="left-sidebar">
@@ -20,32 +12,43 @@
             </ul>
         </div>
 
-
-
         <!--admin content-->
         <div class="admin-content">
             <div class="content">
-                <h2 class="page-title">Manage Users</h2>
-
-                <table>
-                    <thead>
-                        <th>SN</th>
-                        <th>UserName</th>
-
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let user of users">
-                            <td>{{user._id}}</td>
-                            <td>{{user.username}}</td>
-                            <td>{{user.role}}</td>
-                            <td><a href="#" class="edit">edit</a></td>
-                            <td><a href="#" class="delete">delete</a></td>
-                        </tr>
-                    </tbody>
+                <h4>Manage Users</h4>
+                <h5>Admin Dashboard</h5>
+                <table class="responsive-table highlight">
+                  <thead>
+                    <tr>
+                      <th>Full Name</th>
+                      <th>Username</th>
+                      <th>Role (office)</th>
+                      <th>Email</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let user of users">
+                      <td>{{ user.fname }} {{ user.lname }}</td>
+                      <td>{{ user.username }}</td>
+                      <td>{{ user.role }}</td>
+                      <td>{{ user.email }}</td>
+                      <td>
+                        <!-- edit button -->
+                        <a class="action-btn edit" title="Edit or update user">
+                          <i class="material-icons">edit</i> <!-- edit function has to be added -->
+                        </a>
+                        <!-- delete button -->
+                        <a class="action-btn delete" title="Delete user">
+                          <i class="material-icons" (click)="onDelete(user._id)">delete</i>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
+
             </div>
         </div>
     </div>
     </main>
 </body>
-
