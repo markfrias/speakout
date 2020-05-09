@@ -7,32 +7,6 @@ html {
    overflow-x: hidden;
 }
 
-
-a.action-btn{
-  color: #f3f2f2 ;
-  margin: 0px 5px;
-
-}
-a.action-btn:hover{
-  cursor: pointer;
-}
-
-a.action-btn.edit:hover {
-  color: orange;
-}
-
-a.action-btn.delete:hover {
-  color: darkred;
-}
-
-#toast-container {
-  top: auto !important;
-  right: auto !important;
-  bottom: 10%;
-  left:7%;
-}
-
-
 @media only screen and (max-width: 934px) {
     html {
         width: 100%;

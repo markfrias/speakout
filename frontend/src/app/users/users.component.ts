@@ -24,7 +24,7 @@ export class UsersComponent implements OnInit {
     this.refreshUsersList();
   }
 
-  //refresh users list after updating user or deleting user
+  //refresh users list
   refreshUsersList() {
     this.manageUserService.getUsers().subscribe((res) => {
       this.manageUserService.users = res as User[];
