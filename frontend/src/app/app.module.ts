@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 
@@ -23,9 +23,9 @@ import { TagArticlesComponent } from './tags/tag-articles/tag-articles.component
 import { ArticlesComponent } from './articles/articles.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
-import { from } from 'rxjs';
 
-
+import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 const appRoutes: Routes = [
   { path: 'trending', component: TrendingComponent },
@@ -59,7 +59,7 @@ const appRoutes: Routes = [
     ArticlesComponent,
     CreatePostComponent,
     EditUserComponent,
-
+    LoginComponent
 
   ],
   imports: [
@@ -69,7 +69,11 @@ const appRoutes: Routes = [
     FormsModule,
 
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  },AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

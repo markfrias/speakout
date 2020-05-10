@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UserService } from './../shared/user.service';
+
 @Component({
   selector: 'app-topics',
   templateUrl: './topics.component.html',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopicsComponent implements OnInit {
 topics;
-  constructor() { }
+userDetails;
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userService.getUserProfile().subscribe(
+      res => {
+        this.userDetails = res['user'];
+      }
+    );
   }
 
 }

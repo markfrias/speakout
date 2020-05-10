@@ -4,8 +4,8 @@
         <!--<div class = "logo">
             <img src="../../assets/Img/SPEAK OUT (EDITED).png" alt="" class="logo-image">
         </div>-->
-  
-        
+
+
     </header>
     <br>
 
@@ -13,11 +13,10 @@
         <!--left sidebar-->
         <div class="left-sidebar">
             <ul>
-                <li><a href="index.html">Manage Posts</a></li>
+                <li><a routerLink='/admin'>Manage Posts</a></li>
                 <li><a href="../users/index.html">Manage Users</a></li>
                 <li><a href="../topics/index.html">Manage Topics</a></li>
-                <li><a href="../signup">Signup</a></li>
-                <li><a href = "" class="logout">Logout</a></li>
+                <li><a (click)="onLogout()" class="logout" style="color: red; cursor: pointer">Logout</a></li>
             </ul>
         </div>
 
@@ -26,7 +25,13 @@
         <!--admin content-->
         <div class="admin-content">
             <div class="content">
-                <h2 class="page-title">Manage Posts</h2>
+                <div *ngIf="userDetails">
+                  <h3>Hello, {{userDetails.fname}} </h3>
+                  <p style="font-style: italic;"><b>Username:</b> {{userDetails.username}}
+                  <b> Role:</b> {{userDetails.role}}
+                  <b> Email:</b> {{userDetails.email}}</p>
+                  <h5>Manage Post: Admin Dashboard</h5>
+              </div>
 
                 <table>
                     <thead>
@@ -43,17 +48,6 @@
                             <td><a href="#" class="edit">edit</a></td>
                             <td><a href="#" class="delete">delete</a></td>
                             <td><a href="#" class="publish">publish</a></td>
-
-                        <!---
-                        <tr>
-                            <td>2</td>
-                            <td>This is the second post</td>
-                            <td>Joelson</td>
-                            <td><a href="#" class="edit">edit</a></td>
-                            <td><a href="#" class="delete">delete</a></td>
-                            <td><a href="#" class="publish">publish</a></td>
-                        </tr>
-                      -->
                     </tbody>
                 </table>
             </div>
@@ -62,7 +56,7 @@
             <div class="box">
                 <a class="button" href="#popup1">Let me Pop up</a>
             </div>
-            
+
             <div id="popup1" class="overlay">
                 <div class="popup">
                     <h2>Create Post</h2>

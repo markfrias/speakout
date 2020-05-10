@@ -4,10 +4,9 @@
         <!--left sidebar-->
         <div class="left-sidebar">
             <ul>
-                <li><a href="index.html">Manage Posts</a></li>
+                <li><a routerLink='/admin'>Manage Posts</a></li>
                 <li><a href="../users/index.html">Manage Users</a></li>
                 <li><a href="../topics/index.html">Manage Topics</a></li>
-                <li><a href="../signup">Signup</a></li>
                 <li><a href = "" class="logout">Logout</a></li>
             </ul>
         </div>
@@ -15,8 +14,13 @@
         <!--admin content-->
         <div class="admin-content">
             <div class="content">
-                <h4>Manage Users</h4>
-                <h5>Admin Dashboard</h5>
+              <div *ngIf="userDetails">
+                <h3>Hello, {{userDetails.fname}} </h3>
+                <p style="font-style: italic;"><b>Username:</b> {{userDetails.username}}
+                <b> Role:</b> {{userDetails.role}}
+                <b> Email:</b> {{userDetails.email}}</p>
+                <h5>Manage Users: Admin Dashboard</h5>
+            </div>
                 <table class="responsive-table highlight">
                   <thead>
                     <tr>
@@ -46,9 +50,8 @@
                     </tr>
                   </tbody>
                 </table>
-
             </div>
         </div>
     </div>
-    </main>
+  </main>
 </body>

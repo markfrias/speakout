@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 import { ManagePostsService } from './manage-posts.service';
+import { UserService } from './../shared/user.service';
 
 @Component({
   selector: 'app-admin',
@@ -9,12 +12,18 @@ import { ManagePostsService } from './manage-posts.service';
 })
 export class AdminComponent implements OnInit {
   posts;
+  userDetails
 
-  constructor(private managePostService : ManagePostsService) {
+  constructor(private managePostService : ManagePostsService, private userService: UserService, private router: Router) {
     this.showPosts();
   }
 
   ngOnInit(): void {
+    this.userService.getUserProfile().subscribe(
+      res => {
+        this.userDetails = res['user'];
+      }
+    );
   }
 
   showPosts() {
@@ -23,4 +32,10 @@ export class AdminComponent implements OnInit {
       );
     console.log(this.posts);
   }
+
+  onLogout(){
+    this.userService.deleteToken();
+    this.router.navigate(['/posts']);
+  }
+
 }

@@ -4,7 +4,7 @@
         <!--<div class = "logo">
             <img src="../../assets/Img/SPEAK OUT (EDITED).png" alt="" class="logo-image">
         </div>-->
-        
+
     </header>
     <br>
 
@@ -12,10 +12,9 @@
         <!--left sidebar-->
         <div class="left-sidebar">
             <ul>
-                <li><a href="index.html">Manage Posts</a></li>
+                <li><a routerLink='/admin'>Manage Posts</a></li>
                 <li><a href="../users/index.html">Manage Users</a></li>
                 <li><a href="../topics/index.html">Manage Topics</a></li>
-                <li><a href="../signup">Signup</a></li>
                 <li><a href = "" class="logout">Logout</a></li>
             </ul>
         </div>
@@ -25,7 +24,13 @@
         <!--admin content-->
         <div class="admin-content">
             <div class="content">
-                <h2 class="page-title">Manage Topics</h2>
+              <div *ngIf="userDetails">
+                <h3>Hello, {{userDetails.fname}} </h3>
+                <p style="font-style: italic;"><b>Username:</b> {{userDetails.username}}
+                <b> Role:</b> {{userDetails.role}}
+                <b> Email:</b> {{userDetails.email}}</p>
+                <h5>Manage Topics: Admin Dashboard</h5>
+            </div>
 
                 <table>
                     <thead>
@@ -56,7 +61,7 @@
         </div>
     </div>
 
- 
+
     </main>
 </body>
 

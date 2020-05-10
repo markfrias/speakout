@@ -3,6 +3,7 @@ import{ NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 import { UsersService } from './users.service';
+import { UserService } from './../shared/user.service';
 import { User } from './../shared/user.model';
 
 //toast message variable (declared only when using 'materialize styles')
@@ -15,13 +16,19 @@ declare var M: any;
 })
 export class UsersComponent implements OnInit {
   users;
+  userDetails;
 
-  constructor(private manageUserService : UsersService) {
+  constructor(private manageUserService : UsersService, private userService: UserService) {
     this.showUsers();
   }
 
   ngOnInit(): void {
     this.refreshUsersList();
+    this.userService.getUserProfile().subscribe(
+      res => {
+        this.userDetails = res['user'];
+      }
+    );
   }
 
   //refresh users list
