@@ -8,7 +8,6 @@
         
     </header>
     <br>
-
     <div class="admin-wrapper">
         <!--left sidebar-->
         <div class="left-sidebar">
@@ -20,8 +19,6 @@
                 <li><a href = "" class="logout">Logout</a></li>
             </ul>
         </div>
-
-
 
         <!--admin content-->
         <div class="admin-content">
@@ -58,12 +55,31 @@
                 </table>
             </div>
         </div>
-        <div class="button-group">
+        <div class = "button-group">
+            <div class = "form-popup" id="myForm">
+                <button class="open-button" onclick="openForm()">Open Form</button>
+                <form action = "/action_page.php" class = "form-container">
+                  <h1>Create Post</h1>
+              
+                  <label for = "name"><b>Name</b></label>
+                  <br>
+                  <input type = "text" placeholder = "Enter Name" name = "name" required>
+                  <br>
+              
+                  <label for = "message"><b> Message: </b></label>
+                  <br>
+                  <input type = "text" placeholder = "Enter Message" name = "message" required>
+                  <br> 
+
+                  <button type = "submit" class = "btn">Create</button>
+                  <button type = "submit" class = "btn cancel" onclick = "closeForm()">Close</button>
+                </form>
+              </div>
             <div class="box">
-                <a class="button" href="#popup1">Let me Pop up</a>
+                <a class="createpostbtn" routerLink="/create-post" >Create Post</a>
             </div>
             
-            <div id="popup1" class="overlay">
+            <!--<div id="popup1" class="overlay">
                 <div class="popup">
                     <h2>Create Post</h2>
                     <label for="fname" class="floatLabel">First Name</label>
@@ -75,7 +91,7 @@
                     </div>
                 </div>
             </div>
-            <!--<a routerLink="/create-post" class="create-postbtn"><ul> Create Post</ul></a>-->
+            <a routerLink="/create-post" class="create-postbtn"><ul> Create Post</ul></a>-->
         </div>
     </div>
     </main>
