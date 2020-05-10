@@ -42,6 +42,8 @@ export class PostsComponent implements OnInit {
   likeButtonAction(id: string) {
     this.postsService.incrementLikes(id)
       .subscribe();
+      // Temporary view refresh
+      // !! Change to refresh specific parts only !!
       window.location.reload();
   }
 
