@@ -5,9 +5,9 @@
         <div class="left-sidebar">
             <ul>
                 <li><a routerLink='/admin'>Manage Posts</a></li>
-                <li><a href="../users/index.html">Manage Users</a></li>
-                <li><a href="../topics/index.html">Manage Topics</a></li>
-                <li><a href = "" class="logout">Logout</a></li>
+                <li><a routerLink='/users'>Manage Users</a></li>
+                <li><a routerLink='/topics'>Manage Topics</a></li>
+                <li><a (click)="onLogout()" class="logout" style="color: red; cursor: pointer">Logout</a></li>
             </ul>
         </div>
 

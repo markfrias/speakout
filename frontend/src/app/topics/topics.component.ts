@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { UserService } from './../shared/user.service';
 
@@ -10,7 +11,7 @@ import { UserService } from './../shared/user.service';
 export class TopicsComponent implements OnInit {
 topics;
 userDetails;
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.userService.getUserProfile().subscribe(
@@ -18,6 +19,11 @@ userDetails;
         this.userDetails = res['user'];
       }
     );
+  }
+
+  onLogout(){
+    this.userService.deleteToken();
+    this.router.navigate(['/posts']);
   }
 
 }

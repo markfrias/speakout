@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{ NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { UsersService } from './users.service';
 import { UserService } from './../shared/user.service';
@@ -18,7 +19,7 @@ export class UsersComponent implements OnInit {
   users;
   userDetails;
 
-  constructor(private manageUserService : UsersService, private userService: UserService) {
+  constructor(private manageUserService : UsersService, private userService: UserService, private router: Router) {
     this.showUsers();
   }
 
@@ -58,6 +59,11 @@ export class UsersComponent implements OnInit {
         //alert('User Deleted successfully');
       });
     }
+  }
+  //logout user
+  onLogout(){
+    this.userService.deleteToken();
+    this.router.navigate(['/posts']);
   }
 
 }
