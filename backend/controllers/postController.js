@@ -15,6 +15,17 @@ router.get('/', (req, res) => {
     });
 });
 
+// Increment number of likes
+// !! Include error handling !!
+router.patch('/like/:id', (req, res) => {
+   
+        Post.findOneAndUpdate({_id: req.params.id}, {$inc : { likes : 1 }}, (err, docs) => {
+            res.send(docs);
+            console.log("Like incremented on " + req.params.id);
+        });
+        
+});
+
 //Get posts that correspond to a certain topic
 router.get('/topics/:id', (req, res) => {
     Post.find({topic: req.params.id}, (err, docs) => {

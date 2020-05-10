@@ -9,7 +9,7 @@
                 <p>{{post.timestamp}}</p>
                 <i class="description">{{post.description}}</i>
                 <p>{{post.postBody}}</p>
-                <a href="">Likes ({{post.likes}})</a>
+                <a (click)="likeButtonAction(post._id)">Likes ({{post.likes}})</a>
                 <a href="">Comments</a>
                 <a href="">Share ({{post.share}})</a>
             </div>
