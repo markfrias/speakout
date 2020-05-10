@@ -45,7 +45,7 @@ a.action-btn.edit:hover {
 }
 
 a.action-btn.delete:hover {
-  color: darkred;
+  color: red;
 }
 
 #toast-container {
