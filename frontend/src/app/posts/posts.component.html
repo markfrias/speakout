@@ -6,7 +6,7 @@
 
             <div class="post" *ngFor="let post of posts | slice:0:5">
                 <h3>{{post.title}}</h3>
-                <p>{{post.timestamp}}</p>
+                <p>{{post.timestamp | date :'dd-MMM-yyyy hh:mm a'}}</p>
                 <i class="description">{{post.description}}</i>
                 <p>{{post.postBody}}</p>
                 <a (click)="likeButtonAction(post._id)">Likes ({{post.likes}})</a>

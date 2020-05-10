@@ -1,13 +1,5 @@
 <body>
     <main>
-    <header>
-        <!--<div class = "logo">
-            <img src="../../assets/Img/SPEAK OUT (EDITED).png" alt="" class="logo-image">
-        </div>-->
-
-
-    </header>
-    <br>
     <div class="admin-wrapper">
         <!--left sidebar-->
         <div class="left-sidebar">
@@ -30,63 +22,73 @@
                   <h5>Manage Post: Admin Dashboard</h5>
               </div>
 
-                <table>
+              <div class = "button-group">
+                <div class = "form-popup" id="myForm">
+                    <button class="open-button" onclick="openForm()">Open Form</button>
+                    <form action = "/action_page.php" class = "form-container">
+                      <h1>Create Post</h1>
+
+                      <label for = "name"><b>Name</b></label>
+                      <br>
+                      <input type = "text" placeholder = "Enter Name" name = "name" required>
+                      <br>
+
+                      <label for = "message"><b> Message: </b></label>
+                      <br>
+                      <input type = "text" placeholder = "Enter Message" name = "message" required>
+                      <br>
+
+                      <button type = "submit" class = "btn">Create</button>
+                      <button type = "submit" class = "btn cancel" onclick = "closeForm()">Close</button>
+                    </form>
+                  </div>
+                <div class="box">
+                    <a class="createpostbtn" routerLink="/create-post" >Create Post</a>
+                </div>
+
+                <div id="popup1" class="overlay">
+                    <div class="popup">
+                        <h5>Create Post</h5>
+                        <label for="fname" class="floatLabel">First Name</label>
+                        <br>
+                        <input id="fname" name="fname" type="text">
+                        <a class="close" href="#">&times;</a>
+                        <div class="content">
+                            hello.
+                        </div>
+                    </div>
+                </div>
+                <a routerLink="/create-post" class="create-postbtn"><ul> Create Post</ul></a>-->
+            </div>
+
+                <table class="responsive-table highlight" style="overflow: scroll;">
                     <thead>
-                        <th>SN</th>
+                        <th>Date Posted</th>
                         <th>Title</th>
                         <th>Author</th>
-
+                        <th></th>
+                        <th>Publish Post</th>
                     </thead>
                     <tbody>
                         <tr *ngFor="let post of posts">
-                            <td>{{post._id}}</td>
+                            <td>{{post.timestamp | date :'dd - MMM - yyyy'}}</td>
                             <td>{{post.title}}</td>
                             <td>{{post.author}}</td>
-                            <td><a href="#" class="edit">edit</a></td>
-                            <td><a href="#" class="delete">delete</a></td>
+                            <td>
+                              <!-- edit button -->
+                              <a class="action-btn edit" title="Edit or update Post">
+                                <i class="material-icons">edit</i> <!-- edit function has to be added -->
+                              </a>
+                              <!-- delete button -->
+                              <a class="action-btn delete" title="Delete Post">
+                                <i class="material-icons">delete</i> <!-- delete function has to be added -->
+                              </a>
+                            </td>
                             <td><a href="#" class="publish">publish</a></td>
                     </tbody>
                 </table>
             </div>
-        </div>
-        <div class = "button-group">
-            <div class = "form-popup" id="myForm">
-                <button class="open-button" onclick="openForm()">Open Form</button>
-                <form action = "/action_page.php" class = "form-container">
-                  <h1>Create Post</h1>
-
-                  <label for = "name"><b>Name</b></label>
-                  <br>
-                  <input type = "text" placeholder = "Enter Name" name = "name" required>
-                  <br>
-
-                  <label for = "message"><b> Message: </b></label>
-                  <br>
-                  <input type = "text" placeholder = "Enter Message" name = "message" required>
-                  <br>
-
-                  <button type = "submit" class = "btn">Create</button>
-                  <button type = "submit" class = "btn cancel" onclick = "closeForm()">Close</button>
-                </form>
-              </div>
-            <div class="box">
-                <a class="createpostbtn" routerLink="/create-post" >Create Post</a>
-            </div>
-
-            <div id="popup1" class="overlay">
-                <div class="popup">
-                    <h2>Create Post</h2>
-                    <label for="fname" class="floatLabel">First Name</label>
-                    <br>
-                    <input id="fname" name="fname" type="text">
-                    <a class="close" href="#">&times;</a>
-                    <div class="content">
-                        hello.
-                    </div>
-                </div>
-            </div>
-            <a routerLink="/create-post" class="create-postbtn"><ul> Create Post</ul></a>-->
-        </div>
+      </div>
     </div>
     </main>
 </body>
