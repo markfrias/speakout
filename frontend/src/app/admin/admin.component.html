@@ -57,28 +57,50 @@
         </div>
         <div class = "button-group">
             <div class = "form-popup" id="myForm">
-                <button class="open-button" onclick="openForm()">Open Form</button>
+                <button class="open-button" onclick="openForm()">Create Post</button>
                 <form action = "/action_page.php" class = "form-container">
-                  <h1>Create Post</h1>
-              
-                  <label for = "name"><b>Name</b></label>
-                  <br>
-                  <input type = "text" placeholder = "Enter Name" name = "name" required>
-                  <br>
-              
-                  <label for = "message"><b> Message: </b></label>
-                  <br>
-                  <input type = "text" placeholder = "Enter Message" name = "message" required>
-                  <br> 
+                    <h1>Create Post</h1>
+                        <p>
+                            <label for = "name"><b>Name</b></label>
+                            <br>
+                            <input type = "text" placeholder = "Enter Name" name = "name" required>
+                            <br>
+                        </p>
+                        <p> 
+                            <label>Choose A Topic</label>
+                            <select id = "myList">
+                                <option value = "1">one</option>
+                                <option value = "2">two</option>
+                                <option value = "3">three</option>
+                                <option value = "4">four</option>
+                            </select>
+                            <!--<input style = "width: 300px;" id="topic" name= "topic" type="text" placeholder="Enter Topic">-->
+                            <br>
+                        </p>
+                        <p>
+                            <label for = "message"><b> Message: </b></label>
+                            <br>
+                            <input type = "text" placeholder = "Enter Message" name = "message" requiredstyle = "width: 300px; height:30vh;" rows="14" cols="10" wrap="soft">
+                            <br> 
+                        </p>
 
                   <button type = "submit" class = "btn">Create</button>
                   <button type = "submit" class = "btn cancel" onclick = "closeForm()">Close</button>
                 </form>
-              </div>
+            </div>
             <div class="box">
                 <a class="createpostbtn" routerLink="/create-post" >Create Post</a>
             </div>
             
+            <script>
+                function openForm() {
+                    document.getElementById("myForm").style.display = "block";
+                }
+
+                function closeForm() {
+                    document.getElementById("myForm").style.display = "none";
+                }
+            </script>
             <!--<div id="popup1" class="overlay">
                 <div class="popup">
                     <h2>Create Post</h2>

@@ -9,9 +9,19 @@
                     <input style = "width: 300px;" id="name" name="name" type="text" placeholder="Enter Name">
                 </p>
                 <p> 
-                    <label for="topic" class="floatLabel">Topic</label>
+                    <label>Choose A Topic</label>
+                            <select id = "myList">
+                                <option value = "1">Student Life</option>
+                                <option value = "2">Administration</option>
+                                <option value = "3">Dorm Life</option>
+                                <option value = "4">Other</option>
+                                <div class="answer_list" > WELCOME </div>
+                                    <input type="button" name="other" value="Show Text Field" onclick="onButtonClick()">
+                                    <input class="hide" type="text" id="textInput" value="..." >
+                                
+                            </select>
                     <br>
-                    <input style = "width: 300px;" id="topic" name= "topic" type="text" placeholder="Enter Topic">
+                    <!--<input style = "width: 300px;" id="topic" name= "topic" type="text" placeholder="Enter Topic">-->
                 </p>
                 <p> 
                     <label for="message" class="floatLabel">Message</label>
