@@ -4,62 +4,24 @@
         <!--left sidebar-->
         <div class="left-sidebar">
             <ul>
+                <li><a routerLink='/create-post'>Create Post</a></li>
                 <li><a routerLink='/admin'>Manage Posts</a></li>
                 <li><a routerLink='/users'>Manage Users</a></li>
                 <li><a routerLink='/topics'>Manage Topics</a></li>
                 <li><a (click)="onLogout()" class="logout" style="color: red; cursor: pointer">Logout</a></li>
             </ul>
         </div>
-
+    </div>
         <!--admin content-->
         <div class="admin-content">
             <div class="content">
                 <div *ngIf="userDetails">
                   <h3>Hello, {{userDetails.fname}} </h3>
-                  <p style="font-style: italic;"><b>Username:</b> {{userDetails.username}}
+                  <p style="font-style: italic;"><b>Username:</b> {{userDetails.username}} |
                   <b> Role:</b> {{userDetails.role}}
                   <b> Email:</b> {{userDetails.email}}</p>
                   <h5>Manage Post: Admin Dashboard</h5>
-              </div>
-
-              <div class = "button-group">
-                <div class = "form-popup" id="myForm">
-                    <button class="open-button" onclick="openForm()">Open Form</button>
-                    <form action = "/action_page.php" class = "form-container">
-                      <h1>Create Post</h1>
-
-                      <label for = "name"><b>Name</b></label>
-                      <br>
-                      <input type = "text" placeholder = "Enter Name" name = "name" required>
-                      <br>
-
-                      <label for = "message"><b> Message: </b></label>
-                      <br>
-                      <input type = "text" placeholder = "Enter Message" name = "message" required>
-                      <br>
-
-                      <button type = "submit" class = "btn">Create</button>
-                      <button type = "submit" class = "btn cancel" onclick = "closeForm()">Close</button>
-                    </form>
-                  </div>
-                <div class="box">
-                    <a class="createpostbtn" routerLink="/create-post" >Create Post</a>
                 </div>
-
-                <div id="popup1" class="overlay">
-                    <div class="popup">
-                        <h5>Create Post</h5>
-                        <label for="fname" class="floatLabel">First Name</label>
-                        <br>
-                        <input id="fname" name="fname" type="text">
-                        <a class="close" href="#">&times;</a>
-                        <div class="content">
-                            hello.
-                        </div>
-                    </div>
-                </div>
-                <a routerLink="/create-post" class="create-postbtn"><ul> Create Post</ul></a>-->
-            </div>
 
                 <table class="responsive-table highlight" style="overflow: scroll;">
                     <thead>
@@ -88,10 +50,10 @@
                     </tbody>
                 </table>
             </div>
-<<<<<<< HEAD
+
         </div>
 
-        <!-- Create Post Popup -->
+        <!-- Create Post Popup 
         <div class = "button-group">
             <div class = "form-popup" id="myForm">
                 <button class="open-button" onclick="openForm()">Create Post</button>
@@ -105,13 +67,14 @@
                         </p>
                         <p> 
                             <label>Choose A Topic</label>
+                            <br>
                             <select id = "myList">
                                 <option value = "1">Student Life</option>
                                 <option value = "2">SSO</option>
                                 <option value = "3">three</option>
                                 <option value = "4">four</option>
                             </select>
-                            <!--<input style = "width: 300px;" id="topic" name= "topic" type="text" placeholder="Enter Topic">-->
+                            <input style = "width: 300px;" id="topic" name= "topic" type="text" placeholder="Enter Topic">
                             <br>
                         </p>
                         <p>
@@ -120,26 +83,11 @@
                             <input type = "text" placeholder = "Enter Message" name = "message" requiredstyle = "width: 300px; height:30vh;" rows="14" cols="10" wrap="soft">
                             <br> 
                         </p>
-                  <h1>Create Post</h1>
 
-                  <label for = "name"><b>Name</b></label>
-                  <br>
-                  <input type = "text" placeholder = "Enter Name" name = "name" required>
-                  <br>
-
-                  <label for = "message"><b> Message: </b></label>
-                  <br>
-                  <input type = "text" placeholder = "Enter Message" name = "message" required>
-                  <br>
-
-                  <button type = "submit" class = "btn">Create</button>
-                  <button type = "submit" class = "btn cancel" onclick = "closeForm()">Close</button>
+                        <button type = "submit" class = "btn">Create</button>
+                        <button type = "submit" class = "btn cancel" onclick = "closeForm()">Close</button>
                 </form>
             </div>
-            <div class="box">
-                <a class="createpostbtn" routerLink="/create-post" >Create Post</a>
-            </div>
-<<<<<<< HEAD
             
             <script>
                 function openForm() {
@@ -150,27 +98,8 @@
                     document.getElementById("myForm").style.display = "none";
                 }
             </script>
-            <!--<div id="popup1" class="overlay">
-=======
+        
+        </div>-->
 
-            <div id="popup1" class="overlay">
->>>>>>> 808e34992fe7c5f70049cd69af48256daa9a59c6
-                <div class="popup">
-                    <h2>Create Post</h2>
-                    <label for="fname" class="floatLabel">First Name</label>
-                    <br>
-                    <input id="fname" name="fname" type="text">
-                    <a class="close" href="#">&times;</a>
-                    <div class="content">
-                        hello.
-                    </div>
-                </div>
-            </div>
-            <a routerLink="/create-post" class="create-postbtn"><ul> Create Post</ul></a>-->
-        </div>
-=======
-      </div>
->>>>>>> 1738aba1afd1ea505a3afe5d5613ed85075886a5
-    </div>
     </main>
 </body>
