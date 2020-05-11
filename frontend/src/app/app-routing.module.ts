@@ -13,11 +13,9 @@ import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { TopicsComponent } from './topics/topics.component';
 import { CreatePostComponent } from './create-post/create-post.component';
-
 import { ArticlesComponent} from './articles/articles.component';
 
-
-
+import { AuthGuard } from './auth/auth.guard'
 
 const routes: Routes = [
   { path: 'trending', component: TrendingComponent },
@@ -25,7 +23,7 @@ const routes: Routes = [
   { path: 'tags', component: TagsComponent} ,
   { path: 'team', component: TeamComponent},
   { path: 'contact', component: ContactComponent},
-  { path: 'admin', component: AdminComponent},
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
   { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent},
   { path: 'users', component: UsersComponent},

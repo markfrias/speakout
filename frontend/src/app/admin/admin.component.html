@@ -4,26 +4,31 @@
         <!--<div class = "logo">
             <img src="../../assets/Img/SPEAK OUT (EDITED).png" alt="" class="logo-image">
         </div>-->
-  
-        
+
+
     </header>
     <br>
     <div class="admin-wrapper">
         <!--left sidebar-->
         <div class="left-sidebar">
             <ul>
-                <li><a href="index.html">Manage Posts</a></li>
-                <li><a href="../users/index.html">Manage Users</a></li>
-                <li><a href="../topics/index.html">Manage Topics</a></li>
-                <li><a href="../signup">Signup</a></li>
-                <li><a href = "" class="logout">Logout</a></li>
+                <li><a routerLink='/admin'>Manage Posts</a></li>
+                <li><a routerLink='/users'>Manage Users</a></li>
+                <li><a routerLink='/topics'>Manage Topics</a></li>
+                <li><a (click)="onLogout()" class="logout" style="color: red; cursor: pointer">Logout</a></li>
             </ul>
         </div>
 
         <!--admin content-->
         <div class="admin-content">
             <div class="content">
-                <h2 class="page-title">Manage Posts</h2>
+                <div *ngIf="userDetails">
+                  <h3>Hello, {{userDetails.fname}} </h3>
+                  <p style="font-style: italic;"><b>Username:</b> {{userDetails.username}}
+                  <b> Role:</b> {{userDetails.role}}
+                  <b> Email:</b> {{userDetails.email}}</p>
+                  <h5>Manage Post: Admin Dashboard</h5>
+              </div>
 
                 <table>
                     <thead>
@@ -40,21 +45,12 @@
                             <td><a href="#" class="edit">edit</a></td>
                             <td><a href="#" class="delete">delete</a></td>
                             <td><a href="#" class="publish">publish</a></td>
-
-                        <!---
-                        <tr>
-                            <td>2</td>
-                            <td>This is the second post</td>
-                            <td>Joelson</td>
-                            <td><a href="#" class="edit">edit</a></td>
-                            <td><a href="#" class="delete">delete</a></td>
-                            <td><a href="#" class="publish">publish</a></td>
-                        </tr>
-                      -->
                     </tbody>
                 </table>
             </div>
         </div>
+
+        <!-- Create Post Popup -->
         <div class = "button-group">
             <div class = "form-popup" id="myForm">
                 <button class="open-button" onclick="openForm()">Create Post</button>
@@ -83,6 +79,17 @@
                             <input type = "text" placeholder = "Enter Message" name = "message" requiredstyle = "width: 300px; height:30vh;" rows="14" cols="10" wrap="soft">
                             <br> 
                         </p>
+                  <h1>Create Post</h1>
+
+                  <label for = "name"><b>Name</b></label>
+                  <br>
+                  <input type = "text" placeholder = "Enter Name" name = "name" required>
+                  <br>
+
+                  <label for = "message"><b> Message: </b></label>
+                  <br>
+                  <input type = "text" placeholder = "Enter Message" name = "message" required>
+                  <br>
 
                   <button type = "submit" class = "btn">Create</button>
                   <button type = "submit" class = "btn cancel" onclick = "closeForm()">Close</button>
@@ -91,6 +98,7 @@
             <div class="box">
                 <a class="createpostbtn" routerLink="/create-post" >Create Post</a>
             </div>
+<<<<<<< HEAD
             
             <script>
                 function openForm() {
@@ -102,6 +110,10 @@
                 }
             </script>
             <!--<div id="popup1" class="overlay">
+=======
+
+            <div id="popup1" class="overlay">
+>>>>>>> 808e34992fe7c5f70049cd69af48256daa9a59c6
                 <div class="popup">
                     <h2>Create Post</h2>
                     <label for="fname" class="floatLabel">First Name</label>

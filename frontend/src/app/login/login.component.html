@@ -1,12 +1,29 @@
-<div class="container">
-    <div class="main">
-        <h2>Login Form </h2>
-        <form id="form_id" method="post" name="myform">
-        <label>User Name :</label>
-        <input type="text" name="username" id="username"/>
-        <label>Password :</label>
-        <input type="password" name="password" id="password"/>
-        <input type="button" value="Login" id="submit" onclick="validate()"/>
+<body>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <h1 style="font-family: Poppins, sans-serif;">Login your SpeakOut account</h1>
+        <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
+          <input type="text" name="email" #email="ngModel" [(ngModel)]="model.email" placeholder="Email" [pattern]="emailRegex" required
+            [ngClass]="{'invalid-textbox' :signInForm.submitted && !email.valid }">
+          <div *ngIf="signInForm.submitted && email.errors?.pattern">
+            <label class="validation-message">Invalid email address.</label>
+          </div>
+
+          <input type="password" name="password" #password="ngModel" [(ngModel)]="model.password" placeholder="Password" required minlength="8"
+            [ngClass]="{'invalid-textbox' :signInForm.submitted && !password.valid }">
+          <div *ngIf="signInForm.submitted && password.errors?.minlength">
+            <label class="validation-message">Minimum 8 characters.</label>
+          </div>
+          <input type="submit" value="Login">
         </form>
+        <!-- Error message -->
+        <div class="alert" *ngIf="serverErrorMessages">
+          {{serverErrorMessages}}
+        </div>
+
+        <div style="padding: 15px; font-family: Poppins, sans-serif;">
+          Don't have an account? You can register <a routerLink='/signup'>HERE</a>
+        </div>
     </div>
-</div>
+  </div>
+</body>
