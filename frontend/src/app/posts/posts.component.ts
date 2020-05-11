@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PostsService } from './posts.service';
+import { AppComponent } from '../app.component';
+
 
 @Component({
   selector: 'app-posts',
@@ -8,9 +10,14 @@ import { PostsService } from './posts.service';
 })
 export class PostsComponent implements OnInit {
 
+  @Input() address: string;
+  @Input() likeId: string;
   posts;
   trendingPosts;
+  incrementedPost;
+  
 
+  
   constructor(private postsService : PostsService) {
     this.showPosts();
     this.showTrending();
@@ -31,4 +38,17 @@ export class PostsComponent implements OnInit {
       .subscribe((data: any) => this.trendingPosts = data
       );
   }
+
+  likeButtonAction(id: string) {
+    this.postsService.incrementLikes(id)
+      .subscribe();
+      // Temporary view refresh
+      // !! Change to refresh specific parts only !!
+      window.location.reload();
+  }
+
+  
+
 }
+
+
