@@ -9,6 +9,49 @@ nav {
     background-color: #6f3637;
 
 }
+
+/*drop down menu*/
+nav li ul {
+  position: absolute;
+  top: 35px;
+  right: 0px;
+  width: 180px;
+  display: none;
+  z-index: 88888;
+  list-style: none;
+}
+
+nav li:hover ul {
+  display: block;
+}
+
+nav li ul li {
+  width: 100%;
+}
+
+nav li ul li a {
+  padding: 10px;
+  background: none;
+  color: white;
+  display: inline-flex;
+  font-family: Poppins, serif;
+}
+
+nav li ul li a.logout {
+  color: red;
+}
+
+nav li ul li a:hover {
+  text-decoration: underline;
+  background: #0d243a;
+}
+
+nav li ul a:hover {
+  background: #d5d6d6;
+}
+
+/* added */
+
 img {
     width: 182px;
     height: 182px;
@@ -54,10 +97,6 @@ nav > ul {
    list-style: none;
    font-size: 30px;
    margin-left: 25%;
-
-
-
-
 }
 
 .navlinks {
