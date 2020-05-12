@@ -7,9 +7,23 @@
       <a class="navlinks" routerLink="/"><li>Home</li></a>
       <a class="navlinks" routerLink="/contact"><li>Contact Us</li></a>
       <a class="navlinks" routerLink='/team'><li>Meet the Team</li></a>
+    </ul>
+    <!-- Show login button when the user is not logged in -->
+    <a *ngIf='!this.userService.isLoggedIn()' class="loginbtn" id="notLoggedIn" routerLink='/login'><li><i class="fa fa-user"> Login</i></li></a>
+    <!-- Show username (with dashboard link and logout link) instead of login button when the user is logged in -->
+    <a *ngIf='this.userService.isLoggedIn()' class="loginbtn" id="logged-in">
+    <li style="color: azure;">
+      <a>
+        <i class="fa fa-user"></i>
+          Username <!-- code to display username of the logged on user to be added -->
+        <i class="fa fa-chevron-down"></i>
+      </a>
+      <ul>
+        <li><a routerLink='/admin'>Dashboard</a></li>
+        <li><a class="logout" (click)='onLogout()'>Logout</a></li>
       </ul>
-    <a class="loginbtn"routerLink='/login'><li><i class="far fa-user"> Login</i></li></a>
-
+    </li>
+    </a>
   </nav>
 </header>
 
