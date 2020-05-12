@@ -10,7 +10,7 @@ import { AppComponent } from '../app.component';
 })
 export class PostsComponent implements OnInit {
 
-  @Input() address: string;
+  @Input() numberOfLikes: string;
   @Input() likeId: string;
   posts;
   trendingPosts;
@@ -41,10 +41,13 @@ export class PostsComponent implements OnInit {
 
   likeButtonAction(id: string) {
     this.postsService.incrementLikes(id)
-      .subscribe();
+      .subscribe((data: any) => this.posts = data
+      );
+      this.showPosts();
+      
       // Temporary view refresh
       // !! Change to refresh specific parts only !!
-      window.location.reload();
+     
   }
 
   

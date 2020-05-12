@@ -146,13 +146,8 @@ form div {
 
 
 
-<<<<<<< HEAD
-/* Popup CSS */
-{box-sizing: border-box;}
-=======
 /* Create post css
 {box-sizing: border-box;} */
->>>>>>> 1738aba1afd1ea505a3afe5d5613ed85075886a5
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
@@ -3013,7 +3008,6 @@ video.responsive-video {
 .breadcrumb [class^="mdi-"], .breadcrumb [class*="mdi-"],
 .breadcrumb i.material-icons {
   display: inline-block;
-  float: left;
   font-size: 24px;
 }
 
@@ -5941,6 +5935,7 @@ body.keyboard-focused .dropdown-content li:focus {
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+  mask-image: radial-gradient(circle, white 100%, black 100%);
 }
 
 .waves-input-wrapper {
@@ -5962,6 +5957,7 @@ body.keyboard-focused .dropdown-content li:focus {
   line-height: 2.5em;
   border-radius: 50%;
   -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .waves-block {
@@ -6275,6 +6271,7 @@ body.keyboard-focused .dropdown-content li:focus {
   -webkit-transition: opacity .4s;
   transition: opacity .4s;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .materialboxed:hover:not(.active) {
@@ -7072,9 +7069,6 @@ textarea.materialize-textarea {
   pointer-events: none;
 }
 
-[type="checkbox"] {
-  /* checkbox aspect */
-}
 
 [type="checkbox"] + span:not(.lever) {
   position: relative;
