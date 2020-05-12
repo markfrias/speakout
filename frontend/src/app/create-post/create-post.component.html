@@ -9,9 +9,14 @@
                     <div **ngIf="create-postForm.submitted && !name.valid">
                         <label class = "validation-message"> Please enter a name</label>
                     </div>
-            
                 <p>
-                    <input style = "width: 370px;" id="name" name="topic" type="text" placeholder="Enter Topic" autocomplete="off">
+                    <input style = "width: 370px;" id="topic" name="topic" type="text" placeholder="Enter Topic" autocomplete="off">
+                </p>
+                <p>
+                    <input style = "width: 370px;" id="title" name="title" type="text" placeholder="Enter Title" autocomplete="off">
+                </p>
+                <p>
+                    <input style = "width: 370px;" id="description" name="description" type="text" placeholder="Enter Description" autocomplete="off">
                 </p>
                 <p>
                     <textarea id = "message" name = "message" type="text" style = "width: 370px; height:30vh;" rows="14" cols="10" wrap="soft" placeholder="Enter Your Message" ></textarea>
