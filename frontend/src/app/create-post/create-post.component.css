@@ -1,20 +1,24 @@
+html {
+  background-color: #56baed;
+}
 body {
   font-family: monospace;
   font-size: 10px;
   height: 75vh;
   align-content: center;
+  /*background: #ce8054;*/
 }
 form {
-  background: #ce8054;
+  background-color: #56baed;
   opacity: 85%;
   padding: 4em 4em 2em;
   max-width: 400px;
   margin: 50px auto 0;
-  box-shadow: 0 0 1em #222;
+  box-shadow: 0 0 2em #222;
   border-radius: 2px;
   box-align: center;    
 }
-.h2 {
+.h1 {
   margin:0 0 50px 0;
   padding:10px;
   text-align:center;
@@ -87,322 +91,136 @@ form {
   font-size: 14px;
 } 
 
-
-
-
-
-/*body {
-  font-family: Arial, sans-serif;
-  background: darksalmon;
-  background-size: cover;
-  height: 100vh;
-  margin-left: 50px;
-}
-
-h1 {
-  text-align: center;
-  font-family: Tahoma, Arial, sans-serif;
-  color: #06D85F;
-  margin: 80px 0;
-}
-
-.box {
-  width: 40%;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.2);
-  padding: 35px;
-  border: 2px solid #fff;
-  border-radius: 20px/50px;
-  background-clip: padding-box;
-  text-align: center;
-}
-
-.button {
-  font-size: 1em;
-  padding: 10px;
-  color: #fff;
-  border: 2px solid #06D85F;
-  border-radius: 20px/50px;
-  text-decoration: none;
+input[type=button], input[type=submit], input[type=reset]  {
   cursor: pointer;
-  transition: all 0.3s ease-out;
-}
-.button:hover {
-  background: #06D85F;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-}
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
-}
-
-.popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 30%;
-  position: relative;
-  transition: all 5s ease-in-out;
-}
-
-.popup h2 {
-  margin-top: 0;
-  color: #333;
-  font-family: Tahoma, Arial, sans-serif;
-}
-.popup .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-.popup .close:hover {
-  color: #06D85F;
-}
-.popup .content {
-  max-height: 30%;
-  overflow: auto;
-}
-
-@media screen and (max-width: 700px){
-  .box{
-    width: 70%;
-  }
-  .popup{
-    width: 70%;
-  }
-}
-||
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: linear-gradient(#e0eafc, #cfdef3);
-    height: 100vh;
-}
-.center, .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-#click {
-    display: none;
-}
-.click me {
-    display: block;
-    width: 160px;
-    height: 50px;
-    background: #27ae60;
-    border: 1px solid #26a65b;
-    color: white;
-    text-align: center;
-    line-height: 50px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: .5s;
-}
-.click-me:hover {
-    background: blue;
-}
-.content {
-    opacity: 0;
-    visibility: hidden;
-    width: 400px;
-    height: 350px;
-    background: white;
-    border-radius: 3px;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,4);
-    transition: .3s ease-in;
-}
-#click:checked ~ .CONTENT {
-    opacity: 1;
-    visibility: visible;
-}
-.header {
-    height: 68px;
-    background: green;
-    overflow: hidden;
-    border-radius: 3px 3px 0 0;
-    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
-
-}
-.header h2 {
-    color: white;
-    padding-left: 32px;
-    font-weight: normal;
-}
-.fa-times {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    color: pink;
-    font-weight: bold;
-    cursor: pointer;
-}
-.fa-check {
-    margin: 30px 0 0 160px;
-    font-size: 50px;
-    color: purple;
-    font-weight: bold;
-    height: 80px;
-    width: 80px;
-    border: 1px solid magenta;
-    text-align: center;
-    padding-top: 13px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    margin: 30px 0 0 160px;
-
-}
-p{
-    padding-top: 10px;
-    font-size: 19px;
-    color: darksalmon;
-    text-align: center;
-
-}
-.line {
-    bottom: 60px;
-    width: 100%;
-    height: 1px;
-    background: silver;
-}
-.close-btn {
-    position: absolute;
-    bottom: 12px;
-    right: 25px;
-    border: 1px solid black;
-    border-radius: 3px;
-    color: darkslategray;
-    padding: 8px 10px;
-    font-size: 18x;
-    cursor: pointer;
-}
-.close-btn:hover {
-    background: gray;
-    color: white;
-    transition: .5s;
-}
-
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
-}
-body{
-  background: #f2f2f2;
-  text-align: center;
-  overflow: hidden;
-}
-.show-btn{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  user-select: none;
-  transform: translate(-50%, -50%);
-}
-.show-btn.disabled{
-  pointer-events: none;
-}
-.modal{
-  position: absolute;
-  right: 0;
-  opacity: 0;
-  bottom: -100%;
-  width: 360px;
-  transition: bottom 0.4s, opacity 0.4s;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
-}
-.modal.show{
-  bottom: 0;
-  opacity: 1;
-}
-.modal .top-content{
-  background: #34495e;
-  width: 100%;
-  padding: 0 0 30px 0;
-}
-.top-content .left-text{
-  text-align: left;
-  padding: 10px 15px;
-  font-size: 18px;
-  color: #f2f2f2;
-  font-weight: 500;
-  user-select: none;
-}
-.top-content .close-icon{
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 23px;
-  color: silver;
-  cursor: pointer;
-}
-.close-icon:hover{
-  color: #b6b6b6;
-}
-.top-content .fa-camera-retro{
-  font-size: 80px;
-  color: #f2f2f2;
-}
-.modal .bottom-content{
-  background: white;
-  width: 100%;
-  padding: 15px 20px;
-}
-.bottom-content .text{
-  font-size: 28px;
-  font-weight: 600;
-  color: #34495e;
-}
-.bottom-content p{
-  font-size: 18px;
-  line-height: 27px;
-  color: grey;
-}
-.bottom-content .close-btn{
-  padding: 15px 0;
-}
-.show-btn button,
-.close-btn button{
-  padding: 9px 13px;
-  background: #27ae60;
+  background-color: grey;
   border: none;
-  outline: none;
-  font-size: 18px;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   text-transform: uppercase;
-  border-radius: 3px;
-  color: #f2f2f2;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
+  font-size: 13px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.show-btn button{
-  padding: 12px 15px;
-}
-.show-btn button:hover,
-.close-btn button:hover{
-  background: #26a65b;
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  background-color: #39ace7;
 }
 
-*/
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+/* Simple CSS3 Fade-in-down Animation */
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+/* Simple CSS3 Fade-in Animation */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fadeIn {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+/* Simple CSS3 Fade-in Animation 
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #56baed;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #0d0d0d;
+}
+
+.underlineHover:hover:after{
+  width: 100%;
+}*/
