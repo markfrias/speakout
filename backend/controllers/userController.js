@@ -84,7 +84,7 @@ router.get('/:id', (req, res) => {
 });
 
 //edit or update user information
-router.put('/:id', (req, res, next) => {
+router.patch('/:id', (req, res, next) => {
     //check if the user exists in the database
     User.exists({ _id: req.params.id }).then((result) => {
         if (!result) {
