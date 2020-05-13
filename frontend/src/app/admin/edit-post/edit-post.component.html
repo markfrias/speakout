@@ -1,0 +1,30 @@
+<form [formGroup]="editPostForm" (ngSubmit)="onSubmit()">
+
+    <label>
+        Title:
+        <input type="text" formControlName="title">
+    </label>
+
+    <label>
+        Description:
+        <input type="text" formControlName="postDescription">
+    </label>
+
+    <label>
+        Author (optional):
+        <input type="text" formControlName="author">
+    </label>
+
+    <label>
+        Body:
+        <input type="text" formControlName="postBody">
+    </label>
+
+    <label>
+        Topics:
+        <input type="text" formControlName="topics">
+    </label>
+
+    <button type="submit" [disabled]="!editPostForm.valid">Submit</button>
+
+</form>
