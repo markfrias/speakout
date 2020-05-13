@@ -37,9 +37,9 @@
                             <td>{{post.title}}</td>
                             <td>{{post.author}}</td>
                             <td>
-                              <!-- edit button -->a
-                              <a class="action-btn edit"  title="Edit or update Post">
-                                <i class="material-icons" routerLink="/edit-user" >edit</i> <!-- edit function has to be added -->
+                              <!-- edit button -->
+                              <a class="action-btn edit" title="Edit or update Post" routerLink="/edit-post/{{post._id}}">
+                                <i class="material-icons">edit</i> <!-- edit function has to be added -->
                               </a>
                               <!-- delete button -->
                               <a class="action-btn delete" title="Delete Post">
