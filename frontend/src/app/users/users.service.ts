@@ -27,6 +27,6 @@ constructor(private http: HttpClient) { }
 
   //edit user in the database (put method)
   editUser(user : User) {
-    return this.http.put(this.baseURL + `/${user._id}`, user);
+    return this.http.patch(this.baseURL + `/${user._id}`, user);
   }
 }
