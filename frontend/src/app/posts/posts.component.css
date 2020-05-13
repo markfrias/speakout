@@ -83,6 +83,22 @@ p {
     font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
+
+@media (prefers-color-scheme: dark) {
+    .post {
+        background-color: #562221;
+        color: white;
+    }
+
+    .recent-posts {
+        background-color: black;
+    }
+
+    body, .sidebar {
+        background-color: black;
+    }
+}
+
 @media only screen and (max-width:1050px) {
     .recent-posts {
         background-color: rgb(192, 192, 192, 0.3);

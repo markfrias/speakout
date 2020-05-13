@@ -1,4 +1,4 @@
-<form [formGroup]="editPostForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="editPostForm" (keydown.enter)="$event.preventDefault()">
 
     <label>
         Title:
@@ -25,6 +25,15 @@
         <input type="text" formControlName="topics">
     </label>
 
-    <button type="submit" [disabled]="!editPostForm.valid">Submit</button>
+    <button type="button" [disabled]="!editPostForm.valid" (click)="onSubmit()">Submit</button>
 
+    <div id="editorjs"></div>
+    <button (click)="onSave()">Save</button>
 </form>
+
+
+<div *ngIf="bodyData != undefined">
+    <div class="output" *ngFor="let block of bodyData.blocks">
+        <p>{{block.data.text}}</p>
+     </div>
+</div>

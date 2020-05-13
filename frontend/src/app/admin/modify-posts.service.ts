@@ -15,5 +15,16 @@ export class ModifyPostsService {
       
     );
     console.log("hello");
+
+    
+  }
+
+  submitBody(data, id) {
+    console.log("Service reached");
+    this.httpClient.patch<any>('http://127.0.0.1:3300/posts/body/' + id, data).subscribe(
+      (res) => console.log(res),
+      (err) => console.log(err),
+    );
+    console.log(id);
   }
 }
