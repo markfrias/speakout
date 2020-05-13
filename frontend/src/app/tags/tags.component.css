@@ -26,6 +26,7 @@
 
 h1 {
     text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
 }
 h2 {
@@ -40,6 +41,7 @@ li {
     text-align: left;
     padding-top: 25px;
     color: #233342;
+    cursor: pointer;
 }
 /*read more link */
 a:link {

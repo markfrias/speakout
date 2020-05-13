@@ -2,6 +2,29 @@
 <p>{{articles.postDescription}}</p>
 <img [src]=" 'http://127.0.0.1:3300/uploads/' + articles.bannerImageName" *ngIf="articles.bannerImageName != null">
 <p>{{articles.postBody}}</p>
+
+<div class="comments-section">
+    <h2>Comments</h2>
+    <div class="comments" *ngFor="let article of articles.comments">{{article}}</div>
+
+    <div class="comment-post">
+       <input type="text" [formControl]="comment" >
+       <input type="button" value="Submit" (click)="showComment()">
+       <p>{{commentData}}</p>
+    </div>
+
+    <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+        <label>
+            Comment:
+            <input type="text" formControlName="comments">
+        </label>
+
+       
+
+        <button type="submit" [disabled]="!commentForm.valid">Submit</button>
+    </form>
+</div>
+
 <!--<input type="file" (change)="onFileSelect($event)">
 <button type="submit" (submit)="onSubmit()">Submit</button>
 <img [src]="url"> -->

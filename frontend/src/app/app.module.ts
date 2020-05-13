@@ -4,6 +4,8 @@ import { RouterModule, Routes} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -67,6 +69,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [{
