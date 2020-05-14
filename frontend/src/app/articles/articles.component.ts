@@ -61,16 +61,6 @@ export class ArticlesComponent implements OnInit {
     console.log(this.commentData);
   }
 
-  showComment() {
-    console.log(this.comment.value);
-    this.comment.valueChanges
-      .subscribe((data: any) => this.commentData = data 
-    );
-    console.log(this.commentData);
-  }
-
-  onSubmit() {
-    console.warn(this.commentForm.value);
   onSubmit() {
     console.warn(this.commentForm.value);
     console.log(this.postId);
