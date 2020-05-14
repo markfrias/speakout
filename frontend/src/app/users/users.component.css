@@ -3,7 +3,7 @@ body {
     padding: 0px;
     margin: 0px;
     font-family: Poppins, sans-serif;
-    overflow: hidden;
+    overflow: auto;
 }
 main{
     background-color: rgba(252, 246, 246, 0.925);
@@ -63,7 +63,7 @@ a.action-btn.delete:hover {
 
 .admin-wrapper .left-sidebar {
     flex: 2; /* 20% 0f the width */
-    height: 94vh;
+    min-height: 100%;
     background: #0d243a;
 }
 
