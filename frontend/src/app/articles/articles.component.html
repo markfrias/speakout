@@ -5,6 +5,7 @@
         <div class="blocks" *ngFor="let block of articles.postBody[0].blocks">
             <p class="paragraph-block" *ngIf="(block.type).includes('paragraph')" [innerHTML]="block.data.text"></p>
             <img class="image-block" [src]="block.data.file.url" *ngIf="(block.type).includes('image')">
+            <h2 class="header-block" *ngIf="(block.type).includes('header')" [innerHTML]="block.data.text"></h2>
         </div>
     </div>
 
