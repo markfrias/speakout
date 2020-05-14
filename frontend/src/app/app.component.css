@@ -1,3 +1,7 @@
+.active {
+    color: yellow;
+    background-color: blue;
+}
 
 nav {
     display:flex;

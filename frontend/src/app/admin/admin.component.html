@@ -11,7 +11,7 @@
                 <li><a (click)="onLogout()" class="logout" style="color: red; cursor: pointer">Logout</a></li>
             </ul>
         </div>
-    </div>
+
         <!--admin content-->
         <div class="admin-content">
             <div class="content">
@@ -20,7 +20,7 @@
                   <p style="font-style: italic;"><b>Username:</b> {{userDetails.username}} |
                   <b> Role:</b> {{userDetails.role}}
                   <b> Email:</b> {{userDetails.email}}</p>
-                  <h5>Manage Post: Admin Dashboard</h5>
+                  <h5>Admin Dashboard: Manage Post</h5>
                 </div>
 
                 <table class="responsive-table highlight" style="overflow: scroll;">
@@ -37,9 +37,9 @@
                             <td>{{post.title}}</td>
                             <td>{{post.author}}</td>
                             <td>
-                              <!-- edit button -->a
-                              <a class="action-btn edit"  title="Edit or update Post">
-                                <i class="material-icons" routerLink="/edit-user" >edit</i> <!-- edit function has to be added -->
+                              <!-- edit button -->
+                              <a class="action-btn edit" title="Edit or update Post" routerLink="/edit-post/{{post._id}}">
+                                <i class="material-icons">edit</i> <!-- edit function has to be added -->
                               </a>
                               <!-- delete button -->
                               <a class="action-btn delete" title="Delete Post">
@@ -52,20 +52,6 @@
             </div>
 
         </div>
-
-            <div id="popup1" class="overlay">
-                <div class="popup">
-                    <h2>Create Post</h2>
-                    <label for="fname" class="floatLabel">First Name</label>
-                    <br>
-                    <input id="fname" name="fname" type="text">
-                    <a class="close" href="#">&times;</a>
-                    <div class="content">
-                        hello.
-                    </div>
-                </div>
-            </div>
-            <a routerLink="/create-post" class="create-postbtn"><ul> Create Post</ul></a>-->
-        
+      </div>
     </main>
 </body>

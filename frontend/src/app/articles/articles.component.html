@@ -3,6 +3,14 @@
 <img [src]=" 'http://127.0.0.1:3300/uploads/' + articles.bannerImageName" *ngIf="articles.bannerImageName != null">
 <p>{{articles.postBody}}</p>
 
+
+    <p>{{articles.title}}</p>
+    <p>{{articles.postDescription}}</p>
+    <img [src]=" 'http://127.0.0.1:3300/uploads/' + articles.bannerImageName" *ngIf="articles.bannerImageName != null">
+    <p>{{articles.postBody}}</p>
+
+
+
 <div class="comments-section">
     <h2>Comments</h2>
     <div class="comments" *ngFor="let article of articles.comments">{{article}}</div>
