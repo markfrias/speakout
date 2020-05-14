@@ -1,41 +1,43 @@
+<h1 id="pageTitle">Edit Post</h1>
+
 <form [formGroup]="editPostForm" (keydown.enter)="$event.preventDefault()">
 
     <label>
         Title:
-        <input type="text" formControlName="title">
     </label>
+    <input type="text" formControlName="title">
 
     <label>
         Description:
-        <input type="text" formControlName="postDescription">
     </label>
+    <input type="text" id="description" formControlName="postDescription">
+
 
     <label>
         Author (optional):
-        <input type="text" formControlName="author">
     </label>
-
-    <label>
-        Body:
-        
-    </label>
+    <input type="text" formControlName="author">
 
     <label>
         Topics:
-        <input type="text" formControlName="topics">
+    </label>
+    <input type="text" formControlName="topics">
+
+    <label id="bodyLabel">
+        Body:
     </label>
 
 
     
 </form>
 
+
 <div id="editorjs"></div>
-    <button (click)="onSave()">Save</button>
     <button type="button" [disabled]="!editPostForm.valid" (click)="onSubmit()">Submit</button>
 
 
-<div *ngIf="bodyData != undefined">
+<!--<div *ngIf="bodyData != undefined">
     <div class="output" *ngFor="let block of bodyData.blocks">
         <p>{{block.data.text}}</p>
      </div>
-</div>
+</div> -->

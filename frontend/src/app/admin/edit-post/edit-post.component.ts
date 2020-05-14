@@ -82,6 +82,7 @@ export class EditPostComponent implements OnInit {
     setTimeout(() => {
         this.editor = new EditorJS({
           autofocus: true,
+          minHeight: 50,
 
           tools: {
             header: Header,
@@ -161,12 +162,13 @@ export class EditPostComponent implements OnInit {
     setTimeout(() => {
       console.log(this.postContent);
       this.fillForm();
-    }, 150)
+    }, 250)
   }
 
   onSubmit() {
     console.log(this.editPostForm.value);
     this.modifyPostsService.submitForm(this.editPostForm.value, this.postId);
+    this.onSave();
   }
 
   fillForm() {

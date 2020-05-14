@@ -8,12 +8,46 @@
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-form > div, p, label, input, button {
-    margin-bottom: 2vh;
+form > div, p, label, input {
+    margin-bottom: 4vh;
+    
 }
 
 label {
     font-size: 2em;
 }
+
+form > input {
+    width: 50%;
+    height: 5vh;
+    font-size: 1.5em;
+}
+
+button {
+    margin: 0% 50% 0% 50%;
+    padding: 0%;
+    height: 5vh;
+    width: 10vw;
+    font-size: 1.5em;
+    background-color: slategray;
+    border: solid 1px maroon;
+    cursor: pointer;
+    
+}
+
+#description {
+    height: 7vh;
+    font-size: 1em;
+}
+
+#bodyLabel {
+    margin-top: 2vh;
+}
+
+#pageTitle {
+    text-align: center;
+}
+
