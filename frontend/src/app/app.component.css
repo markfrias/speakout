@@ -3,6 +3,7 @@
 .active {
     color: yellow;
     background-color: blue;
+    
 }
 
 nav {
@@ -21,18 +22,22 @@ nav li ul {
   position: absolute;
   top: 35px;
   right: 0px;
-  width: 180px;
+  width: 80px;
   display: none;
   z-index: 88888;
   list-style: none;
+ 
+
 }
 
 nav li:hover ul {
   display: block;
+  background-color:#6f3637 ;
 }
 
 nav li ul li {
   width: 100%;
+  color: #6f3637;
 }
 
 nav li ul li a {
@@ -41,10 +46,12 @@ nav li ul li a {
   color: white;
   display: inline-flex;
   font-family: Poppins, serif;
+
 }
 
 nav li ul li a.logout {
   color: red;
+  text-decoration: none;
 }
 
 nav li ul li a:hover {
@@ -54,8 +61,8 @@ nav li ul li a:hover {
 
 nav li ul a:hover {
   background: #d5d6d6;
-}
 
+}
 /* added */
 
 img {
@@ -74,8 +81,6 @@ a.navlinks {
 
 
 
-
-
 }
 /*link unvisited*/
 a:link {
@@ -83,6 +88,7 @@ a:link {
     color: rgb(247, 193, 56);
     text-decoration: none;
     padding-top: 5px
+
 
 
 }
@@ -126,8 +132,11 @@ a.adminbtn {
     font-size: 18px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: absolute;
+
+
 }
 .loginbtn {
+   
     list-style: none;
     cursor: pointer;
     list-style: none;
@@ -225,22 +234,8 @@ font-size:32px;
 
 /*mobile responsive */
 @media only screen and (max-width:1250px) {
-    .adminbtn {
-        cursor: pointer;
-        list-style: none;
-        list-style: none;
-        color:rgb(75, 75, 235);
-        float: right ;
-
-    }
-    a.adminbtn {
-        display: flex;
-        text-align: end;
-        margin-left: 80%;
-        font-size: 15px;
-        position: absolute;
-
-    }
+    
+    
     .loginbtn {
         cursor: pointer;
         list-style: none;
@@ -397,7 +392,7 @@ a.loginbtn {
     a.loginbtn {
         display: flex;
         text-align: end;
-        margin-left: 86%;
+        margin-left: 75%;
         font-size: 15px;
         position: absolute;
     }
@@ -427,4 +422,18 @@ a.loginbtn {
 
     }
 
+}
+@media only screen and (max-width: 855px) {
+
+.loginbtn {
+    cursor: pointer;
+    list-style: none;
+    list-style: none;
+  
+    float: right ;
+}
+a.loginbtn {
+    margin-left: 75%;
+
+}
 }
