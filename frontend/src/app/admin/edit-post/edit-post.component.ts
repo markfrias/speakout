@@ -86,9 +86,6 @@ export class EditPostComponent implements OnInit {
 
           tools: {
             header: Header,
-            linkTool:  {
-              class: LinkTool
-            },
             image: {
               class: ImageTool,
               config: {
@@ -148,7 +145,7 @@ export class EditPostComponent implements OnInit {
           version: this.postContent.postBody[0].version
           }
         });
-      }, 2000)
+      }, 750)
       
     
   }

@@ -1,13 +1,15 @@
+    <h1 id="title">{{articles.title}}</h1>
+    <h2 id="description">{{articles.postDescription}}</h2>
+
+    <div id="body" *ngIf="articles.postBody[0] != undefined">
+        <div class="blocks" *ngFor="let block of articles.postBody[0].blocks">
+            <div class="paragraph-block" *ngIf="(block.type).includes('paragraph')" [innerHTML]="block.data.text"></div>
+        </div>
+    </div>
 
 
-    <p>{{articles.title}}</p>
-    <p>{{articles.postDescription}}</p>
-    <img [src]=" 'http://127.0.0.1:3300/uploads/' + articles.bannerImageName" *ngIf="articles.bannerImageName != null">
-    <p>{{articles.postBody}}</p>
 
-
-
-<div class="comments-section">
+<!--<div class="comments-section">
     <h2>Comments</h2>
     <div class="comments" *ngFor="let article of articles.comments">{{article}}</div>
 
@@ -27,7 +29,7 @@
 
         <button type="submit" [disabled]="!commentForm.valid">Submit</button>
     </form>
-</div>
+</div> -->
 
 <!--<input type="file" (change)="onFileSelect($event)">
 <button type="submit" (submit)="onSubmit()">Submit</button>
