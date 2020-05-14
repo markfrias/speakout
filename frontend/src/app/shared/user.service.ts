@@ -15,7 +15,7 @@ export class UserService {
     username: '',
     email: '',
     address: '',
-    phoneNumber: null,
+    phoneNumber: '',
     password: '',
     role: ''
   };
@@ -26,6 +26,10 @@ export class UserService {
   //Http Methods
   postUser(user: User){
     return this.http.post(this.baseURL, user, this.noAuthHeader);
+  }
+  //edit user in the database (put method)
+  editUser(user : User) {
+    return this.http.patch(this.baseURL + `/${user._id}`, user, this.noAuthHeader);
   }
 
   login(authCredentials) {

@@ -19,17 +19,45 @@ export class UsersComponent implements OnInit {
   users;
   userDetails;
 
-  constructor(private manageUserService : UsersService, private userService: UserService, private router: Router) {
+  constructor(private manageUserService : UsersService, public userService: UserService, private router: Router) {
     this.showUsers();
   }
 
   ngOnInit(): void {
+    this.resetForm();
     this.refreshUsersList();
     this.userService.getUserProfile().subscribe(
       res => {
         this.userDetails = res['user'];
       }
     );
+  }
+
+  resetForm(form ?: NgForm) {
+    if (form)
+      form.reset();
+    this.userService.selectedUser = {
+      _id: "",
+      fname: "",
+      lname: "",
+      username: "",
+      email: "",
+      address: "",
+      phoneNumber: "",
+      password: "",
+      role: "",
+    }
+  }
+
+  onUpdate(form: NgForm) {
+    this.userService.editUser(form.value).subscribe(res => {
+         //reset form after updating user info
+         this.resetForm(form);
+         alert('User record updated Successfully');
+       },
+       err => {
+         alert('Error in updating user profile:' + JSON.stringify(err, undefined, 2));
+       });
   }
 
   //refresh users list
