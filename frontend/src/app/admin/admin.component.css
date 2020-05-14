@@ -3,7 +3,7 @@ html, body {
     padding: 0px;
     margin: 0px;
     font-family: Poppins, sans-serif;
-    overflow: hidden;
+    overflow: auto;
 }
 main{
     background-color: rgba(252, 246, 246, 0.925);
@@ -89,7 +89,7 @@ a.action-btn.delete:hover {
 
 .admin-wrapper .admin-content {
     flex: 9; /* 90% of the width */
-    height: 100%;
+    min-height: 100%;
     padding: 20px;
 
 }

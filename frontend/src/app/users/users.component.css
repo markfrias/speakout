@@ -3,7 +3,7 @@ body {
     padding: 0px;
     margin: 0px;
     font-family: Poppins, sans-serif;
-    overflow: hidden;
+    overflow: auto;
 }
 main{
     background-color: rgba(252, 246, 246, 0.925);
