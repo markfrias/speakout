@@ -6,6 +6,11 @@
             <p class="paragraph-block" *ngIf="(block.type).includes('paragraph')" [innerHTML]="block.data.text"></p>
             <img class="image-block" [src]="block.data.file.url" *ngIf="(block.type).includes('image')">
             <h2 class="header-block" *ngIf="(block.type).includes('header')" [innerHTML]="block.data.text"></h2>
+            <div class="list-block" *ngIf="(block.type).includes('list')">
+                <ul *ngFor="let item of block.data.items">
+                    <li>{{item}}</li>
+                </ul>
+            </div>
         </div>
     </div>
 
