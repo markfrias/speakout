@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'users', component: UsersComponent},
   { path: 'topics', component: TopicsComponent},
-  {path: 'create-post', component: CreatePostComponent},
+  {path: 'create-post', component: CreatePostComponent, canActivate: [AuthGuard]},
   { path: 'articles/:id', component: ArticlesComponent },
   { path: 'edit-post/:id', component: EditPostComponent},
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
