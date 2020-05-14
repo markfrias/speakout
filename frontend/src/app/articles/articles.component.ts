@@ -5,6 +5,9 @@ import { PostsService } from '../posts/posts.service';
 import { Observable } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
 import { CommentsService } from './comments.service';
+import { Post } from '../posts/post';
+
+
 
 @Component({
   selector: 'app-articles',
@@ -29,7 +32,7 @@ export class ArticlesComponent implements OnInit {
     private commentService: CommentsService
 
   ) { 
-    
+
   }
 
   ngOnInit() {
@@ -37,15 +40,17 @@ export class ArticlesComponent implements OnInit {
       this.postId = params['id'].toString();
       console.log(this.postId);
       this.showArticle(this.postId);
-      console.log(this.articles);
     });
   }
 
   showArticle(id) {
       this.postsService.getSpecificPost(id)
-      .subscribe((data: any) => this.articles = data
+      .subscribe((result: any) => this.articles = result
       );
-      console.log(this.articles);
+      setTimeout( () => {
+        console.log(this.articles);
+      }, 3000)
+      
   }
 
   showComment() {
@@ -58,6 +63,7 @@ export class ArticlesComponent implements OnInit {
 
   onSubmit() {
     console.warn(this.commentForm.value);
+    console.log(this.postId);
     this.commentService.fetchForm(this.commentForm.value, this.postId);
     
     // Set timeout before refreshing article contents

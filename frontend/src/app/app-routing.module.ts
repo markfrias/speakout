@@ -16,6 +16,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { ArticlesComponent} from './articles/articles.component';
 
 import { AuthGuard } from './auth/auth.guard'
+import { EditPostComponent } from './admin/edit-post/edit-post.component';
 
 const routes: Routes = [
   { path: 'trending', component: TrendingComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'topics', component: TopicsComponent},
   {path: 'create-post', component: CreatePostComponent},
   { path: 'articles/:id', component: ArticlesComponent },
+  { path: 'edit-post/:id', component: EditPostComponent},
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

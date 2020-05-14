@@ -4,9 +4,9 @@
     <div routerLink="/"></div>
     <img src="assets/Img/SPEAK OUT (EDITED).png">
     <ul>
-      <a class="navlinks" routerLink="/"><li>Home</li></a>
-      <a class="navlinks" routerLink="/contact"><li>Contact Us</li></a>
-      <a class="navlinks" routerLink='/team'><li>Meet the Team</li></a>
+      <a class="navlinks" routerLink="/posts" [routerLinkActive]="['active-link']"><li>Home</li></a>
+      <a class="navlinks" routerLink="/contact" routerLinkActive="active-link"><li>Contact Us</li></a>
+      <a class="navlinks" routerLink='/team' routerLinkActive="active-link"><li>Meet the Team</li></a>
     </ul>
     <!-- Show login button when the user is not logged in -->
     <a *ngIf='!this.userService.isLoggedIn()' class="loginbtn" id="notLoggedIn" routerLink='/login'><li><i class="fa fa-user"> Login</i></li></a>

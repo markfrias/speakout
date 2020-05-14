@@ -15,7 +15,7 @@ export class UserService {
     username: '',
     email: '',
     address: '',
-    phoneNumber: null,
+    phoneNumber: '',
     password: '',
     role: ''
   };
