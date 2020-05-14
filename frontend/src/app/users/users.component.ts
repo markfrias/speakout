@@ -58,7 +58,7 @@ export class UsersComponent implements OnInit {
          alert('Error in updating user profile:' + JSON.stringify(err, undefined, 2));
        });
   }
-  
+
   //refresh users list
   refreshUsersList() {
     this.manageUserService.getUsers().subscribe((res) => {
