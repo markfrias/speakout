@@ -62,7 +62,7 @@ export class EditPostComponent implements OnInit {
       setTimeout(()=> {
         this.showPostContent(this.postId);
 
-      }, 100)
+      }, 500)
       //console.log(this.articles);
       
     });
@@ -145,7 +145,7 @@ export class EditPostComponent implements OnInit {
           version: this.postContent.postBody[0].version
           }
         });
-      }, 750)
+      }, 3000)
       
     
   }
@@ -159,7 +159,7 @@ export class EditPostComponent implements OnInit {
     setTimeout(() => {
       console.log(this.postContent);
       this.fillForm();
-    }, 250)
+    }, 5000)
   }
 
   onSubmit() {
