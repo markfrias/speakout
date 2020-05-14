@@ -64,6 +64,9 @@ export class ArticlesComponent implements OnInit {
     console.log(this.commentData);
   }
 
+  
+
+  
   onSubmit() {
     console.warn(this.commentForm.value);
     console.log(this.postId);
