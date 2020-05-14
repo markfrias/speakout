@@ -91,32 +91,47 @@ p {
     }
 
     .recent-posts {
-        background-color: black;
+        background-color: rgb(83, 80, 80);
     }
 
     body, .sidebar {
-        background-color: black;
+        background-color: rgb(196, 192, 192);
+        }
+    a{
+            text-decoration: none;
+            color: rgb(245, 210, 210);
+        }
+    a:hover {
+        color: goldenrod;
+    }
+    a:active {
+        color: lightslategray;
+    }
+    a:visited {
+        color: #6186a8;
     }
 }
 
 @media only screen and (max-width:1050px) {
     .recent-posts {
-        background-color: rgb(192, 192, 192, 0.3);
+        
         width: 90%;
         float: left;
         margin: 50px; 
     }
 
     .post {
-    background-color:whitesmoke ;
     margin: 25px;
     padding: 10px;
     border-radius: 8px;
     }
+    p{
+        text-align: center;
+    }
     .sidebar{
         width: 90%;
         float: left;  
-        background-color: #5d6d85;
+       
         margin: 50px;
     }
     .trending-section ul li {
@@ -132,15 +147,13 @@ p {
 @media only screen and (max-width: 934px) { 
     
     .recent-posts {
-        background-color: rgb(192, 192, 192, 0.3);
         width: 90%;
         float: left;
         margin: 50px;
     
     }
     
-    .post {
-    background-color:whitesmoke ;
+    .post { 
     margin: 25px;
     padding: 10px;
     border-radius: 8px;
@@ -156,7 +169,6 @@ p {
     .sidebar{
         width: 90%;
         float: left;  
-        background-color: #5d6d85;
         margin: 50px;
         
     }
