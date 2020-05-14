@@ -21,46 +21,24 @@
               <b> Email:</b> {{userDetails.email}}</p>
               <h5>Manage Users: Admin Dashboard</h5>
             </div>
-            
-            <div class="row">
-              <div class="col s12">
-                <div class="card">
-                  <div class="card-content white-text">
-                    <div class="row">
-                      <div class="col s5">
-                        <form #userForm="ngForm" (ngSubmit)="onUpdate(userForm)" autocomplete="off">
-                          <input type="hidden" name="_id" >
-                          <div class="row">
-                            <div class="input-field col s12">
-                              <input type="text" name="fname" #fname="ngModel" [(ngModel)]="userService.selectedUser.fname" required>
-                              <label>First Name :
-                                <label class="red-text">*</label>
-                              </label>
-                            </div>
+
+            <div style="display: flex;">
+              <div class="col s5" style="flex: 3; border-right: cadetblue 1px solid;">
+                <form #userForm="ngForm" (ngSubmit)="onUpdate(userForm)" autocomplete="off">
+                  <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input type="text" name="fname" #fname="ngModel" [(ngModel)]="userService.selectedUser.fname" placeholder="First Name" required>
+                            <label>First Name :
+                              <label class="red-text">*</label>
+                            </label>
                           </div>
-
-                            <div class="row">
-                              <div class="input-field col s12">
-                                <input type="text" name="lname" #lname="ngModel" [(ngModel)]="userService.selectedUser.lname" required>
-                                <label>Last Name :
-                                  <label class="red-text">*</label>
-                                </label>
-                              </div>
-                            </div>
-
-                            <div class="row">
-                              <div class="input-field col s12">
-                                <input type="text" name="username" #username="ngModel" [(ngModel)]="userService.selectedUser.username" required>
-                                <label>Username :
-                                  <label class="red-text">*</label>
-                                </label>
-                              </div>
-                            </div>
+                        </div>
 
                           <div class="row">
                             <div class="input-field col s12">
-                              <input type="text" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" readonly>
-                              <label>Email :
+                              <input type="text" name="lname" #lname="ngModel" [(ngModel)]="userService.selectedUser.lname" placeholder="Last Name" required>
+                              <label>Last Name :
                                 <label class="red-text">*</label>
                               </label>
                             </div>
@@ -68,76 +46,87 @@
 
                           <div class="row">
                             <div class="input-field col s12">
-                              <input type="text" name="address" #address="ngModel" [(ngModel)]="userService.selectedUser.address" required>
-                              <label>Physical Address :
+                              <input type="text" name="username" #username="ngModel" [(ngModel)]="userService.selectedUser.username" placeholder="Username" required>
+                              <label>Username :
                                 <label class="red-text">*</label>
                               </label>
                             </div>
                           </div>
 
-                          <div class="row">
-                            <div class="input-field col s12">
-                              <input type="text" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="userService.selectedUser.phoneNumber" required>
-                              <label>Phone Number :
-                                <label class="red-text">*</label>
-                              </label>
-                            </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input type="text" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="Email" readonly>
+                            <label>Email :
+                              <label class="red-text">*</label>
+                            </label>
                           </div>
+                        </div>
 
-                          <div class="row">
-                            <div class="input-field col s12">
-                              <input type="text" name="role" #role="ngModel" [(ngModel)]="userService.selectedUser.role" required>
-                              <label>Role (Office) :
-                                <label class="red-text">*</label>
-                              </label>
-                            </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input type="text" name="address" #address="ngModel" [(ngModel)]="userService.selectedUser.address" placeholder="Physical Address" required>
+                            <label>Physical Address :
+                              <label class="red-text">*</label>
+                            </label>
                           </div>
-                          
-                          <div class="row">
-                            <div class="input-field col s12">
-                              <button class="btn btn-custom right" type="button" (click)="resetForm()">Cancel</button>
-                              <button class="btn btn-custom right" type="submit" [disabled]="!userForm.valid">Update</button>
-                            </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input type="text" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="userService.selectedUser.phoneNumber" placeholder="Phone Number" required>
+                            <label>Phone Number :
+                              <label class="red-text">*</label>
+                            </label>
                           </div>
-                        </form>
-                      </div>
-                      <div class="col s7">
-                        <table class="responsive-table highlight" style="background: #085ead;">
-                          <thead>
-                            <tr>
-                              <th>Full Name</th>
-                              <th>Username</th>
-                              <th>Role (office)</th>
-                              <th>Email</th>
-                              <th></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr *ngFor="let user of users">
-                              <td>{{ user.fname }} {{ user.lname }}</td>
-                              <td>{{ user.username }}</td>
-                              <td>{{ user.role }}</td>
-                              <td>{{ user.email }}</td>
-                              <td>
-                                <!--- edit button -->
-                                <a class="action-btn edit" title="Edit or update user">
-                                  <i class="material-icons" (click)="onEdit(user)">edit</i>
-                                </a>
-                                <!-- delete button -->
-                                <a class="action-btn delete" title="Delete user">
-                                  <i class="material-icons" (click)="onDelete(user._id)">delete</i>
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input type="text" name="role" #role="ngModel" [(ngModel)]="userService.selectedUser.role" placeholder="Role (Office)" required>
+                            <label>Role (Office) :
+                              <label class="red-text">*</label>
+                            </label>
+                          </div>
+                        </div>
+                        
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <button class="btn btn-custom right" type="button" (click)="resetForm()">Cancel</button>
+                            <button class="btn btn-custom right" type="submit" [disabled]="!userForm.valid">Update</button>
+                          </div>
+                        </div>
+                  </form>
               </div>
+              <table class="responsive-table highlight" style="flex: 7;">
+                <thead>
+                  <tr>
+                    <th>Full Name</th>
+                    <th>Username</th>
+                    <th>Role (office)</th>
+                    <th>Email</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of users">
+                    <td>{{ user.fname }} {{ user.lname }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                      <!-- edit button -->
+                      <a class="action-btn edit" title="Edit or update user">
+                        <i class="material-icons" (click)="onEdit(user)">edit</i>
+                      </a>
+                      <!-- delete button -->
+                      <a class="action-btn delete" title="Delete user">
+                        <i class="material-icons" (click)="onDelete(user._id)">delete</i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-
           </div>
       </div>
   </div>

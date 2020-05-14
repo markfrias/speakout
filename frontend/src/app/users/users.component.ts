@@ -75,7 +75,7 @@ export class UsersComponent implements OnInit {
 
   //edit or update user
   onEdit(user : User) {
-    this.manageUserService.selectedUser = user;
+    this.userService.selectedUser = user;
   }
   //delete user
   onDelete(_id : string) {

@@ -6,8 +6,14 @@ import { FormGroup, FormControl } from '@angular/forms';
 import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header';
 import LinkTool from '@editorjs/link';
-import SimpleImage from '@editorjs/simple-image';
 import ImageTool from '@editorjs/image';
+import Checklist from '@editorjs/checklist';
+import List from '@editorjs/list';
+import Embed from '@editorjs/embed';
+import Quote from '@editorjs/quote';
+import Warning from '@editorjs/warning';
+
+
 
 import { ɵangular_packages_platform_browser_dynamic_platform_browser_dynamic_a } from '@angular/platform-browser-dynamic';
 
@@ -25,7 +31,6 @@ export class EditPostComponent implements OnInit {
     title: new FormControl(''),
     postDescription: new FormControl(''),
     author: new FormControl(''),
-    postBody: new FormControl(''),
     topics: new FormControl('')
     
   });
@@ -77,21 +82,58 @@ export class EditPostComponent implements OnInit {
     setTimeout(() => {
         this.editor = new EditorJS({
           autofocus: true,
+          minHeight: 50,
 
           tools: {
             header: Header,
-            linkTool:  {
-              class: LinkTool
-            },
             image: {
               class: ImageTool,
               config: {
                 field: 'image' ,
                 endpoints: {
                   byFile: 'http://localhost:3300/images/', // Your backend file uploader endpoint
-                  byUrl: 'http://localhost:8008/fetchUrl', // Your endpoint that provides uploading by Url
+                  byUrl: 'http://localhost:3300/images/url', // Your endpoint that provides uploading by Url
 
                 }
+              }
+            },
+            checklist: {
+              class: Checklist,
+              inlineToolbar: true
+            },
+
+            list: {
+              class: List,
+              inlineToolbar: true
+            },
+
+            embed: {
+              class: Embed,
+              inlineToolbar: true,
+              config: {
+                services: {
+                  youtube: true,
+                  coub: true
+                }
+              }
+            },
+
+            quote: {
+              class: Quote,
+              inlineToolbar: true,
+              config: {
+                quotePlaceholder: 'Enter a quote',
+                captionPlaceholder: 'Quote\'s author'
+              }
+            },
+
+            warning: {
+              class: Warning,
+              inlineToolbar: true,
+              shortcut: 'CMD+SHIFT+W',
+              config: {
+                titlePlaceholder: 'Title',
+                messagePlaceholder: 'Message'
               }
             }
           },
@@ -103,7 +145,7 @@ export class EditPostComponent implements OnInit {
           version: this.postContent.postBody[0].version
           }
         });
-      }, 2000)
+      }, 750)
       
     
   }
@@ -117,12 +159,13 @@ export class EditPostComponent implements OnInit {
     setTimeout(() => {
       console.log(this.postContent);
       this.fillForm();
-    }, 150)
+    }, 250)
   }
 
   onSubmit() {
     console.log(this.editPostForm.value);
     this.modifyPostsService.submitForm(this.editPostForm.value, this.postId);
+    this.onSave();
   }
 
   fillForm() {
