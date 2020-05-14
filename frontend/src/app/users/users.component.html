@@ -4,6 +4,7 @@
       <!--left sidebar-->
       <div class="left-sidebar">
           <ul>
+              <li><a routerLink='/create-post'>Create Post</a></li>
               <li><a routerLink='/admin'>Manage Posts</a></li>
               <li><a routerLink='/users'>Manage Users</a></li>
               <li><a routerLink='/topics'>Manage Topics</a></li>
@@ -23,73 +24,74 @@
             </div>
 
             <div style="display: flex;">
-              <div class="col s5" style="flex: 3; border-right: cadetblue 1px solid;">
+              <div class="col s5" style="flex: 2; border-right: cadetblue 1px solid;">
                 <form #userForm="ngForm" (ngSubmit)="onUpdate(userForm)" autocomplete="off">
+                        <p style="text-align: center; color:  cadetblue;">Edit or update user</p>
                         <input type="hidden" name="_id" >
                         <div class="row">
-                          <div class="input-field col s12">
+                          <div class="col s12">
+                            <label class="green-text">First Name :
+                              <label class="red-text">*</label>
+                            </label>
                             <input type="text" name="fname" #fname="ngModel" [(ngModel)]="userService.selectedUser.fname" placeholder="First Name" required>
-                            <label>First Name :
-                              <label class="red-text">*</label>
-                            </label>
                           </div>
                         </div>
 
                           <div class="row">
-                            <div class="input-field col s12">
+                            <div class="col s12">
+                              <label class="green-text">Last Name :
+                                <label class="red-text">*</label>
+                              </label>
                               <input type="text" name="lname" #lname="ngModel" [(ngModel)]="userService.selectedUser.lname" placeholder="Last Name" required>
-                              <label>Last Name :
-                                <label class="red-text">*</label>
-                              </label>
                             </div>
                           </div>
 
                           <div class="row">
-                            <div class="input-field col s12">
-                              <input type="text" name="username" #username="ngModel" [(ngModel)]="userService.selectedUser.username" placeholder="Username" required>
-                              <label>Username :
+                            <div class="col s12">
+                              <label class="green-text">Username :
                                 <label class="red-text">*</label>
                               </label>
+                              <input type="text" name="username" #username="ngModel" [(ngModel)]="userService.selectedUser.username" placeholder="Username" required>
                             </div>
                           </div>
 
                         <div class="row">
-                          <div class="input-field col s12">
+                          <div class="col s12">
+                            <label class="green-text">Email :
+                              <label class="red-text">*</label>
+                            </label>
                             <input type="text" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="Email" readonly>
-                            <label>Email :
-                              <label class="red-text">*</label>
-                            </label>
                           </div>
                         </div>
 
                         <div class="row">
-                          <div class="input-field col s12">
+                          <div class="col s12">
+                            <label class="green-text">Physical Address :
+                              <label class="red-text">*</label>
+                            </label>
                             <input type="text" name="address" #address="ngModel" [(ngModel)]="userService.selectedUser.address" placeholder="Physical Address" required>
-                            <label>Physical Address :
-                              <label class="red-text">*</label>
-                            </label>
                           </div>
                         </div>
 
                         <div class="row">
-                          <div class="input-field col s12">
+                          <div class="col s12">
+                            <label class="green-text">Phone Number :
+                              <label class="red-text">*</label>
+                            </label>
                             <input type="text" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="userService.selectedUser.phoneNumber" placeholder="Phone Number" required>
-                            <label>Phone Number :
-                              <label class="red-text">*</label>
-                            </label>
                           </div>
                         </div>
 
                         <div class="row">
-                          <div class="input-field col s12">
-                            <input type="text" name="role" #role="ngModel" [(ngModel)]="userService.selectedUser.role" placeholder="Role (Office)" required>
-                            <label>Role (Office) :
+                          <div class="col s12">
+                            <label class="green-text">Role (Office) :
                               <label class="red-text">*</label>
                             </label>
+                            <input type="text" name="role" #role="ngModel" [(ngModel)]="userService.selectedUser.role" placeholder="Role (Office)" required>
                           </div>
                         </div>
-                        
-                        <div class="row">
+
+                        <div class="row" style="padding: 2px;">
                           <div class="input-field col s12">
                             <button class="btn btn-custom right" type="button" (click)="resetForm()">Cancel</button>
                             <button class="btn btn-custom right" type="submit" [disabled]="!userForm.valid">Update</button>
@@ -97,7 +99,7 @@
                         </div>
                   </form>
               </div>
-              <table class="responsive-table highlight" style="flex: 7;">
+              <table class="responsive-table highlight" style="flex: 8;">
                 <thead>
                   <tr>
                     <th>Full Name</th>
