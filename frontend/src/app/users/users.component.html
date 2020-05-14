@@ -4,6 +4,7 @@
       <!--left sidebar-->
       <div class="left-sidebar">
           <ul>
+              <li><a routerLink='/create-post'>Create Post</a></li>
               <li><a routerLink='/admin'>Manage Posts</a></li>
               <li><a routerLink='/users'>Manage Users</a></li>
               <li><a routerLink='/topics'>Manage Topics</a></li>
@@ -21,7 +22,7 @@
               <b> Email:</b> {{userDetails.email}}</p>
               <h5>Manage Users: Admin Dashboard</h5>
             </div>
-            
+
             <div class="row">
               <div class="col s12">
                 <div class="card">
@@ -92,7 +93,7 @@
                               </label>
                             </div>
                           </div>
-                          
+
                           <div class="row">
                             <div class="input-field col s12">
                               <button class="btn btn-custom right" type="button" (click)="resetForm()">Cancel</button>
