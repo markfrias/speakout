@@ -131,22 +131,31 @@ router.patch('/:id', (req, res) => {
         if (!result) {
             return res.status(400).send(`No post record with given id: ${req.params.id}`);
         } else {
-            var updatePost = {
-                title: req.body.title,
-                postDescription: req.body.postDescription,
-                author: req.body.author,
-                postBody: req.body.postBody,
-                timestamp: req.body.timestamp,
-                topic: req.body.topic,
-                likes: req.body.likes,
-                shares: req.body.shares,
-                comments: req.body.comments,
-                bannerImageName: req.body.bannerImageName
-
-            };
-            Post.findByIdAndUpdate(req.params.id, { $set: updatePost }, { new: true }, (err, doc) => {
+            
+            Post.findByIdAndUpdate(req.params.id, {$set: req.body}, { new: true }, (err, doc) => {
                 if (!err)
                     res.send(doc);
+                else
+                    console.log('Error in post update: ' + JSON.stringify(err, undefined, 2));
+            }); 
+        }
+    });
+});
+
+// Update body
+router.patch('/body/:id', (req, res) => {
+    //first, check if the post exists in the database
+    Post.exists({ _id: req.params.id }).then((result) => {
+        if (!result) {
+            return res.status(400).send(`No post record with given id: ${req.params.id}`);
+        } else {
+            
+            Post.findByIdAndUpdate(req.params.id, {$set: { postBody : req.body}}, { new: true }, (err, doc) => {
+                if (!err){
+                    res.send(doc);
+                    console.log("Body success");
+                }
+                    
                 else
                     console.log('Error in post update: ' + JSON.stringify(err, undefined, 2));
             }); 

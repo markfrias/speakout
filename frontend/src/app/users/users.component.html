@@ -22,6 +22,32 @@
               <h5>Manage Users: Admin Dashboard</h5>
             </div>
 
+            <div class="row">
+              <div class="col s12">
+                <div class="card">
+                  <div class="card-content white-text">
+                    <div class="row">
+                      <div class="col s5">
+                        <form #userForm="ngForm" (ngSubmit)="onUpdate(userForm)" autocomplete="off">
+                          <input type="hidden" name="_id" >
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <input type="text" name="fname" #fname="ngModel" [(ngModel)]="userService.selectedUser.fname" required>
+                              <label>First Name :
+                                <label class="red-text">*</label>
+                              </label>
+                            </div>
+                          </div>
+
+                            <div class="row">
+                              <div class="input-field col s12">
+                                <input type="text" name="lname" #lname="ngModel" [(ngModel)]="userService.selectedUser.lname" required>
+                                <label>Last Name :
+                                  <label class="red-text">*</label>
+                                </label>
+                              </div>
+                            </div>
+
             <div style="display: flex;">
               <div class="col s5" style="flex: 3; border-right: cadetblue 1px solid;">
                 <form #userForm="ngForm" (ngSubmit)="onUpdate(userForm)" autocomplete="off">
@@ -77,6 +103,12 @@
                             <label>Phone Number :
                               <label class="red-text">*</label>
                             </label>
+
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <button class="btn btn-custom right" type="button" (click)="resetForm()">Cancel</button>
+                              <button class="btn btn-custom right" type="submit" [disabled]="!userForm.valid">Update</button>
+                            </div>
                           </div>
                         </div>
 

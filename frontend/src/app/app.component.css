@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
 .active {
     color: yellow;
     background-color: blue;
@@ -171,7 +173,6 @@ li.navlinks-2 {
 
 }
 
-@import url(http://fonts.googleapis.com/css?family=Raleway);
 h2{
 background-color: #FEFFED;
 padding: 30px 35px;
