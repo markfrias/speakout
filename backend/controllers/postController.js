@@ -101,6 +101,29 @@ router.post('/',(req, res) => {
     })
 });
 
+// Add a comment to a specific post
+router.patch('/comment/:id', (req, res) => {
+    // Check if article exists in the database
+    Post.exists({ _id: req.params.id }).then((result) => {
+        if (!result) {
+            return res.status(400).send(`No post record with given id: ${req.params.id}`);
+        } else {
+            var updatePost = {
+                comments: req.body.comments,
+            };
+            Post.findByIdAndUpdate(req.params.id, { $push: { comments: req.body.comments }}, { new: true }, (err, doc) => {
+                if (!err){
+                    res.send(doc);
+                    console.log("Comment added");
+
+                }
+                else
+                    console.log('Error in post update: ' + JSON.stringify(err, undefined, 2));
+            }); 
+        }
+    });
+});
+
 //edit or update post
 router.patch('/:id', (req, res) => {
     //first, check if the post exists in the database
