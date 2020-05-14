@@ -27,6 +27,7 @@ export class UserService {
   postUser(user: User){
     return this.http.post(this.baseURL, user, this.noAuthHeader);
   }
+  
   //edit user in the database (put method)
   editUser(user : User) {
     return this.http.patch(this.baseURL + `/${user._id}`, user, this.noAuthHeader);

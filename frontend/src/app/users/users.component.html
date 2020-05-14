@@ -26,6 +26,7 @@
             <div style="display: flex;">
               <div class="col s5" style="flex: 2; border-right: cadetblue 1px solid;">
                 <form #userForm="ngForm" (ngSubmit)="onUpdate(userForm)" autocomplete="off">
+                  <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
                         <p style="text-align: center; color:  cadetblue;">Edit or update user</p>
                         <input type="hidden" name="_id" >
                         <div class="row">

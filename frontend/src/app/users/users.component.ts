@@ -72,11 +72,12 @@ export class UsersComponent implements OnInit {
       );
     console.log(this.users);
   }
-
+  
   //edit or update user
   onEdit(user : User) {
     this.userService.selectedUser = user;
   }
+
   //delete user
   onDelete(_id : string) {
     if(confirm('Are you sure you want to delete this user record?') == true) {
