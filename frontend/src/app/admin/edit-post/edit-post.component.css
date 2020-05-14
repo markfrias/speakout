@@ -1,0 +1,19 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+* {
+    font-family: raleway;
+    font-weight: 2em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > div, p, label, input, button {
+    margin-bottom: 2vh;
+}
+
+label {
+    font-size: 2em;
+}

@@ -17,7 +17,7 @@
 
     <label>
         Body:
-        <input type="text" formControlName="postBody">
+        
     </label>
 
     <label>
@@ -25,11 +25,13 @@
         <input type="text" formControlName="topics">
     </label>
 
-    <button type="button" [disabled]="!editPostForm.valid" (click)="onSubmit()">Submit</button>
 
-    <div id="editorjs"></div>
-    <button (click)="onSave()">Save</button>
+    
 </form>
+
+<div id="editorjs"></div>
+    <button (click)="onSave()">Save</button>
+    <button type="button" [disabled]="!editPostForm.valid" (click)="onSubmit()">Submit</button>
 
 
 <div *ngIf="bodyData != undefined">
