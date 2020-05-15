@@ -11,13 +11,14 @@ nav {
 nav li ul {
   position: absolute;
   top: 35px;
-  right: 0px;
+  right: 18px;
   width: 10vw;
   display: none;
   z-index: 88888;
   list-style: none;
-}
 
+  
+}
 /* Login dropdown */
 nav li:hover ul {
   display: block;
@@ -30,7 +31,7 @@ nav li ul li {
 }
 
 nav li ul li a {
-  padding: 10px;
+  padding: 9px;
   background: none;
   color: white;
   display: inline-flex;
@@ -61,9 +62,10 @@ a.navlinks {
     list-style: none;
     cursor: pointer;
     padding-right: 1vw;
+   
+    
 
 }
-
 /*link unvisited*/
 a:link {
     margin: 0;
@@ -87,6 +89,7 @@ nav > ul {
    display: flex;
    list-style: none;
    font-size: 30px;
+   margin-left: 26%;
 }
 
 .loginbtn {  
@@ -159,8 +162,63 @@ font-size:32px;
 
 /*mobile responsive */
 @media only screen and (max-width:1250px) {
+    nav > ul {
+        margin-left: 25%;
+    }
     
-    
+    .loginbtn {
+        cursor: pointer;
+        list-style: none;
+        list-style: none;
+        color:rgb(75, 75, 235);
+      
+    }
+    a.loginbtn {
+        
+        margin-left: 86%;
+        position: absolute;
+    }
+}
+@media only screen and (max-width:1050px){
+    nav > ul {
+        margin-left: 15%;
+    }
+
+    #secondary-nav > ul {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    margin-left: 30%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+    .loginbtn {
+        cursor: pointer;
+        list-style: none;
+        list-style: none;
+        color:rgb(75, 75, 235);
+        float: right ;
+    }
+    a.loginbtn {
+       
+        text-align: end;
+        margin-left: 80%;
+    }
+}
+@media only screen and (max-width: 934px) {
+
+    nav {
+        display:flex;
+        width: 100%;
+        height: 8vh;
+        background-color: #6f3637;
+
+    }
+    nav > ul {
+        margin-top: 10px;
+        margin-left: 8%;
+       
+    }
     .loginbtn {
         cursor: pointer;
         list-style: none;
@@ -171,74 +229,10 @@ font-size:32px;
     a.loginbtn {
         display: flex;
         text-align: end;
-        margin-left: 86%;
+        margin-top:-15px;
+        margin-left: 80%;
         font-size: 15px;
         position: absolute;
-    }
-}
-@media only screen and (max-width:1050px){
-    nav > ul {
-        width: 100%;
-        max-height: 0px;
-        position: absolute;
-        margin-top: 30px;
-        z-index: 1;
-        display: flex;
-        list-style: none;
-        font-size: 30px;
-
-}
-.navlinks {
-    margin-left:5vw;
-    cursor: pointer;
-}
-.adminbtn {
-    cursor: pointer;
-    list-style: none;
-    list-style: none;
-    color:rgb(75, 75, 235);
-    float: right ;
-
-}
-a.adminbtn {
-    display: flex;
-    text-align: end;
-    margin-left: 80%;
-    font-size: 15px;
-    position: absolute;
-
-}
-.loginbtn {
-    cursor: pointer;
-    list-style: none;
-    list-style: none;
-    color:rgb(75, 75, 235);
-    float: right ;
-}
-a.loginbtn {
-    display: flex;
-    text-align: end;
-    margin-left: 86%;
-    font-size: 15px;
-    position: absolute;
-}
-#secondary-nav > ul {
-    display: flex;
-    list-style-type: none;
-    width: 100%;
-    margin-left: 30%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-}
-}
-@media only screen and (max-width: 934px) {
-
-    nav {
-        display:flex;
-        width: 100%;
-        height: 8vh;
-        background-color: #6f3637;
-
     }
     img {
         width: 142px;
@@ -252,75 +246,7 @@ a.loginbtn {
         font-size: 18px;
 
     }
-    /*link unvisited */
-    a:link {
-        margin: 0;
-        color: rgb(247, 193, 56);
-        text-decoration: none;
-        padding-top: 5px
-
-    }
-
-    /* link visited */
-    a:visited {
-        color: #6186a8;
-        text-decoration: none;
-    }
-    /*link hover */
-    a:hover {
-        color: goldenrod;
-
-    }
-
-    nav > ul {
-        width: 100%;
-        max-height: 0px;
-        position: absolute;
-        margin-top: 6px;
-        z-index: 1;
-        display: flex;
-        list-style: none;
-        font-size: 30px;
-      /* margin-left: 25%;*/
-
-
-    }
-
-    .navlinks {
-        margin-right: 5vw;
-        cursor: pointer;
-
-    }
-    .adminbtn {
-        cursor: pointer;
-        list-style: none;
-        list-style: none;
-        color:rgb(75, 75, 235);
-        float: right ;
-
-    }
-    a.adminbtn {
-        display: flex;
-        text-align: end;
-        margin-left: 80%;
-        font-size: 15px;
-        position: absolute;
-
-    }
-    .loginbtn {
-        cursor: pointer;
-        list-style: none;
-        list-style: none;
-        color:rgb(75, 75, 235);
-        float: right ;
-    }
-    a.loginbtn {
-        display: flex;
-        text-align: end;
-        margin-left: 75%;
-        font-size: 15px;
-        position: absolute;
-    }
+    
     #secondary-nav > ul {
         display: flex;
         list-style-type: none;
@@ -345,20 +271,6 @@ a.loginbtn {
         display: inline-block;
 
 
+    } 
     }
 
-}
-@media only screen and (max-width: 855px) {
-
-.loginbtn {
-    cursor: pointer;
-    list-style: none;
-    list-style: none;
-  
-    float: right ;
-}
-a.loginbtn {
-    margin-left: 75%;
-
-}
-}
