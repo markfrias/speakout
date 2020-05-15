@@ -29,20 +29,20 @@
                           <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="topicService.selectedTopic._id">
                           <p style="text-align: center; color:  cadetblue;">Add new Topic or Update existing Topic</p>
                           <div class="row">
-                            <div class="input-field col s12">
-                              <input type="text" name="topicName" #topicName="ngModel" [(ngModel)]="topicService.selectedTopic.topicName" placeholder="Topic" required>
-                              <label>Topic :
+                            <div class="col s12">
+                              <label class="green-text">Topic :
                                 <label class="red-text">*</label>
                               </label>
+                              <input type="text" name="topicName" #topicName="ngModel" [(ngModel)]="topicService.selectedTopic.topicName" placeholder="Topic" required>
                             </div>
                           </div>
 
                             <div class="row">
-                              <div class="input-field col s12">
-                                <input type="text" name="description" #description="ngModel" [(ngModel)]="topicService.selectedTopic.description" placeholder="Description" required>
-                                <label>Description :
+                              <div class="col s12">
+                                <label class="green-text">Description :
                                   <label class="red-text">*</label>
                                 </label>
+                                <input type="text" name="description" #description="ngModel" [(ngModel)]="topicService.selectedTopic.description" placeholder="Description" required>
                               </div>
                             </div>
 

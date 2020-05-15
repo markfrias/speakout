@@ -35,65 +35,42 @@
                               <label class="red-text">*</label>
                             </label>
                             <input type="text" name="fname" #fname="ngModel" [(ngModel)]="userService.selectedUser.fname" placeholder="First Name" required>
-                          </div>
-                        </div>
 
-                          <div class="row">
-                            <div class="col s12">
+                            <label class="green-text">Last Name :
+                                <label class="red-text">*</label>
+                              </label>
+                              <input type="text" name="lname" #lname="ngModel" [(ngModel)]="userService.selectedUser.lname" placeholder="Last Name" required>
+
                               <label class="green-text">Last Name :
                                 <label class="red-text">*</label>
                               </label>
                               <input type="text" name="lname" #lname="ngModel" [(ngModel)]="userService.selectedUser.lname" placeholder="Last Name" required>
-                            </div>
-                          </div>
 
-                          <div class="row">
-                            <div class="col s12">
                               <label class="green-text">Username :
                                 <label class="red-text">*</label>
                               </label>
                               <input type="text" name="username" #username="ngModel" [(ngModel)]="userService.selectedUser.username" placeholder="Username" required>
-                            </div>
-                          </div>
 
-                        <div class="row">
-                          <div class="col s12">
                             <label class="green-text">Email :
                               <label class="red-text">*</label>
                             </label>
                             <input type="text" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="Email" readonly>
-                          </div>
-                        </div>
 
-                        <div class="row">
-                          <div class="col s12">
                             <label class="green-text">Physical Address :
                               <label class="red-text">*</label>
                             </label>
                             <input type="text" name="address" #address="ngModel" [(ngModel)]="userService.selectedUser.address" placeholder="Physical Address" required>
-                          </div>
-                        </div>
 
-                        <div class="row">
-                          <div class="col s12">
                             <label class="green-text">Phone Number :
                               <label class="red-text">*</label>
                             </label>
                             <input type="text" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="userService.selectedUser.phoneNumber" placeholder="Phone Number" required>
-                          </div>
-                        </div>
 
-                        <div class="row">
-                          <div class="col s12">
                             <label class="green-text">Role (Office) :
                               <label class="red-text">*</label>
                             </label>
                             <input type="text" name="role" #role="ngModel" [(ngModel)]="userService.selectedUser.role" placeholder="Role (Office)" required>
-                          </div>
-                        </div>
 
-                        <div class="row" style="padding: 2px;">
-                          <div class="input-field col s12">
                             <button class="btn btn-custom right" type="button" (click)="resetForm()">Cancel</button>
                             <button class="btn btn-custom right" type="submit" [disabled]="!userForm.valid">Update</button>
                           </div>
