@@ -8,7 +8,17 @@ import { User } from './user.model';
 })
 export class UserService {
   readonly baseURL = 'http://localhost:3300/users';
-  selectedUser: User;
+  selectedUser: User = {
+    _id: '',
+    fname: '',
+    lname: '',
+    username: '',
+    email: '',
+    address: '',
+    phoneNumber: '',
+    password: '',
+    role: ''
+  };
   usersList: User[];
 
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
