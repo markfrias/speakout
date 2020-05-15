@@ -1,3 +1,30 @@
+#secondary-nav > ul {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    margin-left: 40%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+}
+
+.navlinks-2 {
+
+    cursor: pointer;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 10px;
+
+
+
+}
+li.navlinks-2 {
+    color: #2b2e4a;
+    display: inline-block;
+
+
+}
+
 /* Adjust for responsiveness */
 .topic-page-container {
     display: flex;

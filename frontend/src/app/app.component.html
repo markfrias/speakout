@@ -1,10 +1,9 @@
 <header>
   <nav>
-
-    <div routerLink="/"></div>
     <img src="assets/Img/SPEAK OUT (EDITED).png">
     <ul>
-      <a class="navlinks" routerLink="/posts" [routerLinkActive]="['active-link']"><li>Home</li></a>
+      <a class="navlinks" routerLink="/" [routerLinkActive]="['active-link']"><li>Home</li></a>
+      <a class="navlinks" routerLink="/posts" [routerLinkActive]="['active-link']"><li>Feed</li></a>
       <a class="navlinks" routerLink="/contact" routerLinkActive="active-link"><li>Contact Us</li></a>
       <a class="navlinks" routerLink='/team' routerLinkActive="active-link"><li>Meet the Team</li></a>
     </ul>
@@ -28,13 +27,7 @@
 </header>
 
 <main>
-<div id="secondary-nav">
-  <ul>
-    <li class="navlinks-2" routerLink="/trending">Trending Posts</li>
-    <li class="navlinks-2" routerLink="/posts">Recent Posts</li>
-    <li class="navlinks-2" routerLink="/tags">Topics</li>
-  </ul>
-</div>
+
 </main>
 
 <router-outlet></router-outlet>
