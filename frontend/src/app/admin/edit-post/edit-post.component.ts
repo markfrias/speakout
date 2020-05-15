@@ -16,6 +16,7 @@ import Warning from '@editorjs/warning';
 
 
 import { ɵangular_packages_platform_browser_dynamic_platform_browser_dynamic_a } from '@angular/platform-browser-dynamic';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -59,22 +60,15 @@ export class EditPostComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.postId = params['id'].toString();
       console.log(this.postId);
-      setTimeout(()=> {
-        this.showPostContent(this.postId);
-
-      }, 500)
-      //console.log(this.articles);
-      
+      this.showPostContent(this.postId);      
     });
     
-    setTimeout(() => {
       if (this.postContent == undefined)
       console.log("Error");
 
       else 
       console.log(this.postContent.postBody[0].blocks);
 
-    }, 1000)
     
 
       
@@ -151,15 +145,44 @@ export class EditPostComponent implements OnInit {
   }
 
   showPostContent(id) {
-    this.postsService.getSpecificPost(id)
-    .subscribe((result: any) => this.postContent = result
-    );
-
     
-    setTimeout(() => {
-      console.log(this.postContent);
-      this.fillForm();
-    }, 5000)
+  
+    let assignData = new Promise((resolve, reject) => {
+      let content = undefined;
+      this.postsService.getSpecificPost(id)
+      .subscribe((result: any) => content = result)
+
+      setTimeout(() => {
+        if (content != undefined){
+          resolve(content);
+        } else {
+          setTimeout(() => {
+            if (content != undefined){
+              resolve(content);
+            } else {
+              reject("Cannot load data, please refresh");
+            }
+          }, 50)
+          
+          
+
+        }
+          
+          
+      }, 50)
+    })
+      
+    assignData
+      .then((content) => {
+        this.postContent = content;
+        this.fillForm();
+      })
+      .catch((message) => {
+        console.log(message);
+        this.showPostContent(this.postId);
+      } )
+
+      
   }
 
   onSubmit() {
