@@ -89,7 +89,7 @@ export class UsersComponent implements OnInit {
   //logout user
   onLogout(){
     this.userService.deleteToken();
-    this.router.navigate(['/posts']);
+    this.router.navigate(['/home']);
   }
 
 }

@@ -16,7 +16,7 @@ export class AppComponent {
 
   onLogout(){
     this.userService.deleteToken();
-    this.router.navigate(['/posts']);
+    this.router.navigate(['/home']);
   }
 
 }

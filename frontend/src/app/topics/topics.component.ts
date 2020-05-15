@@ -89,7 +89,7 @@ export class TopicsComponent implements OnInit {
   //logout button function (on the left side bar)
   onLogout(){
     this.userService.deleteToken();
-    this.router.navigate(['/posts']);
+    this.router.navigate(['/home']);
   }
 
 }
