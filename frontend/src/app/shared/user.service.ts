@@ -19,30 +19,43 @@ export class UserService {
     password: '',
     role: ''
   };
+  usersList: User[];
 
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
 
   constructor(private http: HttpClient) { }
-  //Http Methods
+  /* HTTP METHODS */
+  //insert new user into the database
   postUser(user: User){
     return this.http.post(this.baseURL, user, this.noAuthHeader);
   }
-  
-  //edit user in the database (put method)
+
+  //get all users
+  getUsers() {
+    return this.http.get(this.baseURL);
+  }
+
+  //delete user
+  deleteUser(_id: string) {
+    return this.http.delete(this.baseURL + `/${_id}`);
+  }
+
+  //edit user in the database (patch method)
   editUser(user : User) {
     return this.http.patch(this.baseURL + `/${user._id}`, user, this.noAuthHeader);
   }
 
+  //login user
   login(authCredentials) {
     return this.http.post(this.baseURL + '/authenticate', authCredentials, this.noAuthHeader);
   }
 
+  //get user profile
   getUserProfile () {
     return this.http.get(this.baseURL + '/user-profile')
   }
 
-
-  //Helper Methods
+  /* HELPER METHODS */
   setToken(token: string) {
     localStorage.setItem('token', token);
   }
