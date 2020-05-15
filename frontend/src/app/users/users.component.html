@@ -20,7 +20,7 @@
               <p style="font-style: italic;"><b>Username:</b> {{userDetails.username}}
               <b> Role:</b> {{userDetails.role}}
               <b> Email:</b> {{userDetails.email}}</p>
-              <h5>Manage Users: Admin Dashboard</h5>
+              <h5>Admin Dashboard: Manage Users</h5>
             </div>
 
             <div style="display: flex;">
@@ -111,7 +111,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let user of users">
+                  <tr *ngFor="let user of userService.usersList">
                     <td>{{ user.fname }} {{ user.lname }}</td>
                     <td>{{ user.username }}</td>
                     <td>{{ user.role }}</td>
