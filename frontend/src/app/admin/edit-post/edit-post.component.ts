@@ -162,14 +162,14 @@ export class EditPostComponent implements OnInit {
             } else {
               reject("Cannot load data, please refresh");
             }
-          }, 50)
+          }, 2000)
           
           
 
         }
           
           
-      }, 50)
+      }, 250)
     })
       
     assignData
