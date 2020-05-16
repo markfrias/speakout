@@ -38,11 +38,11 @@
                             <td>
                               <!-- edit button -->
                               <a class="action-btn edit" title="Edit or update Post" routerLink="/edit-post/{{post._id}}">
-                                <i class="material-icons">edit</i> <!-- edit function has to be added -->
+                                <i class="material-icons">edit</i>
                               </a>
                               <!-- delete button -->
                               <a class="action-btn delete" title="Delete Post">
-                                <i class="material-icons">delete</i> <!-- delete function has to be added -->
+                                <i class="material-icons"(click)="onDelete(post._id)">delete</i>
                               </a>
                             </td>
                             <td><a href="#" class="publish">publish</a></td>

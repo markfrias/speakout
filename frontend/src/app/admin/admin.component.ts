@@ -38,4 +38,14 @@ export class AdminComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
+  //delete post
+  onDelete(_id : string) {
+    if(confirm('Are you sure you want to delete this Post?') == true) {
+      this.managePostService.deletePost(_id).subscribe((res) => {
+        this.showPosts();
+        alert('Post Deleted successfully');
+      });
+    }
+  }
+
 }
