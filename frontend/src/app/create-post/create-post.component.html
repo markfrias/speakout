@@ -6,10 +6,8 @@
                 <h2 style = "font-family: Poppins, sans-serif;">Create Post</h2>
                 <hr>
                     <input style = "width: 370px;" id="name" name="author" type="text" #author="ngModel" [(ngModel)]="postsService.selectedPost.author" placeholder="Enter Name" autocomplete="off">
-                    <div *ngIf="createPostForm.submitted && !author.valid">
-                        <label class="validation-message">First name is required.</label>
-                      </div>
-                    <!--<p>
+
+                <!--<p>
                     <input style = "width: 370px;" id="topic" name="topic" type="text" #topic="ngModel" [(ngModel)]="postsService.selectedPost.topic" placeholder="Enter Topic" autocomplete="off">
                 </p>-->
                 <p>
@@ -26,39 +24,7 @@
                 </p>
                 <hr>
             </form>
-            <script>
-                function validateForm() {
-                    var a = document.forms["english_registration_form"]["author"].value;
-                    var b = document.forms["english_registration_form"]["title"].value;
-                    var c = document.forms["english_registration_form"]["description"].value;
-                    var d = document.forms["english_registration_form"]["message"].value;
-
-                    if (a == null || a == "") {
-                        authorError = "Please enter your name";
-                        document.getElementById("author_error").innerHTML = authorError; 
-                        return false;
-                    } 
-
-                    else if (b == null || b == "") {
-                        titleError = "Please enter a title";
-                        document.getElementById("title_error").innerHTML = titleError;
-                        return false;
-                    } 
-
-                    else if (c == null || c == "") {        
-                        descriptionError = "Please enter a description";
-                        document.getElementById("description_error").innerHTML = descriptionError;
-                        return false;
-                    } 
-
-                    else if (d == null || d == ""){
-                        messageError = "Please enter a messaeg";
-                        document.getElementById("message_error").innerHTML = messageError;
-                    }
-
-                    else {return true;}
-                }
-            </script>
+            
         </div>
     </main>
 </body>
