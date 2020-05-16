@@ -1,5 +1,19 @@
-    <h1 id="title">{{articles.title}}</h1>
-    <h2 id="description">{{articles.postDescription}}</h2>
+<div id="article-container">
+    
+    <div id="article-head">
+        <h1 id="title">{{articles.title}}</h1>
+        <h2 id="description">{{articles.postDescription}}</h2>
+    </div>
+
+    <div class="meta-details">
+        <span *ngIf="articles.author != undefined">By {{articles.author}}</span>
+        <span *ngIf="articles.author === undefined">By Anonymous</span>
+        &nbsp;
+        <span>|</span>
+        &nbsp; 
+        <span>Date written: {{articles.timestamp}}</span>
+    </div>
+    
 
     <div id="body" *ngIf="articles.postBody[0] != undefined">
         <div class="blocks" *ngFor="let block of articles.postBody[0].blocks">
@@ -11,25 +25,23 @@
                     <li *ngFor="let item of block.data.items">{{item}}</li>
                 </ol>
             </div>
-
+    
             <div class="ul-list-block" *ngIf="(block.type).includes('list') && (block.data.style).includes('unordered')">
                 <ul>
                     <li *ngFor="let item of block.data.items">{{item}}</li>
                 </ul>
+            </div>
         </div>
     </div>
+    
+    <div class="comments-bar">
+        <img src="">
+        <button (click)="toggleCommentsBox()">Show Comments</button>
+    </div>
 
-
-
-<!--<div class="comments-section">
+    <div class="comments-section" *ngIf="!commentsHidden">
     <h2>Comments</h2>
     <div class="comments" *ngFor="let article of articles.comments">{{article}}</div>
-
-    <div class="comment-post">
-       <input type="text" [formControl]="comment" >
-       <input type="button" value="Submit" (click)="showComment()">
-       <p>{{commentData}}</p>
-    </div>
 
     <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
         <label>
@@ -41,7 +53,14 @@
 
         <button type="submit" [disabled]="!commentForm.valid">Submit</button>
     </form>
-</div> -->
+</div>
+
+
+
+
+
+
+
 
 <!--<input type="file" (change)="onFileSelect($event)">
 <button type="submit" (submit)="onSubmit()">Submit</button>

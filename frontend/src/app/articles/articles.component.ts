@@ -25,7 +25,8 @@ export class ArticlesComponent implements OnInit {
     comments: new FormControl('')
     });
   
-  paragraph: 'paragraph'
+  paragraph: 'paragraph';
+  commentsHidden = true;
   
   constructor(
     private route: ActivatedRoute,
@@ -64,6 +65,13 @@ export class ArticlesComponent implements OnInit {
     console.log(this.commentData);
   }
 
+  toggleCommentsBox() {
+    if (this.commentsHidden == false) {
+      this.commentsHidden = true;
+      console.log("Whut");
+    } else
+    this.commentsHidden = false;
+  }
   
 
   
