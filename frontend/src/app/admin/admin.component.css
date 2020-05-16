@@ -33,6 +33,7 @@ nav {
 /* unvisited link */
 a:link {
   color: #ce8054;
+  text-decoration: none;
 }
 /* visited link */
 a:visited {
