@@ -35,25 +35,36 @@
     </div>
     
     <div class="comments-bar">
-        <img src="">
-        <button (click)="toggleCommentsBox()">Show Comments</button>
+        
+            <img src="assets/Img/speech-bubble.svg" alt="Comment dialog icon">
+            <button (click)="toggleCommentsBox()">Show Comments</button>
+        
+        
+       
+            <img src="assets/Img/thumb-up.svg" alt="Like icon">
+            <button (click)="likeButtonAction(articles._id)">Like {{articles.likes}}</button>
+        
+        
     </div>
 
     <div class="comments-section" *ngIf="!commentsHidden">
     <h2>Comments</h2>
     <div class="comments" *ngFor="let article of articles.comments">{{article}}</div>
 
-    <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+    <form id="newForm" [formGroup]="commentForm" (ngSubmit)="onSubmit()">
         <label>
             Comment:
-            <input type="text" formControlName="comments">
+            
         </label>
+        <input id="comments-form" type="text" formControlName="comments">
 
        
 
         <button type="submit" [disabled]="!commentForm.valid">Submit</button>
     </form>
 </div>
+
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
 
 

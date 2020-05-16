@@ -15,6 +15,26 @@ router.get('/', (req, res) => {
     });
 });
 
+// Get likes for a specific post
+router.get('/like-data/:id', (req, res) => {
+    //first, check if the post exists in the databse
+    Post.exists({ _id: req.params.id }).then((result) => {
+        if (!result) {
+            return res.status(400).send(`No post record with given id: ${req.params.id}`);
+        } else {
+            Post.find({ _id: req.body.params }, {likes: 1}, (err, doc) => {
+                if (!err){
+                    res.send(doc);
+                    console.log("like sent");
+                }
+                    
+                else
+                    console.log('Error in retrieving post record:' + JSON.stringify(err, undefined, 2));
+            });
+        }
+    });
+});
+
 // Increment number of likes
 // !! Include error handling !!
 router.patch('/like/:id', (req, res) => {
