@@ -15,7 +15,7 @@ export class ManagePostsService {
   }
 
   deletePost(_id: string) {
-    return this.http.delete('http://localhost:3300/posts' + `/${_id}`);
+    return this.http.delete('http://localhost:3300/posts/' + _id);
   }
 
 }
