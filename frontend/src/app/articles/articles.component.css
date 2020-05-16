@@ -60,5 +60,40 @@
     padding: 10px;
 }
 
+.comments-bar {
+    display: flex;
+    height: 100px;
+}
+
+.comments-bar > button {
+    border: 0px;
+    background-color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 50px;
+    margin-right: 100px;
+}
+
+.comments-bar > img {
+    width: 150px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > input {
+    width: 50%;
+    height: 100px;
+}
+
+form > button {
+    width: 50%;
+    height: 30px;
+    border: solid 2px black;
+    background-color: white;
+}
+
 
 

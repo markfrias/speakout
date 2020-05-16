@@ -72,6 +72,20 @@ export class ArticlesComponent implements OnInit {
     } else
     this.commentsHidden = false;
   }
+
+  likeButtonAction(id: string) {
+    this.postsService.incrementLikes(id)
+      .subscribe((data: any) => this.articles.likes = data.likes
+      );
+
+      console.log(this.articles.likes);
+      
+      // Temporary view refresh
+      // !! Change to refresh specific parts only !!
+     
+  }
+
+  
   
 
   
@@ -85,7 +99,8 @@ export class ArticlesComponent implements OnInit {
     setTimeout(() => {
       this.showArticle(this.postId);
 
-    }, 250)
+    }, 250);
+  
   }
 
 

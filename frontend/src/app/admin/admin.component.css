@@ -147,7 +147,7 @@ td {
 .edit:hover,
 .delete:hover,
 .publish:hover {
-  text-decoration: underline;
+  text-decoration: underline overline;
 }
 
 form div {
