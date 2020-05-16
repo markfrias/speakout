@@ -35,7 +35,7 @@ export class AdminComponent implements OnInit {
 
   onLogout(){
     this.userService.deleteToken();
-    this.router.navigate(['/posts']);
+    this.router.navigate(['/home']);
   }
 
 }
