@@ -1,13 +1,179 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
+
 nav {
-    display:flex;
+    height: 75px;
     width: 100%;
-    height: 12vh;
     background-color: #6f3637;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-/*drop down menu*/
+.nav-item {
+    height: 75%;
+    /*background-color: blue; */
+}
+
+#image-container {
+    width: 25%;
+    height: 150%;
+    align-self: inherit;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    z-index: 0;
+}
+
+#logo-big {
+    height: 100%;
+    width: auto;
+}
+
+#logo-small {
+    display: none;
+}
+
+#navlink-container {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px;
+}
+
+.navlinks {
+    list-style-type: none;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-family: 'raleway', 'arial';
+}
+
+.navlinks:hover .navlinks {
+    color: white;
+}
+
+#login-button-container {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 20px;
+    align-items: center;
+    position: relative;
+}
+
+#login-button-container > div {
+    cursor: pointer;
+}
+
+#login-button-container > div > i {
+    margin-right: 10px;
+}
+
+#login-button-container > div > span, a {
+    font-family: 'raleway', 'arial';
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    top: 40px;
+    color: white;
+}
+
+.show {display:flex; flex-direction: column;}
+
+#login-button-container:hover .dropdown-content, #login-button-container:active .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Styles starting at 1024 width and below (tablets) */
+@media screen and (max-width: 1024px) and (min-width: 600px) {
+    #image-container {
+        width: 20%;
+    }
+
+    #navlink-container {
+        width: 50%;
+    }
+
+    #login-button-container {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 645px) {
+    #image-container {
+        width: auto;
+        margin-left: 5px;
+    }
+
+    #navlink-container {
+        width: auto;
+    }
+
+    #login-button-container {
+        width: 25%;
+    }
+}
+/* Styles starting at 599 width and below */
+@media screen and (max-width: 645px) {
+    nav {
+        flex-direction: column;
+        height: 100px;
+    }
+
+    #image-container {
+        height: 50%;
+        width: 100%;
+    }
+    
+    #logo-big {
+        display: none;
+    }
+
+    #logo-small {
+        display: block;
+        height: 100%;
+    }
+
+    #login-button-container {
+        display: none;
+    }
+
+    #navlink-container {
+        height: 50%;
+        width: 100%;
+    }
+
+    .navlinks {
+        font-size: 15px;
+    }
+}
+
+/*nav {
+    display: flex;
+    width: 100%;
+    height: 75px;
+    background-color: #6f3637;
+    align-items: center;
+}
+
+/*drop down menu
 nav li ul {
   position: absolute;
   top: 35px;
@@ -19,7 +185,7 @@ nav li ul {
 
   
 }
-/* Login dropdown */
+/* Login dropdown 
 nav li:hover ul {
   display: block;
   background-color:#6f3637 ;
@@ -49,47 +215,30 @@ nav li ul li a:hover {
 nav li ul a:hover {
   background: #d5d6d6;
 }
-/* added */
+/* added 
 
-/* Logo */
+/* Logo 
 img {
     width: 150px;
     height: 150px;
+    align-self: flex-start;
 }
+
+/* Navbar link styles 
 a.navlinks {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     list-style: none;
     cursor: pointer;
     padding-right: 1vw;
-   
-    
-
-}
-/*link unvisited*/
-a:link {
-    margin: 0;
-    color: rgb(247, 193, 56);
-    text-decoration: none;
-    padding-top: 5px
 }
 
-/*link visited*/
-a:visited {
-    color: #6186a8;
-    text-decoration: none;
-}
-/*link hover*/
-a:hover {
-    color: goldenrod;
-}
-
-/* List container */
+/* List container 
 nav > ul {
    display: flex;
    list-style: none;
    font-size: 30px;
-   margin-left: 26%;
+   justify-self: center;
 }
 
 .loginbtn {  
@@ -98,17 +247,44 @@ nav > ul {
     list-style: none;
     list-style: none;
     color:rgb(75, 75, 235);
-    float: right;
 }
 a.loginbtn {
-    padding: 35px;
+    padding-bottom: 35px;
     display: flex;
     text-align: center;
     margin-left: 85%;
     font-size: 18px;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
     position: absolute;
+    padding: 35px 0px;
 }
+
+a:link {
+    margin: 0;
+    color: rgb(247, 193, 56);
+    text-decoration: none;
+    padding-top: 5px
+}
+
+/*link visited 
+a:visited {
+    color: #6186a8;
+    text-decoration: none;
+}
+/*link hover 
+a:hover {
+    color: goldenrod;
+}
+
+
+
+
+
+
+/*link unvisited
+
+
+
 
 h2{
 background-color: #FEFFED;
@@ -158,9 +334,10 @@ font-weight: bold;
 center{
 font-size:32px;
 }
+*/
 
 
-/*mobile responsive */
+/*mobile responsive 
 @media only screen and (max-width:1250px) {
     nav > ul {
         margin-left: 25%;
@@ -237,7 +414,7 @@ font-size:32px;
     img {
         width: 142px;
         height: 142px;
-       /* margin: 3px; */
+        margin: 3px; 
 
     }
     a.navlinks {
@@ -273,4 +450,4 @@ font-size:32px;
 
     } 
     }
-
+*/
