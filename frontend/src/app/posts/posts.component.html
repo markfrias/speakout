@@ -11,7 +11,7 @@
         <h2>Recent Posts</h2>
         <!--Need to change code below. Use structural directives later-->
         <div class="recent-posts">
-
+            <a routerLink="/request">Request to publish your article.</a>
             <div class="post" *ngFor="let post of posts | slice:0:5">
                 <h3>{{post.title}}</h3>
                 <p>{{post.timestamp | date :'dd-MMM-yyyy hh:mm a'}}</p>

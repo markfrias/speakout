@@ -1,0 +1,42 @@
+<h1 id="pageTitle">Create Post</h1>
+
+<form [formGroup]="editPostForm" (keydown.enter)="$event.preventDefault()">
+
+    <label>
+        Title:
+    </label>
+    <input type="text" formControlName="title">
+
+    <label>
+        Description:
+    </label>
+    <input type="text" id="description" formControlName="postDescription">
+
+    <label>
+        Author (optional):
+    </label>
+    <input type="text" formControlName="author">
+
+    <label>
+        Topics:
+    </label>
+    <input type="text" formControlName="topics">
+
+    <label id="bodyLabel">
+        Body:
+    </label>
+
+    
+</form>
+
+<div id="editorjs"></div>
+    <button type="button" [disabled]="!editPostForm.valid" (click)="onSubmit()">Submit</button>
+    <div class="messages" id="error-message" *ngIf="postId === undefined && error === true">An error is encountered. The post was not created.</div>
+    <div class="messages" id="success-message" *ngIf="postId != undefined">The post was successfully created.</div>
+
+<!--<div *ngIf="bodyData != undefined">
+    <div class="output" *ngFor="let block of bodyData.blocks">
+        <p>{{block.data.text}}</p>
+     </div>
+</div> -->
+

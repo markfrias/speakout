@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 
 import { AuthGuard } from './auth/auth.guard'
 import { EditPostComponent } from './admin/edit-post/edit-post.component';
+import { RequestPostComponent } from './request-post/request-post.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'users', component: UsersComponent},
   { path: 'topics', component: TopicsComponent},
+  { path: 'request', component: RequestPostComponent },
   {path: 'create-post', component: CreatePostComponent, canActivate: [AuthGuard]},
   { path: 'articles/:id', component: ArticlesComponent },
   { path: 'edit-post/:id', component: EditPostComponent},
