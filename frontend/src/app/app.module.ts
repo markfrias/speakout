@@ -29,6 +29,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { EditPostComponent } from './admin/edit-post/edit-post.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   { path: 'trending', component: TrendingComponent },
@@ -64,7 +65,8 @@ const appRoutes: Routes = [
     CreatePostComponent,
     EditUserComponent,
     LoginComponent,
-    EditPostComponent
+    EditPostComponent,
+    HomeComponent
 
   ],
   imports: [

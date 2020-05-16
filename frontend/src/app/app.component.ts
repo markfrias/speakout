@@ -11,12 +11,21 @@ import { UserService } from './shared/user.service'
 export class AppComponent {
   title = 'frontend';
   userDetails;
+  
+  
 
   constructor(public userService: UserService, private router: Router){ }
 
   onLogout(){
     this.userService.deleteToken();
-    this.router.navigate(['/posts']);
+    this.router.navigate(['/home']);
   }
+
+  openContextMenu() {
+    document.getElementById('dd-content').classList.toggle("show");
+  }
+
+  
+  
 
 }

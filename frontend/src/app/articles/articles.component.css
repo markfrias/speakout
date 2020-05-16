@@ -1,7 +1,64 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost&family=Libre+Baskerville&display=swap');
+
+* {
+    /*font-family: 'Jost', sans-serif;*/
+    font-family: 'Libre Baskerville', serif;
+}
+
+#article-container {
+    margin-top: 10%;
+    margin-left: 5%;
+    background-color: gray;
+    width: 75%;
+    border-radius: 2px;
+    padding: 10px;
+    height: 100%;
+}
+
+
+.meta-details {
+    font-size: 15px;
+    margin-bottom: 17px;
+}
+
+#title {
+    font-size: 50px;
+    margin-bottom: 0px;
+}
+
+.header-block {
+    font-size: 40px;
+    margin-top: 50px;
+    text-decoration: underline;
+}
+
+.image-block {
+    width: 100%;
+}
+
+#body {
+    font-size: 18px;
+    margin-right: 10%;
+    line-height: 1.7em;
+}
+
+#description {
+    font-size: 24px;
+    font-weight: lighter;
+    color: #1b1b1b ;
+    margin: 15px 0px;
+}
+
 .comments {
     width: 30vw;
     height: auto;
-    background-color: green;
+    background-color: none;
+    border: solid 1px black;
     margin-bottom: 5px;
     padding: 10px;
 }
+
+
+

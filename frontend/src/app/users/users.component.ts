@@ -3,12 +3,8 @@ import{ NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-import { UsersService } from './users.service';
 import { UserService } from './../shared/user.service';
 import { User } from './../shared/user.model';
-
-//toast message variable (declared only when using 'materialize styles')
-declare var M: any;
 
 @Component({
   selector: 'app-users',
@@ -19,28 +15,57 @@ export class UsersComponent implements OnInit {
   users;
   userDetails;
 
-  constructor(private manageUserService : UsersService, private userService: UserService, private router: Router) {
-    this.showUsers();
-  }
+  constructor(public userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.resetForm();
     this.refreshUsersList();
     this.userService.getUserProfile().subscribe(
       res => {
         this.userDetails = res['user'];
-      }
-    );
+      });
+  }
+
+  //reset edit user form
+  resetForm(form ?: NgForm) {
+    if (form)
+      form.reset();
+    this.userService.selectedUser = {
+      _id: "",
+      fname: "",
+      lname: "",
+      username: "",
+      email: "",
+      address: "",
+      phoneNumber: "",
+      password: "",
+      role: "",
+    }
+  }
+
+  //update user record
+  onUpdate(form: NgForm) {
+    this.userService.editUser(form.value).subscribe((res) => {
+      this.resetForm(form);
+      this.refreshUsersList();
+      this.userService.getUserProfile().subscribe(
+        res => {
+          this.userDetails = res['user'];
+        });
+      alert('User record updated Successfully');
+    });
   }
 
   //refresh users list
   refreshUsersList() {
-    this.manageUserService.getUsers().subscribe((res) => {
-      this.manageUserService.users = res as User[];
+    this.userService.getUsers().subscribe((res) => {
+      this.userService.usersList = res as User[];
     });
   }
 
+  //retrieve all users from the database
   showUsers() {
-    this.manageUserService.getUsers()
+    this.userService.getUsers()
       .subscribe((data: any) => this.users = data
       );
     console.log(this.users);
@@ -48,22 +73,23 @@ export class UsersComponent implements OnInit {
 
   //edit or update user
   onEdit(user : User) {
-    this.manageUserService.selectedUser = user;
+    this.userService.selectedUser = user;
   }
+
   //delete user
   onDelete(_id : string) {
     if(confirm('Are you sure you want to delete this user record?') == true) {
-      this.manageUserService.deleteUser(_id).subscribe((res) => {
+      this.userService.deleteUser(_id).subscribe((res) => {
         this.refreshUsersList();
-        M.toast({ html: 'User Deleted successfully', classes: 'rounded' });
-        //alert('User Deleted successfully');
+        alert('User Deleted successfully');
       });
     }
   }
+
   //logout user
   onLogout(){
     this.userService.deleteToken();
-    this.router.navigate(['/posts']);
+    this.router.navigate(['/home']);
   }
 
 }

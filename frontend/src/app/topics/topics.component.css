@@ -2928,7 +2928,6 @@ video.responsive-video {
 .breadcrumb i,
 .breadcrumb [class^="mdi-"], .breadcrumb [class*="mdi-"],
 .breadcrumb i.material-icons {
-  display: inline-block;
   float: left;
   font-size: 24px;
 }
@@ -3151,7 +3150,7 @@ tr {
 }
 
 td, th {
-  padding: 15px 5px;
+  padding: 10px 5px;
   display: table-cell;
   text-align: left;
   vertical-align: middle;
@@ -5857,6 +5856,7 @@ body.keyboard-focused .dropdown-content li:focus {
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+  mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
 }
 
 .waves-input-wrapper {
@@ -5878,6 +5878,7 @@ body.keyboard-focused .dropdown-content li:focus {
   line-height: 2.5em;
   border-radius: 50%;
   -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .waves-block {
@@ -6191,6 +6192,7 @@ body.keyboard-focused .dropdown-content li:focus {
   -webkit-transition: opacity .4s;
   transition: opacity .4s;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .materialboxed:hover:not(.active) {
@@ -6988,9 +6990,8 @@ textarea.materialize-textarea {
   pointer-events: none;
 }
 
-[type="checkbox"] {
+/*[type="checkbox"] {
   /* checkbox aspect */
-}
 
 [type="checkbox"] + span:not(.lever) {
   position: relative;

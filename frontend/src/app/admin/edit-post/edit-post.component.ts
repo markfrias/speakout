@@ -6,10 +6,17 @@ import { FormGroup, FormControl } from '@angular/forms';
 import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header';
 import LinkTool from '@editorjs/link';
-import SimpleImage from '@editorjs/simple-image';
 import ImageTool from '@editorjs/image';
+import Checklist from '@editorjs/checklist';
+import List from '@editorjs/list';
+import Embed from '@editorjs/embed';
+import Quote from '@editorjs/quote';
+import Warning from '@editorjs/warning';
+
+
 
 import { ɵangular_packages_platform_browser_dynamic_platform_browser_dynamic_a } from '@angular/platform-browser-dynamic';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -25,7 +32,6 @@ export class EditPostComponent implements OnInit {
     title: new FormControl(''),
     postDescription: new FormControl(''),
     author: new FormControl(''),
-    postBody: new FormControl(''),
     topics: new FormControl('')
     
   });
@@ -54,22 +60,15 @@ export class EditPostComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.postId = params['id'].toString();
       console.log(this.postId);
-      setTimeout(()=> {
-        this.showPostContent(this.postId);
-
-      }, 100)
-      //console.log(this.articles);
-      
+      this.showPostContent(this.postId);      
     });
     
-    setTimeout(() => {
       if (this.postContent == undefined)
       console.log("Error");
 
       else 
       console.log(this.postContent.postBody[0].blocks);
 
-    }, 1000)
     
 
       
@@ -77,21 +76,58 @@ export class EditPostComponent implements OnInit {
     setTimeout(() => {
         this.editor = new EditorJS({
           autofocus: true,
+          minHeight: 50,
 
           tools: {
             header: Header,
-            linkTool:  {
-              class: LinkTool
-            },
             image: {
               class: ImageTool,
               config: {
                 field: 'image' ,
                 endpoints: {
                   byFile: 'http://localhost:3300/images/', // Your backend file uploader endpoint
-                  byUrl: 'http://localhost:8008/fetchUrl', // Your endpoint that provides uploading by Url
+                  byUrl: 'http://localhost:3300/images/url', // Your endpoint that provides uploading by Url
 
                 }
+              }
+            },
+            checklist: {
+              class: Checklist,
+              inlineToolbar: true
+            },
+
+            list: {
+              class: List,
+              inlineToolbar: true
+            },
+
+            embed: {
+              class: Embed,
+              inlineToolbar: true,
+              config: {
+                services: {
+                  youtube: true,
+                  coub: true
+                }
+              }
+            },
+
+            quote: {
+              class: Quote,
+              inlineToolbar: true,
+              config: {
+                quotePlaceholder: 'Enter a quote',
+                captionPlaceholder: 'Quote\'s author'
+              }
+            },
+
+            warning: {
+              class: Warning,
+              inlineToolbar: true,
+              shortcut: 'CMD+SHIFT+W',
+              config: {
+                titlePlaceholder: 'Title',
+                messagePlaceholder: 'Message'
               }
             }
           },
@@ -103,26 +139,56 @@ export class EditPostComponent implements OnInit {
           version: this.postContent.postBody[0].version
           }
         });
-      }, 2000)
+      }, 3000)
       
     
   }
 
   showPostContent(id) {
-    this.postsService.getSpecificPost(id)
-    .subscribe((result: any) => this.postContent = result
-    );
-
     
-    setTimeout(() => {
-      console.log(this.postContent);
-      this.fillForm();
-    }, 150)
+  
+    let assignData = new Promise((resolve, reject) => {
+      let content = undefined;
+      this.postsService.getSpecificPost(id)
+      .subscribe((result: any) => content = result)
+
+      setTimeout(() => {
+        if (content != undefined){
+          resolve(content);
+        } else {
+          setTimeout(() => {
+            if (content != undefined){
+              resolve(content);
+            } else {
+              reject("Cannot load data, please refresh");
+            }
+          }, 2000)
+          
+          
+
+        }
+          
+          
+      }, 250)
+    })
+      
+    assignData
+      .then((content) => {
+        this.postContent = content;
+        this.fillForm();
+      })
+      .catch((message) => {
+        console.log(message);
+        this.showPostContent(this.postId);
+      } )
+
+      
   }
 
   onSubmit() {
     console.log(this.editPostForm.value);
     this.modifyPostsService.submitForm(this.editPostForm.value, this.postId);
+    this.onSave();
   }
 
   fillForm() {

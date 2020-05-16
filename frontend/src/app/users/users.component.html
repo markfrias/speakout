@@ -1,58 +1,108 @@
-<body>
-    <main>
-    <div class="admin-wrapper">
-        <!--left sidebar-->
-        <div class="left-sidebar">
-            <ul>
-                <li><a routerLink='/create-post'>Create Post</a></li>
-                <li><a routerLink='/admin'>Manage Posts</a></li>
-                <li><a routerLink='/users'>Manage Users</a></li>
-                <li><a routerLink='/topics'>Manage Topics</a></li>
-                <li><a (click)="onLogout()" class="logout" style="color: red; cursor: pointer">Logout</a></li>
-            </ul>
-        </div>
+<main>
+  <div class="admin-wrapper">
+      <!--left sidebar-->
+      <div class="left-sidebar">
+          <ul>
+              <li><a routerLink='/create-post'>Create Post</a></li>
+              <li><a routerLink='/admin'>Manage Posts</a></li>
+              <li><a routerLink='/users'>Manage Users</a></li>
+              <li><a routerLink='/topics'>Manage Topics</a></li>
+              <li><a (click)="onLogout()" class="logout" style="color: red; cursor: pointer">Logout</a></li>
+          </ul>
+      </div>
 
-        <!--admin content-->
-        <div class="admin-content">
-            <div class="content">
-              <div *ngIf="userDetails">
-                <h3>Hello, {{userDetails.fname}} </h3>
-                <p style="font-style: italic;"><b>Username:</b> {{userDetails.username}}
-                <b> Role:</b> {{userDetails.role}}
-                <b> Email:</b> {{userDetails.email}}</p>
-                <h5>Admin Dashboard: Manage Users</h5>
-              </div>
-                <table class="responsive-table highlight">
-                  <thead>
-                    <tr>
-                      <th>Full Name</th>
-                      <th>Username</th>
-                      <th>Role (office)</th>
-                      <th>Email</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let user of users">
-                      <td>{{ user.fname }} {{ user.lname }}</td>
-                      <td>{{ user.username }}</td>
-                      <td>{{ user.role }}</td>
-                      <td>{{ user.email }}</td>
-                      <td>
-                        <!-- edit button -->
-                        <a class="action-btn edit" title="Edit or update user">
-                          <i class="material-icons">edit</i> <!-- edit function has to be added -->
-                        </a>
-                        <!-- delete button -->
-                        <a class="action-btn delete" title="Delete user">
-                          <i class="material-icons" (click)="onDelete(user._id)">delete</i>
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+      <!--admin content-->
+      <div class="admin-content">
+          <div class="content">
+            <div *ngIf="userDetails">
+              <h3>Hello, {{userDetails.fname}} </h3>
+              <p style="font-style: italic;"><b>Username:</b> {{userDetails.username}}
+              <b> Role:</b> {{userDetails.role}}
+              <b> Email:</b> {{userDetails.email}}</p>
+              <h5>Admin Dashboard: Manage Users</h5>
             </div>
-        </div>
-    </div>
-  </main>
-</body>
+
+            <div style="display: flex;">
+              <div class="col s5" style="flex: 2; border-right: cadetblue 1px solid;">
+                <form #userForm="ngForm" (ngSubmit)="onUpdate(userForm)" autocomplete="off">
+                  <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
+                        <p style="text-align: center; color:  cadetblue;">Edit or Update user</p>
+                        <input type="hidden" name="_id" >
+                        <div class="row">
+                          <div class="col s12">
+                            <label class="green-text">First Name :
+                              <label class="red-text">*</label>
+                            </label>
+                            <input type="text" name="fname" #fname="ngModel" [(ngModel)]="userService.selectedUser.fname" placeholder="First Name" required>
+
+                            <label class="green-text">Last Name :
+                              <label class="red-text">*</label>
+                            </label>
+                            <input type="text" name="lname" #lname="ngModel" [(ngModel)]="userService.selectedUser.lname" placeholder="Last Name" required>
+
+                            <label class="green-text">Username :
+                              <label class="red-text">*</label>
+                            </label>
+                            <input type="text" name="username" #username="ngModel" [(ngModel)]="userService.selectedUser.username" placeholder="Username" required>
+
+                            <label class="green-text">Email :
+                              <label class="red-text">*</label>
+                            </label>
+                            <input type="text" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="Email" readonly>
+
+                            <label class="green-text">Physical Address :
+                              <label class="red-text">*</label>
+                            </label>
+                            <input type="text" name="address" #address="ngModel" [(ngModel)]="userService.selectedUser.address" placeholder="Physical Address" required>
+
+                            <label class="green-text">Phone Number :
+                              <label class="red-text">*</label>
+                            </label>
+                            <input type="text" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="userService.selectedUser.phoneNumber" placeholder="Phone Number" required>
+
+                            <label class="green-text">Role (Office) :
+                              <label class="red-text">*</label>
+                            </label>
+                            <input type="text" name="role" #role="ngModel" [(ngModel)]="userService.selectedUser.role" placeholder="Role (Office)" required>
+
+                            <button class="btn btn-custom right" type="button" (click)="resetForm()">Cancel</button>
+                            <button class="btn btn-custom right" type="submit" [disabled]="!userForm.valid">Update</button>
+                          </div>
+                        </div>
+                  </form>
+              </div>
+              <table class="responsive-table highlight" style="flex: 8;">
+                <thead>
+                  <tr>
+                    <th>Full Name</th>
+                    <th>Username</th>
+                    <th>Role (office)</th>
+                    <th>Email</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of userService.usersList">
+                    <td>{{ user.fname }} {{ user.lname }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                      <!-- edit button -->
+                      <a class="action-btn edit" title="Edit or update user">
+                        <i class="material-icons" (click)="onEdit(user)">edit</i>
+                      </a>
+                      <!-- delete button -->
+                      <a class="action-btn delete" title="Delete user">
+                        <i class="material-icons" (click)="onDelete(user._id)">delete</i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+  </div>
+</main>
+

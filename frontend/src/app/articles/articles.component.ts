@@ -23,7 +23,10 @@ export class ArticlesComponent implements OnInit {
   commentData;
   commentForm = new FormGroup({
     comments: new FormControl('')
-    })
+    });
+  
+  paragraph: 'paragraph';
+  commentsHidden = true;
   
   constructor(
     private route: ActivatedRoute,
@@ -49,6 +52,7 @@ export class ArticlesComponent implements OnInit {
       );
       setTimeout( () => {
         console.log(this.articles);
+        console.log(this.articles.postBody[0].blocks[0].type);
       }, 3000)
       
   }
@@ -61,6 +65,16 @@ export class ArticlesComponent implements OnInit {
     console.log(this.commentData);
   }
 
+  toggleCommentsBox() {
+    if (this.commentsHidden == false) {
+      this.commentsHidden = true;
+      console.log("Whut");
+    } else
+    this.commentsHidden = false;
+  }
+  
+
+  
   onSubmit() {
     console.warn(this.commentForm.value);
     console.log(this.postId);

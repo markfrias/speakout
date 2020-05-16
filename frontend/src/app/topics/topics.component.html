@@ -1,44 +1,85 @@
-<body>
-    <main>
-    <div class="admin-wrapper">
-        <!--left sidebar-->
-        <div class="left-sidebar">
-            <ul>
-                <li><a routerLink='/create-post'>Create Post</a></li>
-                <li><a routerLink='/admin'>Manage Posts</a></li>
-                <li><a routerLink='/users'>Manage Users</a></li>
-                <li><a routerLink='/topics'>Manage Topics</a></li>
-                <li><a (click)="onLogout()" class="logout" style="color: red; cursor: pointer">Logout</a></li>
-            </ul>
-        </div>
+<main>
+  <div class="admin-wrapper">
+      <!--left sidebar-->
+      <div class="left-sidebar">
+          <ul>
+              <li><a routerLink='/create-post'>Create Post</a></li>
+              <li><a routerLink='/admin'>Manage Posts</a></li>
+              <li><a routerLink='/users'>Manage Users</a></li>
+              <li><a routerLink='/topics'>Manage Topics</a></li>
+              <li><a (click)="onLogout()" class="logout" style="color: red; cursor: pointer">Logout</a></li>
+          </ul>
+      </div>
 
-        <!--admin content-->
-        <div class="admin-content">
-            <div class="content">
-              <div *ngIf="userDetails">
-                <h3>Hello, {{userDetails.fname}} </h3>
-                <p style="font-style: italic;"><b>Username:</b> {{userDetails.username}}
-                <b> Role:</b> {{userDetails.role}}
-                <b> Email:</b> {{userDetails.email}}</p>
-                <h5>Admin Dashboard: Manage Topics</h5>
+      <!--admin content-->
+      <div class="admin-content">
+          <div class="content">
+            <div *ngIf="userDetails">
+              <h3>Hello, {{userDetails.fname}} </h3>
+              <p style="font-style: italic;"><b>Username:</b> {{userDetails.username}}
+              <b> Role:</b> {{userDetails.role}}
+              <b> Email:</b> {{userDetails.email}}</p>
+              <h5>Admin Dashboard: Manage Topics</h5>
             </div>
 
-                <table>
-                    <thead>
-                        <th>SN</th>
-                        <th>Category</th>
+            <div style="display: flex;">
+              <div class="col s5" style="flex: 3; border-right: cadetblue 1px solid;">
+                <form #topicForm="ngForm" (ngSubmit)="onSubmit(topicForm)" autocomplete="off">
+                        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="topicService.selectedTopic._id">
+                        <p style="text-align: center; color:  cadetblue;">Add new Topic or Update existing Topic</p>
+                        <div class="row">
+                          <div class="col s12">
+                            <label class="green-text">Topic :
+                              <label class="red-text">*</label>
+                            </label>
+                            <input type="text" name="topicName" #topicName="ngModel" [(ngModel)]="topicService.selectedTopic.topicName" placeholder="Topic" required>
+                          </div>
+                        </div>
 
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let topic of topics">
-                            <td>{{topic._id}}</td>
-                            <td>{{topic.category}}</td>
-                            <td><a href="#" class="edit">edit</a></td>
-                            <td><a href="#" class="delete">delete</a></td>
-                    </tbody>
-                </table>
+                          <div class="row">
+                            <div class="col s12">
+                              <label class="green-text">Description :
+                                <label class="red-text">*</label>
+                              </label>
+                              <input type="text" name="description" #description="ngModel" [(ngModel)]="topicService.selectedTopic.description" placeholder="Description" required>
+                            </div>
+                          </div>
+
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <button class="btn btn-custom right" type="button" (click)="resetForm()">Cancel</button>
+                            <button class="btn btn-custom right" type="submit" [disabled]="!topicForm.valid" title="Update or Add new topic">Submit</button>
+                          </div>
+                        </div>
+                  </form>
+              </div>
+              <table class="responsive-table highlight" style="flex: 7;">
+                <thead>
+                  <tr>
+                    <th>Topic</th>
+                    <th>Description</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let topic of topicService.topicsList">
+                    <td>{{ topic.topicName }}</td>
+                    <td>{{ topic.description }}</td>
+                    <td>
+                      <!-- edit button -->
+                      <a class="action-btn edit" title="Edit or update topic">
+                        <i class="material-icons" (click)="onEdit(topic)">edit</i>
+                      </a>
+                      <!-- delete button -->
+                      <a class="action-btn delete" title="Delete topic">
+                        <i class="material-icons" (click)="onDelete(topic._id)">delete</i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-        </div>
-    </div>
-    </main>
-</body>
+          </div>
+      </div>
+  </div>
+</main>

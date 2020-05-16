@@ -14,11 +14,13 @@ import { UsersComponent } from './users/users.component';
 import { TopicsComponent } from './topics/topics.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { ArticlesComponent} from './articles/articles.component';
+import { HomeComponent } from './home/home.component'; 
 
 import { AuthGuard } from './auth/auth.guard'
 import { EditPostComponent } from './admin/edit-post/edit-post.component';
 
 const routes: Routes = [
+  { path: 'home', component: HomeComponent},
   { path: 'trending', component: TrendingComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'tags', component: TagsComponent} ,
@@ -29,10 +31,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'users', component: UsersComponent},
   { path: 'topics', component: TopicsComponent},
-  {path: 'create-post', component: CreatePostComponent},
+  {path: 'create-post', component: CreatePostComponent, canActivate: [AuthGuard]},
   { path: 'articles/:id', component: ArticlesComponent },
   { path: 'edit-post/:id', component: EditPostComponent},
-  { path: '', redirectTo: '/posts', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 

@@ -1,4 +1,4 @@
-body {
+html {
     height: 100%;
     padding: 0px;
     margin: 0px;
@@ -62,7 +62,7 @@ a.action-btn.delete:hover {
 }
 
 .admin-wrapper .left-sidebar {
-    flex: 2; /* 20% 0f the width */
+    flex: 1; /* 10% 0f the width */
     min-height: 100%;
     background: #0d243a;
 }
@@ -88,8 +88,8 @@ a.action-btn.delete:hover {
 }
 
 .admin-wrapper .admin-content {
-    flex: 8; /* 80% of the width */
-    height: 100%;
+    flex: 9; /* 90% of the width */
+    min-height: 100%;
     padding-left: 20px;
 }
 
@@ -2929,7 +2929,6 @@ video.responsive-video {
 .breadcrumb i,
 .breadcrumb [class^="mdi-"], .breadcrumb [class*="mdi-"],
 .breadcrumb i.material-icons {
-  display: inline-block;
   float: left;
   font-size: 24px;
 }
@@ -3152,7 +3151,7 @@ tr {
 }
 
 td, th {
-  padding: 15px 5px;
+  padding: 10px 5px;
   display: table-cell;
   text-align: left;
   vertical-align: middle;
@@ -3613,7 +3612,7 @@ table span.badge {
 .row {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
+  margin-bottom: 2px;
 }
 
 .row:after {
@@ -5858,6 +5857,8 @@ body.keyboard-focused .dropdown-content li:focus {
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+  mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+
 }
 
 .waves-input-wrapper {
@@ -5879,6 +5880,7 @@ body.keyboard-focused .dropdown-content li:focus {
   line-height: 2.5em;
   border-radius: 50%;
   -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .waves-block {
@@ -6192,6 +6194,7 @@ body.keyboard-focused .dropdown-content li:focus {
   -webkit-transition: opacity .4s;
   transition: opacity .4s;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .materialboxed:hover:not(.active) {
@@ -6989,9 +6992,8 @@ textarea.materialize-textarea {
   pointer-events: none;
 }
 
-[type="checkbox"] {
-  /* checkbox aspect */
-}
+/*[type="checkbox"] {
+  /* checkbox aspect */ 
 
 [type="checkbox"] + span:not(.lever) {
   position: relative;
