@@ -169,7 +169,7 @@ export class EditPostComponent implements OnInit {
         }
           
           
-      }, 250)
+      }, 500)
     })
       
     assignData

@@ -108,16 +108,15 @@ router.post('/',(req, res) => {
         postBody: req.body.postBody,
         timestamp: req.body.timestamp,
         topic: req.body.topic,
-        likes: req.body.likes,
-        shares: req.body.shares,
-        comments: req.body.comments,
-        bannerImageName: req.body.bannerImageName
     });
     newPost.save((err, doc) => {
         if (!err) 
-            res.send(doc);
-        else
+            res.send(doc)
+        else{
             console.log('Error in adding new post: ' + JSON.stringify(err, undefined, 2));
+            res.json(err);
+        }
+            
     })
 });
 
