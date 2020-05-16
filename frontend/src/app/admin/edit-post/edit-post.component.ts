@@ -49,11 +49,7 @@ export class EditPostComponent implements OnInit {
     private postsService: PostsService
     
     
-  ) { 
-    
-
-  
-  }
+  ) {}
 
   ngOnInit(): void {
 
