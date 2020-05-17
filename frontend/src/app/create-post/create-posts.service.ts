@@ -10,11 +10,11 @@ export class CreatePostsService {
 
   submitForm(formData) {
     let resp;
-    return this.httpClient.post("http://127.0.0.1:3300/posts/", formData);
+    return this.httpClient.post("http://heroku-speakout.herokuapp.com/posts/", formData);
   }
 
   submitBody(data) {
-    this.httpClient.post("http://127.0.0.1:3300/posts/body/", data)
+    this.httpClient.post("http://heroku-speakout.herokuapp.com/posts/body/", data)
       .subscribe(
         (res) => console.log(res),
         (err) => console.log(err)

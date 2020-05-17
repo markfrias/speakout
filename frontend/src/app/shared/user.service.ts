@@ -7,7 +7,7 @@ import { User } from './user.model';
   providedIn: 'root'
 })
 export class UserService {
-  readonly baseURL = 'http://localhost:3300/users';
+  readonly baseURL = 'http://heroku-speakout.herokuapp.com/users';
   selectedUser: User = {
     _id: '',
     fname: '',
