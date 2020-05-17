@@ -16,7 +16,6 @@ const fileHandler = require('./upload');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
 app.use(fileHandler);
 app.use(passport.initialize());
 
