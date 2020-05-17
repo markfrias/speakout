@@ -35,7 +35,7 @@ router.post('/images', upload.single('image'), function(req, res, next) {
         res.json({
             'success' : 1,
             "file": {
-                "url": "http://127.0.0.1:3300/uploads/" + filename
+                "url": "https://heroku-speakout.herokuapp.com/uploads/" + filename
             }
         })
     
@@ -53,7 +53,7 @@ router.post('/images/url', (req, res, next) => {
             res.json({ 
                 success: 1,
                 file: {
-                    url : "http://127.0.0.1:3300/uploads/" + (filename.slice(8, filename.length))
+                    url : "https://heroku-speakout.herokuapp.com/uploads/" + (filename.slice(8, filename.length))
                 }
              })
         })
