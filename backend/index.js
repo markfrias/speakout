@@ -7,6 +7,7 @@ const cors = require('cors');
 require('./config/config');
 require('./db');
 require('./config/passportConfig');
+const fileHandler = require('./upload');
 
 
 
@@ -19,7 +20,6 @@ app.use(passport.initialize());
 const userController = require('./controllers/userController');
 const topicController = require('./controllers/topicController');
 const postsRoute = require('./controllers/postController');
-const fileHandler = require('./upload');
 
 
 
