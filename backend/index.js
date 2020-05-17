@@ -29,6 +29,8 @@ app.use((err, req, res, next) => {
     }
 });
 
+app.use(cors({origin: 'http://localhost:4200'}, {origin: 'https://aup-speakout.herokuapp.com/' }));
+
 app.use('/uploads', express.static('uploads'));
 
 app.listen(_port, (err) => {
