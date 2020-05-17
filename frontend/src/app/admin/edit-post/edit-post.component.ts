@@ -81,8 +81,8 @@ export class EditPostComponent implements OnInit {
               config: {
                 field: 'image' ,
                 endpoints: {
-                  byFile: 'http://localhost:3300/images/', // Your backend file uploader endpoint
-                  byUrl: 'http://localhost:3300/images/url', // Your endpoint that provides uploading by Url
+                  byFile: 'https://heroku-speakout.herokuapp.com/images/', // Your backend file uploader endpoint
+                  byUrl: 'https://heroku-speakout.herokuapp.com/images/url', // Your endpoint that provides uploading by Url
 
                 }
               }

@@ -8,7 +8,7 @@ require('./config/config');
 require('./db');
 require('./config/passportConfig');
 
-
+app.use(cors());
 const userController = require('./controllers/userController');
 const topicController = require('./controllers/topicController');
 const postsRoute = require('./controllers/postController');
@@ -18,7 +18,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(fileHandler);
 app.use(passport.initialize());
-app.use(cors({origin: '*'}));
+
 
 //handle validation errors within the application
 app.use((err, req, res, next) => {
