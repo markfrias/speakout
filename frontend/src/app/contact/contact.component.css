@@ -1,19 +1,23 @@
 
 * {
     background-color:#a18586;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
 }
+  
 .contact-form {
-    text-align: center;
-    width: 50%;
-    margin-left: 25%;
+    text-align: left;
+    width: 40%;
+    margin-left: 30%;
+    padding: 30px;
    
 }
 .form-input-fname input{
     text-align: left;
-    width: 41%;
-    padding: 15px 45px 0px 0px;
+    font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 90%;
+    padding: 10px 30px 10px 5px;
     margin:5px;
     background-color:whitesmoke;
 
@@ -69,13 +73,66 @@ h1 {
     text-align: center;
 }
 
-
-@media only screen and (max-width: 934px) {
-    body {
+/* Styles starting at 1024 width and below (tablets) */
+@media screen and (max-width: 1070px) and (min-width: 600px) {
+   .contact-form {
         margin-top: 10%;
-        height: 100%;
-        background-color: whitesmoke;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        position: inherit;
+        height: 50%;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        padding:30px;
     }
+    .form-input-fname input{
+        text-align: left;
+        width: 90%;
+        padding:5px 25px 5px 0px;
+        margin:2px;
+        background-color:whitesmoke;
+        font-size:13px;
+    }    
+    .form-submit {
+        font-size: 15px;
+        text-align:center;
+       
+
 }
+.form-input-message input {
+    width: 95%;
+    padding: 15px 5px;
+    padding-bottom: 90px;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    background-color: whitesmoke;
+    }
+ }
+@media screen and (max-width: 835px) and (min-width: 645px) {
+    .contact-form {
+        height:50%
+    }
+    .form-input-fname input{
+        text-align: left;
+        width: 90%;
+        height:80%;
+        padding:5px 25px 5px 0px;
+        margin:2px;
+        background-color:whitesmoke;
+        font-size:13px;
+    }    
+
+}
+@media screen and (max-width: 742px) and (min-width: 535px) {
+    .contact-form {
+        width: 50%;
+        margin-left: 19%;
+    }
+    .form-input-fname input {
+        width: 50%;
+        padding:5px 125px 5px 0px;
+        font-size: 13px;
+    }
+    
+
+
+}
+
