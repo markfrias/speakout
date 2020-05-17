@@ -14,7 +14,7 @@ const fileHandler = require('./upload');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.use(fileHandler);
+
 app.use(passport.initialize());
 
 const userController = require('./controllers/userController');
@@ -34,6 +34,8 @@ app.use((err, req, res, next) => {
 
 
 
+
+
 app.use('/uploads', express.static('uploads'));
 
 app.listen(_port, (err) => {
@@ -44,3 +46,5 @@ app.listen(_port, (err) => {
 app.use('/users', userController);
 app.use('/topics', topicController);
 app.use('/posts', postsRoute);
+app.use(fileHandler);
+
