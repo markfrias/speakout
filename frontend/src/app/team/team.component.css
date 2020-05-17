@@ -33,7 +33,7 @@ body {
 .content .members-profile-left .post .profile-image {
     margin-left: 25px;
     margin-top: 7px;
-    width: 30%;
+    width: 27%;
     height: 95%;
     float: left;
     border-radius: 5px;
@@ -64,7 +64,7 @@ body {
 
 
 .members-profile-left .post .profile-image {
-    width: 30%;
+    width: 27%;
     height: 50px;
     float: left;
     border-radius: 50%;
