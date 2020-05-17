@@ -18,7 +18,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(fileHandler);
 app.use(passport.initialize());
-app.use(cors());
+app.use(cors({origin: '*'}));
 
 //handle validation errors within the application
 app.use((err, req, res, next) => {
@@ -29,7 +29,7 @@ app.use((err, req, res, next) => {
     }
 });
 
-app.use(cors({origin: 'http://localhost:4200'}, {origin: 'https://aup-speakout.herokuapp.com/' }));
+
 
 app.use('/uploads', express.static('uploads'));
 
