@@ -8,16 +8,19 @@ require('./config/config');
 require('./db');
 require('./config/passportConfig');
 
+
+
+const app = express();
 app.use(cors());
+app.use(bodyParser.json());
+app.use(fileHandler);
+app.use(passport.initialize());
+
 const userController = require('./controllers/userController');
 const topicController = require('./controllers/topicController');
 const postsRoute = require('./controllers/postController');
 const fileHandler = require('./upload');
 
-const app = express();
-app.use(bodyParser.json());
-app.use(fileHandler);
-app.use(passport.initialize());
 
 
 //handle validation errors within the application
