@@ -9,7 +9,7 @@ export class ModifyPostsService {
   constructor(private httpClient: HttpClient) { }
 
   submitForm(formData, id){
-    this.httpClient.patch<any>("http://heroku-speakout.herokuapp.com/posts/" + id, formData ).subscribe(
+    this.httpClient.patch<any>("https://heroku-speakout.herokuapp.com/posts/" + id, formData ).subscribe(
       (res) => console.log(res),
       (err) => console.log(err),
       
@@ -21,7 +21,7 @@ export class ModifyPostsService {
 
   submitBody(data, id) {
     console.log("Service reached");
-    this.httpClient.patch<any>('http://heroku-speakout.herokuapp.com/posts/body/' + id, data).subscribe(
+    this.httpClient.patch<any>('https://heroku-speakout.herokuapp.com/posts/body/' + id, data).subscribe(
       (res) => console.log(res),
       (err) => console.log(err),
     );
