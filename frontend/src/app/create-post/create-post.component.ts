@@ -16,6 +16,8 @@ import Embed from '@editorjs/embed';
 import Quote from '@editorjs/quote';
 import Warning from '@editorjs/warning';
 import { HttpClient } from '@angular/common/http';
+import { TopicService } from '../shared/topic.service';
+import { Topic } from '../shared/topic.model';
 
 
 
@@ -26,21 +28,37 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CreatePostComponent implements OnInit {
   public editor: any;
-  constructor (public postsService: PostsService, private router: Router) {}
+  topics;
+
+  constructor (public postsService: PostsService, public topicService: TopicService, private router: Router) {}
 
   ngOnInit(): void {
+    this.showTopics();
+    this.refreshTopicList();
   }
+
+  showTopics(){
+    this.topicService.getTopics().subscribe((data: any) => this.topics = data);
+    console.log(this.topics)
+  }
+
+  refreshTopicList(){
+    this.topicService.getTopics().subscribe((res) => {
+      this.topicService.topicsList = res as Topic[];
+    })
+  }
+
   onSubmit(form: NgForm){
     this.postsService.addPost(form.value).subscribe(res => {
       alert('New post created successfully');
     },
     err => {
       alert('error adding new post:' + JSON.stringify(err, undefined, 2));
- 
+
     }
-    
+
     );
-  
+
   this.editor = new EditorJS({
     autofocus: true,
     minHeight: 50,

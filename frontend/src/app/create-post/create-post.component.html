@@ -1,6 +1,6 @@
 <main>
     <div class = "wrapper fadeInDown">
-            
+
         <form #createPostForm="ngForm" (ngSubmit)="createPostForm.valid && onSubmit(createPostForm)">
             <h2 style = "font-family: Poppins, sans-serif;">Create Post</h2>
                 <hr>
@@ -10,16 +10,9 @@
                     </div>-->
                 <p>
                     <select #topic="ngModel" [(ngModel)]="postsService.selectedPost.topic" id="topic" name="topic">
-                        <option value="topic">Select a topic: </option>
-                        <option value="admin">Administration</option>
-                        <option value="life">Campus Life</option>
-                        <option value="sso">SSO</option>
-                        <option value="cafe">Cafeteria</option>
-                        <option value="quarantine">Quarantine
-                        <option value="news">News</option>
-                        <option value="dorm">Dormitory</option>
-                        <option value="off-camp">Off-Campus</option>
-                      </select>
+                        <option disabled>Select a topic: </option>
+                        <option *ngFor="let topic of topicService.topicsList" [value]="topic"> {{topic.topicName}} </option>
+                    </select>
                     <!-- <input style = "width: 370px;" id="topic" name="topic" type="text" #topic="ngModel" [(ngModel)]="postsService.selectedPost.topic" placeholder="Enter Topic" autocomplete="off"> -->
                 </p>
                 <p>
@@ -35,7 +28,7 @@
                 <p>
                     <input type = "submit" value = "submit">
                 </p>
-                
+
         </form>
     </div>
 </main>
