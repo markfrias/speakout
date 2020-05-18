@@ -9,7 +9,7 @@ export class CommentsService {
   constructor(private httpClient: HttpClient) { }
 
   fetchForm(formData, id){
-    this.httpClient.patch<any>("http://heroku-speakout.herokuapp.com/posts/comment/" + id, formData ).subscribe(
+    this.httpClient.patch<any>("https://heroku-speakout.herokuapp.com/posts/comment/" + id, formData ).subscribe(
       (res) => console.log(res),
       (err) => console.log(err)
     );
