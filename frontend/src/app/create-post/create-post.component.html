@@ -18,45 +18,13 @@
                     <input style = "width: 370px;" id="description" name="postDescription" type="text" #postDescription="ngModel" [(ngModel)]="postsService.selectedPost.postDescription" placeholder="Enter Description" autocomplete="off">
                 </p>
                 <p>
-                    <textarea id = "message" name = "postBody" type="text" #postBody="ngModel" [(ngModel)]="postsService.selectedPost.postBody" style = "width: 370px; height:30vh;" rows="14" cols="10" wrap="soft" placeholder="Enter Your Message" ></textarea>
+                    <textarea id = "message" name = "postBody" type="text" #postBody="ngModel" [(ngModel)]="postsService.selectedPost.postBody" style = "width: 480px; height:30vh;" rows="14" cols="10" wrap="soft" placeholder="Enter Your Message" ></textarea>
                 </p>
+                <hr>
                 <p>
                     <input type = "submit" value = "submit">
                 </p>
-                <hr>
+                
         </form>
-            <script>
-                function validateForm() {
-                    var a = document.forms["english_registration_form"]["author"].value;
-                    var b = document.forms["english_registration_form"]["title"].value;
-                    var c = document.forms["english_registration_form"]["description"].value;
-                    var d = document.forms["english_registration_form"]["message"].value;
-
-                    if (a == null || a == "") {
-                        authorError = "Please enter your name";
-                        document.getElementById("author_error").innerHTML = authorError; 
-                        return false;
-                    } 
-
-                    else if (b == null || b == "") {
-                        titleError = "Please enter a title";
-                        document.getElementById("title_error").innerHTML = titleError;
-                        return false;
-                    } 
-
-                    else if (c == null || c == "") {        
-                        descriptionError = "Please enter a description";
-                        document.getElementById("description_error").innerHTML = descriptionError;
-                        return false;
-                    } 
-
-                    else if (d == null || d == ""){
-                        messageError = "Please enter a messaeg";
-                        document.getElementById("message_error").innerHTML = messageError;
-                    }
-
-                    else {return true;}
-                }
-        </script>
     </div>
 </main>
