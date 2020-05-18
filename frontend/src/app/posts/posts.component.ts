@@ -15,12 +15,15 @@ export class PostsComponent implements OnInit {
   posts;
   trendingPosts;
   incrementedPost;
+  isShown: boolean;
   
 
   
   constructor(private postsService : PostsService) {
+    this.isShown = false;
     this.showPosts();
     this.showTrending();
+    
   }
 
   ngOnInit(): void {
@@ -48,6 +51,10 @@ export class PostsComponent implements OnInit {
       // Temporary view refresh
       // !! Change to refresh specific parts only !!
      
+  }
+
+  onShow() {
+    this.isShown = true;
   }
 
   

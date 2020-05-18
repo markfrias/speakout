@@ -60,7 +60,7 @@
 
        
 
-        <button type="submit" [disabled]="!commentForm.valid">Submit</button>
+        <button type="submit" [disabled]="!commentForm.valid" (click)="onSubmit()">Submit</button>
     </form>
 </div>
 
