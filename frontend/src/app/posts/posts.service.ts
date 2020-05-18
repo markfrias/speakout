@@ -26,27 +26,27 @@ export class PostsService {
   constructor(private http: HttpClient) { }
 
   getPosts() {
-    return this.http.get('https://heroku-speakout.herokuapp.com/posts/');
+    return this.http.get('http://127.0.0.1:3300/posts/published');
   }
   addPost(post: Post) {
-    return this.http.post('https://heroku-speakout.herokuapp.com/posts/', post);
+    return this.http.post('http://127.0.0.1:3300/posts/', post);
  }
 
   // Returns results for trending posts
   getTrending() {
-    return this.http.get('https://heroku-speakout.herokuapp.com/posts/trending/');
+    return this.http.get('http://127.0.0.1:3300/posts/trending/');
   }
 
   getSpecificPost(id: string) {
-    return this.http.get('https://heroku-speakout.herokuapp.com/posts/' + id);
+    return this.http.get('http://127.0.0.1:3300/posts/' + id);
   }
 
   incrementLikes(id: string) {
-    return this.http.patch('https://heroku-speakout.herokuapp.com/posts/like/' + id, null);
+    return this.http.patch('http://127.0.0.1:3300/posts/like/' + id, null);
   }
 
   getLikes(id: string) {
-    return this.http.get("https://heroku-speakout.herokuapp.com/posts/like-data/" + id);
+    return this.http.get("http://127.0.0.1:3300/posts/like-data/" + id);
   }
   
 }

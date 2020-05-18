@@ -15,6 +15,18 @@ router.get('/', (req, res) => {
     });
 });
 
+//Get all published posts
+router.get('/published', (req, res) => {
+    Post.find({published : true}, (err, docs) => {
+        if (!err){
+            res.send(docs);
+            console.log("Request successful");
+        }else{
+            console.log('Error in retrieving Posts: ' + JSON.stringify(err, undefined, 2));
+        }
+    });
+});
+
 // Get likes for a specific post
 router.get('/like-data/:id', (req, res) => {
     //first, check if the post exists in the databse
@@ -46,9 +58,18 @@ router.patch('/like/:id', (req, res) => {
         
 });
 
+// Set published property to true
+// !! Include error handling !!
+router.patch('/publish/:id', (req, res) => {
+    Post.findOneAndUpdate({_id: req.params.id}, {$set : { published : true }}, (err, docs) => {
+        res.send(docs);
+        console.log("Post published with id " + req.params.id);
+    });
+})
+
 //Get posts that correspond to a certain topic
 router.get('/topics/:id', (req, res) => {
-    Post.find({topic: req.params.id}, (err, docs) => {
+    Post.find({topic: req.params.id, published: true}, (err, docs) => {
         if (!err){
             res.send(docs);
             console.log("Request successful");
@@ -60,7 +81,7 @@ router.get('/topics/:id', (req, res) => {
 
 // Get 10 posts sorted by their number of likes and limited to 10 items returned
 router.get('/trending', (req, res) => {
-    Post.find({}, null, {sort: {likes: -1}}, (err, docs) => {
+    Post.find({published: true}, null, {sort: {likes: -1}}, (err, docs) => {
         if (!err){
             res.send(docs);
             console.log("Request successful");

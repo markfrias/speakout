@@ -65,8 +65,8 @@ export class RequestPostComponent implements OnInit {
               config: {
                 field: 'image' ,
                 endpoints: {
-                  byFile: 'https://heroku-speakout.herokuapp.com/images/', // Your backend file uploader endpoint
-                  byUrl: 'https://heroku-speakout.herokuapp.com/images/url', // Your endpoint that provides uploading by Url
+                  byFile: 'http://127.0.0.1:3300/images/', // Your backend file uploader endpoint
+                  byUrl: 'http://127.0.0.1:3300/images/url', // Your endpoint that provides uploading by Url
 
                 }
               }
@@ -140,7 +140,8 @@ export class RequestPostComponent implements OnInit {
 
       const newObj =  {
         ...this.editPostForm.value,
-        postBody: this.bodyData
+        postBody: this.bodyData,
+        published: false
       }
 
       this.bodyData = newObj;
