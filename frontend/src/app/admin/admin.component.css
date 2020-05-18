@@ -1,18 +1,11 @@
-
 html {
-  height: 100%;
-  padding: 0px;
-  margin: 0px;
-  font-family: Poppins, sans-serif;
-  overflow: hidden;
-}
-body {
   height: 100%;
   padding: 0px;
   margin: 0px;
   font-family: Poppins, sans-serif;
   overflow: auto;
 }
+
 main{
   background-color: rgba(252, 246, 246, 0.925);
   height: 100vh;
@@ -121,14 +114,12 @@ left:7%;
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 1rem;
-  overflow: hidden;
+  font-size: 1.1rem;
 }
 
 th,
 td {
   padding: 5px;
-  text-align: center;
   border-bottom: 1px solid #d3d3d3;
 }
 
@@ -153,6 +144,20 @@ td {
 form div {
   margin-bottom: 15px;
 }
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  .element {
+    background: white;
+    color: black;
+  }
+}
 
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .element {
+    background: black;
+    color: white;
+  }
+}
 
 
