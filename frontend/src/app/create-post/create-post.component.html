@@ -9,7 +9,7 @@
                     <label class="validation-message">First name is required.</label>
                     </div>-->
                 <p>
-                    <select id="topic" name="topic">
+                    <select #topic="ngModel" [(ngModel)]="postsService.selectedPost.topic" id="topic" name="topic">
                         <option value="topic">Select a topic: </option>
                         <option value="admin">Administration</option>
                         <option value="life">Campus Life</option>
