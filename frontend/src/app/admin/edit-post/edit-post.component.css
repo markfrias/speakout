@@ -1,7 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
 * {
-    font-family: raleway;
+    font-family: "Poppins";
     font-weight: 2em;
 }
 
