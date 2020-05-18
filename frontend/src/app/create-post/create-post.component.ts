@@ -1,10 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from './../posts/posts.service';
 import { Post } from './../shared/post.model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../shared/user.service';
 import { NgForm } from '@angular/forms';
 import { createAotUrlResolver } from '@angular/compiler';
+
+import EditorJS from '@editorjs/editorjs';
+import Header from '@editorjs/header';
+import LinkTool from '@editorjs/link';
+import ImageTool from '@editorjs/image';
+import Checklist from '@editorjs/checklist';
+import List from '@editorjs/list';
+import Embed from '@editorjs/embed';
+import Quote from '@editorjs/quote';
+import Warning from '@editorjs/warning';
+import { HttpClient } from '@angular/common/http';
+
 
 
 @Component({
@@ -13,7 +25,7 @@ import { createAotUrlResolver } from '@angular/compiler';
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent implements OnInit {
-
+  public editor: any;
   constructor (public postsService: PostsService, private router: Router) {}
 
   ngOnInit(): void {
@@ -28,7 +40,65 @@ export class CreatePostComponent implements OnInit {
     }
     
     );
-  }
+  
+  this.editor = new EditorJS({
+    autofocus: true,
+    minHeight: 50,
 
+    tools: {
+      header: Header,
+      image: {
+        class: ImageTool,
+        config: {
+          field: 'image' ,
+          endpoints: {
+            byFile: 'https://heroku-speakout.herokuapp.com:3300/images/', // Your backend file uploader endpoint
+            byUrl: 'https://heroku-speakout.herokuapp.com:3300/images/url', // Your endpoint that provides uploading by Url
+
+          }
+        }
+      },
+      checklist: {
+        class: Checklist,
+        inlineToolbar: true
+      },
+
+      list: {
+        class: List,
+        inlineToolbar: true
+      },
+
+      embed: {
+        class: Embed,
+        inlineToolbar: true,
+        config: {
+          services: {
+            youtube: true,
+            coub: true
+          }
+        }
+      },
+
+      quote: {
+        class: Quote,
+        inlineToolbar: true,
+        config: {
+          quotePlaceholder: 'Enter a quote',
+          captionPlaceholder: 'Quote\'s author'
+        }
+      },
+
+      warning: {
+        class: Warning,
+        inlineToolbar: true,
+        shortcut: 'CMD+SHIFT+W',
+        config: {
+          titlePlaceholder: 'Title',
+          messagePlaceholder: 'Message'
+        }
+      }
+    },
+  });
+  }
 }
 
