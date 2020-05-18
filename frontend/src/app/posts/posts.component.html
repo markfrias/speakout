@@ -18,11 +18,6 @@
                 <h3>{{post.title}}</h3>
                 <p>Date created: {{post.timestamp | date :'dd-MMM-yyyy'}}</p>
                 <p>{{post.postDescription}}<span id="dots">...</span><span id="more"></span></p>
-<<<<<<< HEAD
-                <button id="myBtn" [routerLink] = "['/articles' + post._id]">Read more</button>
-                <a (click)="likeButtonAction(post._id)">Likes ({{post.likes}})</a>
-                <a href="">Comments</a>
-=======
                 <button [routerLink] = "['/articles/' + post._id]">Read more</button>
             </div>
 
@@ -38,7 +33,6 @@
                     <a (click)="likeButtonAction(post._id)">Likes ({{post.likes}})</a>
                     <a href="">Comments</a>
                 </div>
->>>>>>> 6155df76c63c12475ecfeb9ade4db2d7ded3e44f
             </div>
             
         </div>
