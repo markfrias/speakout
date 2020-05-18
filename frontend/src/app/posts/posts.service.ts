@@ -16,7 +16,7 @@ export class PostsService {
     author: "",
     postBody: "",
     timestamp: null,
-    /*topic: "",*/
+    topic: "",
     likes: null,
     shares: null,
     comments: "",

@@ -5,7 +5,7 @@ export class Post {
     author: string;
     postBody: string;
     timestamp: Date;
-    /*topic: string;*/
+    topic: string;
     likes: number;
     shares: number;
     comments: string;
