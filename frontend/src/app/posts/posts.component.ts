@@ -39,6 +39,8 @@ export class PostsComponent implements OnInit {
       );
   }
 
+
+
   likeButtonAction(id: string) {
     this.postsService.incrementLikes(id)
       .subscribe((data: any) => this.posts = data
