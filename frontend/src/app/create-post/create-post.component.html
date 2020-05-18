@@ -10,7 +10,7 @@
                     </div>-->
                 <p>
                     <select #topic="ngModel" [(ngModel)]="postsService.selectedPost.topic" id="topic" name="topic">
-                        <option value="topic">Select a topic: </option>
+                        <option selected disabled hidden value="">Select a topic: </option>
                         <option value="admin">Administration</option>
                         <option value="life">Campus Life</option>
                         <option value="sso">SSO</option>
