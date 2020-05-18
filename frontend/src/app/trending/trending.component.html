@@ -12,7 +12,7 @@
     <div class="trending-post" *ngFor="let trendingPost of trendingPosts">
         <h2>{{trendingPost.title}}</h2>
         <p>{{trendingPost.postDescription}}<span id="dots">...</span><span id="more"></span></p>
-        <button onclick="myFunction()" id="myBtn">Read more</button>
+        <button id="myBtn" [routerLink] = "['articles' + trendingPost._id]">Read more</button>
         <p>Likes: ({{trendingPost.likes}})</p>
     </div>
 </div>
