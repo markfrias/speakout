@@ -7,7 +7,7 @@ import { Topic } from './topic.model';
   providedIn: 'root'
 })
 export class TopicService {
-  readonly baseURL = 'https://localhost:3300/topics';
+  readonly baseURL = 'https://heroku-speakout.herokuapp.com/topics';
   selectedTopic: Topic = {
     _id: '',
     topicName: '',
