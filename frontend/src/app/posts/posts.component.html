@@ -17,7 +17,7 @@
                 <p>{{post.timestamp | date :'dd-MMM-yyyy hh:mm a'}}</p>
                 <i class="description">{{post.description}}</i>
                 <p>{{post.postDescription}}<span id="dots">...</span><span id="more"></span></p>
-                <button onclick="myFunction()" id="myBtn">Read more</button>
+                <button onclick="myFunction()" id="myBtn" [routerLink] = "['articles/' + post._id]">Read more</button>
                 <a (click)="likeButtonAction(post._id)">Likes ({{post.likes}})</a>
                 <a href="">Comments</a>
                 <a href="">Share ({{post.share}})</a>
