@@ -50,4 +50,18 @@ button {
 #pageTitle {
     text-align: center;
 }
-
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    .element {
+      background: white;
+      color: black;
+    }
+  }
+  
+  /* Dark mode */
+@media (prefers-color-scheme: dark) {
+    .element {
+      background: black;
+      color: white;
+    }
+  }
