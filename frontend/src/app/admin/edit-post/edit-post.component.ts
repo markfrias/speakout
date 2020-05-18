@@ -81,8 +81,8 @@ export class EditPostComponent implements OnInit {
               config: {
                 field: 'image' ,
                 endpoints: {
-                  byFile: 'https://heroku-speakout.herokuapp.com/images/', // Your backend file uploader endpoint
-                  byUrl: 'https://heroku-speakout.herokuapp.com/images/url', // Your endpoint that provides uploading by Url
+                  byFile: 'http://127.0.0.1:3300/images/', // Your backend file uploader endpoint
+                  byUrl: 'http://127.0.0.1:3300/images/url', // Your endpoint that provides uploading by Url
 
                 }
               }
@@ -182,8 +182,13 @@ export class EditPostComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.editPostForm.value);
-    this.modifyPostsService.submitForm(this.editPostForm.value, this.postId);
+    let postFormData = {
+      ...this.editPostForm.value,
+      published: false
+    }
+    console.log(postFormData);
+
+    this.modifyPostsService.submitForm(postFormData, this.postId);
     this.onSave();
   }
 
@@ -204,7 +209,7 @@ export class EditPostComponent implements OnInit {
 
   onSave() {
     this.editor.save().then((outputData) => {
-      console.log('Article data: ', outputData)
+      console.log('Article data: ', outputData);
       this.bodyData = outputData;
       console.log(this.bodyData);
     }).catch((error) => {

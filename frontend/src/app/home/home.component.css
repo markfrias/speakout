@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    font-family: 'Poppins', "sans-serif";
+}
+
+#banner {
+    height: 70vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner > p {
+    width: 70%;
+    text-align: center;
+}
+
+#button-top {
+    color: white;
+    border: solid 1px white;
+    margin: 0;
+    padding: 0;
+}
+
+#button-top:hover {
+    color: black;
+    background: rgba(255, 255, 255, 0.801);
+}
+
+
+#banner > h2 {
+    font-size: 50px;
+    margin: 0 0 10px 0;
+}
+
+#banner > p {
+    font-size: 25px;
+}
+
+.strips {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.strips > img {
+    height: 70%;
+}
+
+#strip-1 {
+    background-color: gray;
+}
+
+#strip-1 > img, .strips > img {
+    align-self: center;
+    margin-left: 15vw;
+}
+
+.strip-text-container {
+    flex-direction: column;
+    width: 40%;
+    align-self: center;
+    margin-left: 10vw;
+}
+
+.strip-text-container > h3 {
+    font-size: 45px;
+}
+
+.strip-text-container > p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#strip-2 {
+    background-color: darkgoldenrod;
+}
+
+#strip-3 {
+    background-color: darkkhaki;
+}
+
+#start-here-banner {
+    background-color: cadetblue;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#start-here-banner > h3 {
+    font-size: 45px;
+}
+
+.button {
+    border: solid 1px black;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 75px;
+    width: 150px;
+    align-self: center;
+    color: black;
+    transition: background 1s, border 1s;
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#button-bottom:hover {
+    background: rgba(200, 255, 255, 10);
+    border: solid 1px blue;
+}
+
+#buttons-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+

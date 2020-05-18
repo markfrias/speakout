@@ -42,7 +42,10 @@ const PostSchema = mongoose.Schema({
         type: [String]
     },
 
-    bannerImageName: String
+    published: {
+        type: Boolean,
+        default: false
+    }
 });
 
 module.exports = mongoose.model("Posts", PostSchema);

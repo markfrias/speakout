@@ -26,7 +26,7 @@ export class PostsService {
   constructor(private http: HttpClient) { }
 
   getPosts() {
-    return this.http.get('https://heroku-speakout.herokuapp.com/posts/');
+    return this.http.get('https://heroku-speakout.herokuapp.com/posts/published');
   }
   addPost(post: Post) {
     return this.http.post('https://heroku-speakout.herokuapp.com/posts/', post);

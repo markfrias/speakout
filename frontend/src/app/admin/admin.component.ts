@@ -48,4 +48,14 @@ export class AdminComponent implements OnInit {
     }
   }
 
+  onPublish(_id : string) {
+    this.managePostService.publishPost(_id)
+    .subscribe((res) => {
+      alert("Post has been published.");
+    },
+    (err) => {
+      alert("Post failed to publish.")
+    } );
+  }
+
 }
