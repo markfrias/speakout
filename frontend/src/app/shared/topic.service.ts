@@ -7,7 +7,7 @@ import { Topic } from './topic.model';
   providedIn: 'root'
 })
 export class TopicService {
-  readonly baseURL = 'http://localhost:3300/topics';
+  readonly baseURL = 'https://localhost:3300/topics';
   selectedTopic: Topic = {
     _id: '',
     topicName: '',

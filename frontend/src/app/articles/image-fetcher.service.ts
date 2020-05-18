@@ -9,7 +9,7 @@ export class ImageFetcherService {
   constructor(private httpClient: HttpClient) { }
 
   fetchImage(formData) {
-    this.httpClient.post<any>("http://127.0.0.1:3300/uploads", formData ).subscribe(
+    this.httpClient.post<any>("https://heroku-speakout.herokuapp.com/uploads", formData ).subscribe(
       (res) => console.log(res),
       (err) => console.log(err)
     );
