@@ -14,12 +14,12 @@ export class TagsService {
 
   // Returns all topics
   getTopics() {
-    return this.http.get('http://127.0.0.1:3300/topics/');
+    return this.http.get('https://heroku-speakout.herokuapp.com/topics/');
   }
 
   // Returns posts related to topic
   getArticles(id) {
-    return this.http.get('http://127.0.0.1:3300/posts/topics/' + id);
+    return this.http.get('https://heroku-speakout.herokuapp.com/posts/topics/' + id);
   }
 }
 
