@@ -58,6 +58,10 @@ p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
+#more {
+    display: none;
+}
+
 @media only screen and (max-width:934px) {
     .trending-wrapper {
         margin-top:10%;
