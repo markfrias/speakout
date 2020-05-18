@@ -18,4 +18,8 @@ export class ManagePostsService {
     return this.http.delete('https://heroku-speakout.herokuapp.com/posts/' + _id);
   }
 
+  publishPost(_id: string) {
+    return this.http.patch('https://heroku-speakout.herokuapp.com/posts/publish/' + _id, null);
+  }
+
 }
