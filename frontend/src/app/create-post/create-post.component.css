@@ -125,7 +125,21 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   -ms-transform: scale(0.95);
   transform: scale(0.95);
 }
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  .element {
+    background: white;
+    color: black;
+  }
+}
 
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .element {
+    background: black;
+    color: white;
+  }
+}
 
 /* Simple CSS3 Fade-in-down Animation */
 .fadeInDown {

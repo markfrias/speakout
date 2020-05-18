@@ -4,13 +4,15 @@
         <form #createPostForm="ngForm" (ngSubmit)="createPostForm.valid && onSubmit(createPostForm)">
             <h2 style = "font-family: Poppins, sans-serif;">Create Post</h2>
                 <hr>
+                <p>
                     <input style = "width: 370px;" id="name" name="author" type="text" #author="ngModel" [(ngModel)]="postsService.selectedPost.author" placeholder="Enter Name" autocomplete="off">
                     <div *ngIf="createPostForm.submitted && !author.valid">
-                        <label class="validation-message">First name is required.</label>
-                      </div>
-                    <!--<p>
+                    <label class="validation-message">First name is required.</label>
+                    </div>
+                </p> 
+                <p>
                     <input style = "width: 370px;" id="topic" name="topic" type="text" #topic="ngModel" [(ngModel)]="postsService.selectedPost.topic" placeholder="Enter Topic" autocomplete="off">
-                </p>-->
+                </p>
                 <p>
                     <input style = "width: 370px;" id="title" name="title" type="text" #title="ngModel" [(ngModel)]="postsService.selectedPost.title" placeholder="Enter Title" autocomplete="off">
                 </p>

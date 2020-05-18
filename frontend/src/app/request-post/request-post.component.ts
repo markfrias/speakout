@@ -65,8 +65,8 @@ export class RequestPostComponent implements OnInit {
               config: {
                 field: 'image' ,
                 endpoints: {
-                  byFile: 'http://127.0.0.1:3300/images/', // Your backend file uploader endpoint
-                  byUrl: 'http://127.0.0.1:3300/images/url', // Your endpoint that provides uploading by Url
+                  byFile: 'https://heroku-speakout.herokuapp.com:3300/images/', // Your backend file uploader endpoint
+                  byUrl: 'https://heroku-speakout.herokuapp.com:3300/images/url', // Your endpoint that provides uploading by Url
 
                 }
               }
