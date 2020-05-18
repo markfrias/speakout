@@ -11,11 +11,11 @@ export class ManagePostsService {
   constructor(private http: HttpClient) { }
 
   getPosts() {
-    return this.http.get('http://heroku-speakout.herokuapp.com/posts/');
+    return this.http.get('https://heroku-speakout.herokuapp.com/posts/');
   }
 
   deletePost(_id: string) {
-    return this.http.delete('http://heroku-speakout.herokuapp.com/posts/' + _id);
+    return this.http.delete('https://heroku-speakout.herokuapp.com/posts/' + _id);
   }
 
 }
