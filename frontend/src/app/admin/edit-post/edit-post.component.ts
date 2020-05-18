@@ -33,22 +33,22 @@ export class EditPostComponent implements OnInit {
     postDescription: new FormControl(''),
     author: new FormControl(''),
     topics: new FormControl('')
-    
+
   });
   formData;
   public editor: any;
   bodyData: any;
-  
-  
-  
+
+
+
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private modifyPostsService: ModifyPostsService,
     private postsService: PostsService
-    
-    
+
+
   ) {}
 
   ngOnInit(): void {
@@ -56,18 +56,18 @@ export class EditPostComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.postId = params['id'].toString();
       console.log(this.postId);
-      this.showPostContent(this.postId);      
+      this.showPostContent(this.postId);
     });
-    
+
       if (this.postContent == undefined)
       console.log("Error");
 
-      else 
+      else
       console.log(this.postContent.postBody[0].blocks);
 
-    
 
-      
+
+
     // Code for Editor.js initial configuration
     setTimeout(() => {
         this.editor = new EditorJS({
@@ -130,19 +130,19 @@ export class EditPostComponent implements OnInit {
 
          data: {
             time: this.postContent.postBody[0].time,
-          blocks: 
+          blocks:
             this.postContent.postBody[0].blocks,
           version: this.postContent.postBody[0].version
           }
         });
       }, 3000)
-      
-    
+
+
   }
 
   showPostContent(id) {
-    
-  
+
+
     let assignData = new Promise((resolve, reject) => {
       let content = undefined;
       this.postsService.getSpecificPost(id)
@@ -159,15 +159,15 @@ export class EditPostComponent implements OnInit {
               reject("Cannot load data, please refresh");
             }
           }, 2000)
-          
-          
+
+
 
         }
-          
-          
+
+
       }, 500)
     })
-      
+
     assignData
       .then((content) => {
         this.postContent = content;
@@ -178,7 +178,7 @@ export class EditPostComponent implements OnInit {
         this.showPostContent(this.postId);
       } )
 
-      
+
   }
 
   onSubmit() {
@@ -190,6 +190,7 @@ export class EditPostComponent implements OnInit {
 
     this.modifyPostsService.submitForm(postFormData, this.postId);
     this.onSave();
+    alert('Post updated successfully')
   }
 
   fillForm() {
@@ -216,16 +217,16 @@ export class EditPostComponent implements OnInit {
       console.log('Saving failed: ', error)
     });
     this.submitForm();
-    
+
   }
- 
+
   submitForm() {
     console.log(this.postId);
     setTimeout(() => {
       console.log(this.bodyData);
       this.modifyPostsService.submitBody(this.bodyData, this.postId);
     }, 1000)
-   
+
   }
 }
 
@@ -243,7 +244,7 @@ export class EditPostComponent implements OnInit {
   constructor({data}){
     this.data = data;
   }
-  
+
   render() {
     const input = document.createElement('input');
     input.value = this.data && this.data.url ? this.data.url : '';
