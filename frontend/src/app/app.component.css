@@ -8,10 +8,15 @@ nav {
     justify-content: space-evenly;
     font-family: 'Raleway', 'Arial';
     font-weight: 700;
+    box-sizing: border-box;
 }
 
 
 /* Nav link logo container */
+#image-container {
+    padding: 1vh 0;
+}
+
 #logo-big {
     display: none;
 }
@@ -26,9 +31,9 @@ nav {
     flex-direction: row;
     justify-content: space-around;
     list-style-type: none;
-    padding: 0 2vw;
     width: 100%;
     box-sizing: border-box;
+    padding: 1vh 2vw;
 }
 
 .navlinks {
