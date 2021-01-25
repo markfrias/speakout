@@ -5,7 +5,7 @@
 }
 
 #banner {
-    height: 70vh;
+    height: 100%;
     width: 100%;
     background-color: black;
     color: white;
@@ -13,11 +13,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 2vh 2vw;
 }
 
 #banner > p {
-    width: 70%;
-    text-align: center;
+    font-size: 1.25em;
+    padding: 0 5vw;
 }
 
 #button-top {
@@ -34,13 +37,10 @@
 
 
 #banner > h2 {
-    font-size: 50px;
     margin: 0 0 10px 0;
+    font-size: 3em;
 }
 
-#banner > p {
-    font-size: 25px;
-}
 
 .strips {
     height: 60vh;
