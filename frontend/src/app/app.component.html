@@ -1,19 +1,26 @@
-
 <nav>
   <div id="image-container" class="nav-item">
     <img id="logo-big" src="assets/Img/SPEAK OUT (EDITED).png" alt="Speakout website logo">
     <img id="logo-small" src="assets/Img/flat_logo.png" alt="Speakout logo for small devices">
   </div>
-    
+
   <ul id="navlink-container" class="nav-item">
-    <a class="navlinks" routerLink="/" [routerLinkActive]="['active-link']"><li>Home</li></a>
-    <a class="navlinks" routerLink="/posts" [routerLinkActive]="['active-link']"><li>Feed</li></a>
-    <a class="navlinks" routerLink="/contact" routerLinkActive="active-link"><li>Contact Us</li></a>
-    <a class="navlinks" routerLink='/team' routerLinkActive="active-link"><li>Meet the Team</li></a>
+    <a class="navlinks" routerLink="/" [routerLinkActive]="['active-link']">
+      <li>HOME</li>
+    </a>
+    <a class="navlinks" routerLink="/posts" [routerLinkActive]="['active-link']">
+      <li>FEED</li>
+    </a>
+    <a class="navlinks" routerLink="/contact" routerLinkActive="active-link">
+      <li>CONTACT US</li>
+    </a>
+    <a class="navlinks" routerLink='/team' routerLinkActive="active-link">
+      <li>ABOUT US</li>
+    </a>
   </ul>
 
   <div id="login-button-container" class="nav-item">
-    
+
     <!-- Show login button when the user is not logged in -->
     <div *ngIf='!this.userService.isLoggedIn()' class="loginbtn" id="notLoggedIn" routerLink="/login">
       <i class="fa fa-user"></i>
@@ -31,7 +38,7 @@
       <a class="logout" (click)='onLogout()'>Logout</a>
     </div>
   </div>
-  
+
 </nav>
 
 

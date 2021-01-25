@@ -1,0 +1,480 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*nav {
+    height: 75px;
+    width: 100%;
+    background-color: #6f3637;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-item {
+    height: 100%;
+    /*background-color: blue; */
+/*} /*
+
+#image-container {
+
+    height: 150%;
+    align-self: inherit;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    z-index: 0;
+}
+
+#logo-big {
+    height: 100%;
+    width: auto;
+}
+
+#logo-small {
+    display: none;
+}
+
+#navlink-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px;
+}
+
+.navlinks {
+    list-style-type: none;
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+    font-family: 'arial';
+    font-weight: 700;
+}
+
+.navlinks:hover .navlinks {
+    color: white;
+}
+
+#login-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 20px;
+    align-items: center;
+    position: relative;
+}
+
+#login-button-container > div {
+    cursor: pointer;
+}
+
+#login-button-container > div > i {
+    margin-right: 10px;
+}
+
+#login-button-container > div > span, a {
+    font-family: 'raleway', 'arial';
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    top: 40px;
+    color: white;
+}
+
+.show {display:flex; flex-direction: column;}
+
+#login-button-container:hover .dropdown-content, #login-button-container:active .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Styles starting at 1024 width and below (tablets) */
+/*@media screen and (max-width: 1024px) and (min-width: 600px) {
+    #image-container {
+        width: 20%;
+    }
+
+    #navlink-container {
+        width: 50%;
+    }
+
+    #login-button-container {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 645px) {
+    #image-container {
+        width: auto;
+        margin-left: 5px;
+    }
+
+    #navlink-container {
+        width: auto;
+    }
+
+    #login-button-container {
+        width: 25%;
+    }
+}
+/* Styles starting at 599 width and below */
+/*@media screen and (max-width: 645px) {
+    nav {
+        flex-direction: column;
+        height: 100px;
+    }
+
+    #image-container {
+        height: 50%;
+        width: 100%;
+    }
+    
+    #logo-big {
+        display: none;
+    }
+
+    #logo-small {
+        display: block;
+        height: 100%;
+    }
+
+    #login-button-container {
+        display: none;
+    }
+
+    #navlink-container {
+        height: 50%;
+        width: 100%;
+    }
+
+    .navlinks {
+        font-size: 15px;
+    }
+}
+
+/*nav {
+    display: flex;
+    width: 100%;
+    height: 75px;
+    background-color: #6f3637;
+    align-items: center;
+}
+
+/*drop down menu
+nav li ul {
+  position: absolute;
+  top: 35px;
+  right: 18px;
+  width: 10vw;
+  display: none;
+  z-index: 88888;
+  list-style: none;
+
+  
+}
+/* Login dropdown 
+nav li:hover ul {
+  display: block;
+  background-color:#6f3637 ;
+}
+
+nav li ul li {
+  width: 100%;
+  color: #6f3637;
+}
+
+nav li ul li a {
+  padding: 9px;
+  background: none;
+  color: white;
+  display: inline-flex;
+}
+
+nav li ul li a.logout {
+  color: red;
+  text-decoration: none;
+}
+
+nav li ul li a:hover {
+  text-decoration: underline;
+}
+
+nav li ul a:hover {
+  background: #d5d6d6;
+}
+/* added 
+
+/* Logo 
+img {
+    width: 150px;
+    height: 150px;
+    align-self: flex-start;
+}
+
+/* Navbar link styles 
+a.navlinks {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    list-style: none;
+    cursor: pointer;
+    padding-right: 1vw;
+}
+
+/* List container 
+nav > ul {
+   display: flex;
+   list-style: none;
+   font-size: 30px;
+   justify-self: center;
+}
+
+.loginbtn {  
+    list-style: none;
+    cursor: pointer;
+    list-style: none;
+    list-style: none;
+    color:rgb(75, 75, 235);
+}
+a.loginbtn {
+    padding-bottom: 35px;
+    display: flex;
+    text-align: center;
+    margin-left: 85%;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    position: absolute;
+    padding: 35px 0px;
+}
+
+a:link {
+    margin: 0;
+    color: rgb(247, 193, 56);
+    text-decoration: none;
+    padding-top: 5px
+}
+
+/*link visited 
+a:visited {
+    color: #6186a8;
+    text-decoration: none;
+}
+/*link hover 
+a:hover {
+    color: goldenrod;
+}
+
+
+
+
+
+
+/*link unvisited
+
+
+
+
+h2{
+background-color: #FEFFED;
+padding: 30px 35px;
+margin: -10px -50px;
+text-align:center;
+border-radius: 10px 10px 0 0;
+}
+hr{
+margin: 10px -50px;
+border: 0;
+border-top: 1px solid #ccc;
+margin-bottom: 40px;
+}
+div.container{
+width: 900px;
+height: 610px;
+margin:35px auto;
+font-family: 'Raleway', sans-serif;
+}
+div.main{
+width: 300px;
+padding: 10px 50px 25px;
+border: 2px solid gray;
+border-radius: 10px;
+font-family: raleway;
+float:left;
+margin-top:50px;
+}
+input[type=text],input[type=password]{
+width: 100%;
+height: 40px;
+padding: 5px;
+margin-bottom: 25px;
+margin-top: 5px;
+border: 2px solid #ccc;
+color: #4f4f4f;
+font-size: 16px;
+border-radius: 5px;
+}
+label{
+color: #464646;
+text-shadow: 0 1px 0 #fff;
+font-size: 14px;
+font-weight: bold;
+}
+center{
+font-size:32px;
+}
+*/
+
+
+/*mobile responsive 
+@media only screen and (max-width:1250px) {
+    nav > ul {
+        margin-left: 25%;
+    }
+    
+    .loginbtn {
+        cursor: pointer;
+        list-style: none;
+        list-style: none;
+        color:rgb(75, 75, 235);
+      
+    }
+    a.loginbtn {
+        
+        margin-left: 86%;
+        position: absolute;
+    }
+}
+@media only screen and (max-width:1050px){
+    nav > ul {
+        margin-left: 15%;
+    }
+
+    #secondary-nav > ul {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    margin-left: 30%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+    .loginbtn {
+        cursor: pointer;
+        list-style: none;
+        list-style: none;
+        color:rgb(75, 75, 235);
+        float: right ;
+    }
+    a.loginbtn {
+       
+        text-align: end;
+        margin-left: 80%;
+    }
+}
+@media only screen and (max-width: 934px) {
+
+    nav {
+        display:flex;
+        width: 100%;
+        height: 8vh;
+        background-color: #6f3637;
+
+    }
+    nav > ul {
+        margin-top: 10px;
+        margin-left: 8%;
+       
+    }
+    .loginbtn {
+        cursor: pointer;
+        list-style: none;
+        list-style: none;
+        color:rgb(75, 75, 235);
+        float: right ;
+    }
+    a.loginbtn {
+        display: flex;
+        text-align: end;
+        margin-top:-15px;
+        margin-left: 80%;
+        font-size: 15px;
+        position: absolute;
+    }
+    img {
+        width: 142px;
+        height: 142px;
+        margin: 3px; 
+
+    }
+    a.navlinks {
+
+        padding: 15px;
+        font-size: 18px;
+
+    }
+    
+    #secondary-nav > ul {
+        display: flex;
+        list-style-type: none;
+        width: 100%;
+      margin-left: 20%;
+        font-family: monospace;
+        position: absolute;
+
+
+    }
+
+    .navlinks-2 {
+        margin-right: 3vw;
+        cursor: pointer;
+        font-size: 18px;
+        text-align: center;
+
+
+    }
+    li.navlinks-2 {
+        color: #2b2e4a;
+        display: inline-block;
+
+
+    } 
+    }
+*/

@@ -9,15 +9,15 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public userService: UserService, private router: Router){ }
+  constructor(public userService: UserService, private router: Router) { }
 
-  
- 
+
+
 
   ngOnInit(): void {
   }
 
-  onLogout(){
+  onLogout() {
     this.userService.deleteToken();
     this.router.navigate(['/home']);
   }
