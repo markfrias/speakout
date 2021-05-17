@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +12,8 @@ export class CreatePostsService {
   constructor(private httpClient: HttpClient) { }
 
   submitForm(formData) {
-    let resp;
-    return this.httpClient.post("https://heroku-speakout.herokuapp.com/posts/", formData);
+    return this.httpClient.post("https://heroku-speakout.herokuapp.com/posts/", formData)
+
   }
 
   submitBody(data) {
