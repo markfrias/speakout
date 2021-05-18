@@ -1,52 +1,61 @@
 <div id="secondary-nav">
     <ul>
-      <li class="navlinks-2" routerLink="/trending">Trending Posts</li>
-      <li class="navlinks-2" routerLink="/posts">Recent Posts</li>
+        <li class="navlinks-2" routerLink="/trending">Trending Posts</li>
+        <li class="navlinks-2" routerLink="/posts">Recent Posts</li>
     </ul>
 
-    
+
 </div>
 
 
-    <main>
-        <h2>Recent Posts</h2>
-        <a routerLink="/request">Request to publish your article.</a>
-        <!--Need to change code below. Use structural directives later-->
-        <div class="recent-posts">
-            
-            <div class="post" *ngFor="let post of posts | slice:0:5">
+<main>
+    <h2>Recent Posts</h2>
+    <a routerLink="/request">Request to publish your article.</a>
+    <!--Need to change code below. Use structural directives later-->
+    <div class="recent-posts">
+
+        <div class="loading-posts" *ngIf="!posts">
+            <mat-spinner diameter="75"></mat-spinner>
+
+        </div>
+        <div class="post" *ngFor="let post of posts | slice:0:5">
+            <h3>{{post.title | demo }}</h3>
+            <p>Date created: {{post.timestamp | date :'dd-MMM-yyyy'}}</p>
+            <p>{{post.postDescription}}<span id="dots">...</span><span id="more"></span></p>
+            <button [routerLink]="['/articles/' + post._id]">Read more</button>
+        </div>
+
+        <button (click)="onShow()" *ngIf="!isShown && posts">Show More</button>
+
+        <div *ngIf="isShown">
+            <div class="post" *ngFor="let post of posts | slice :6:posts.length">
                 <h3>{{post.title}}</h3>
-                <p>Date created: {{post.timestamp | date :'dd-MMM-yyyy'}}</p>
+                <p>{{post.timestamp | date :'dd-MMM-yyyy'}}</p>
+                <i class="description">{{post.description}}</i>
                 <p>{{post.postDescription}}<span id="dots">...</span><span id="more"></span></p>
-                <button [routerLink] = "['/articles/' + post._id]">Read more</button>
-            </div>
-
-            <button (click)="onShow()" *ngIf="!isShown">Show More</button>
-
-            <div *ngIf="isShown">
-                <div class="post" *ngFor="let post of posts | slice :6:posts.length">
-                    <h3>{{post.title}}</h3>
-                    <p>{{post.timestamp | date :'dd-MMM-yyyy'}}</p>
-                    <i class="description">{{post.description}}</i>
-                    <p>{{post.postDescription}}<span id="dots">...</span><span id="more"></span></p>
-                    <button onclick="myFunction()" id="myBtn" [routerLink] = "['/articles/' + post._id]">Read more</button>
-                    <a (click)="likeButtonAction(post._id)">Likes ({{post.likes}})</a>
-                    <a href="">Comments</a>
-                </div>
-            </div>
-            
-        </div>
-
-        <div class="sidebar">
-            <div class="search-section">
-                
-
-                <div class="trending-section">
-                    <h4>Trending</h4>
-                    <ul>
-                        <li *ngFor="let trendingPost of trendingPosts"><a [routerLink]="['/articles', trendingPost._id]">{{trendingPost.title}}</a></li>
-                    </ul>
-                </div>
+                <button onclick="myFunction()" id="myBtn" [routerLink]="['/articles/' + post._id]">Read more</button>
+                <a (click)="likeButtonAction(post._id)">Likes ({{post.likes}})</a>
+                <a href="">Comments</a>
             </div>
         </div>
-    </main>
+
+    </div>
+
+    <div class="sidebar">
+        <div class="search-section">
+
+
+            <div class="trending-section">
+                <h4>Trending</h4>
+                <div class="loading-posts" *ngIf="!posts">
+                    <mat-spinner diameter="75" color="white"></mat-spinner>
+
+                </div>
+                <ul *ngIf="trendingPosts">
+                    <li *ngFor="let trendingPost of trendingPosts"><a
+                            [routerLink]="['/articles', trendingPost._id]">{{trendingPost.title}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { DemoPipe } from './posts/file.pipe';
 
 
 
@@ -31,20 +34,21 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { EditPostComponent } from './admin/edit-post/edit-post.component';
 import { HomeComponent } from './home/home.component';
 import { RequestPostComponent } from './request-post/request-post.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   { path: 'trending', component: TrendingComponent },
   { path: 'posts', component: PostsComponent },
-  { path: 'tags', component: TagsComponent} ,
-  { path: 'team', component: TeamComponent},
-  { path: 'admin', component: AdminComponent},
-  { path: 'signup', component: SignupComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'users', component: UsersComponent},
-  { path: 'topics', component: TopicsComponent},
-  { path: 'create-post', component: CreatePostComponent},
-  { path: 'edit-user', component: EditUserComponent},
-  { path: 'edit-post', component: EditPostComponent}
+  { path: 'tags', component: TagsComponent },
+  { path: 'team', component: TeamComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'users', component: UsersComponent },
+  { path: 'topics', component: TopicsComponent },
+  { path: 'create-post', component: CreatePostComponent },
+  { path: 'edit-user', component: EditUserComponent },
+  { path: 'edit-post', component: EditPostComponent }
 
 ]
 
@@ -68,7 +72,8 @@ const appRoutes: Routes = [
     LoginComponent,
     EditPostComponent,
     HomeComponent,
-    RequestPostComponent
+    RequestPostComponent,
+    DemoPipe
 
   ],
   imports: [
@@ -76,14 +81,16 @@ const appRoutes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
 
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  },AuthGuard],
+  }, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
