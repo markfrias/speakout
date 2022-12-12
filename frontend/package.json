@@ -23,7 +23,7 @@
     "@editorjs/editorjs": "^2.17.0",
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
     "bootstrap": "^4.4.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "ng2-opd-popup": "^1.1.21",
     "path": "^0.12.7",
     "rxjs": "~6.5.4",
